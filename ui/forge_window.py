@@ -958,67 +958,63 @@ class ForgeWindow:
 
     # ── Tab 3: Review ─────────────────────────────────────────────────────────
 
+    # Review panel definitions:
+    # original = input funscript (source_data)
+    # master   = processed main funscript (no suffix — same stem)
+    # alpha, beta, pulse_frequency = derived channels
+    _REVIEW_PANELS = [
+        ("alpha",            "alpha  —  where (left/right)"),
+        ("beta",             "beta  —  where (up/down)"),
+        ("pulse_frequency",  "pulse frequency  —  intensity"),
+    ]
+
     def _build_tab_review(self):
         tab = ttk.Frame(self.notebook)
         self.notebook.add(tab, text="  3 · Review  ")
-        tab.columnconfigure(0, weight=1)
-        tab.columnconfigure(1, weight=3)
+
+        # Column layout: original (left, spans full height) + 2-col grid (right)
+        tab.columnconfigure(0, weight=1)   # original
+        tab.columnconfigure(1, weight=1)   # grid col A
+        tab.columnconfigure(2, weight=1)   # grid col B
         tab.rowconfigure(0, weight=1)
-        tab.rowconfigure(1, weight=0)
+        tab.rowconfigure(1, weight=1)
+        tab.rowconfigure(2, weight=0)      # nav row
 
-        # Left: output checklist
-        left = ttk.LabelFrame(tab, text="Generated Outputs")
-        left.grid(row=0, column=0, sticky="nsew", padx=(5, 2), pady=5)
-        left.columnconfigure(0, weight=1)
-        left.rowconfigure(0, weight=1)
+        self._review_figs = {}
+        self._review_canvases = {}
 
-        # Scrollable list
-        list_canvas = tk.Canvas(left, highlightthickness=0)
-        list_canvas.grid(row=0, column=0, sticky="nsew")
-        scrollbar = ttk.Scrollbar(left, orient="vertical", command=list_canvas.yview)
-        scrollbar.grid(row=0, column=1, sticky="ns")
-        list_canvas.configure(yscrollcommand=scrollbar.set)
+        def _make_panel(parent, row, col, rowspan, label, suffix):
+            lf = ttk.LabelFrame(parent, text=label)
+            lf.grid(row=row, column=col, rowspan=rowspan, sticky="nsew",
+                    padx=(5 if col == 0 else 2, 2 if col < 2 else 5),
+                    pady=(5 if row == 0 else 2, 2))
+            lf.columnconfigure(0, weight=1)
+            lf.rowconfigure(0, weight=1)
+            fig = Figure(tight_layout=True)
+            canvas = FigureCanvas(fig, master=lf)
+            canvas.draw()
+            canvas.get_tk_widget().pack(fill="both", expand=True)
+            self._review_figs[suffix] = fig
+            self._review_canvases[suffix] = canvas
 
-        self.output_list_frame = ttk.Frame(list_canvas)
-        list_canvas.create_window((0, 0), window=self.output_list_frame, anchor="nw")
-        self.output_list_frame.bind(
-            "<Configure>",
-            lambda e: list_canvas.configure(scrollregion=list_canvas.bbox("all"))
-        )
+        # Original — left column, full height
+        _make_panel(tab, 0, 0, 2, "Original funscript", "original")
 
-        ttk.Label(self.output_list_frame, text="Process first to see outputs.").pack(padx=8, pady=8)
+        # Master — top-left of right grid
+        _make_panel(tab, 0, 1, 1, "master  —  processed", "master")
 
-        # Right: comparison plots
-        right = ttk.LabelFrame(tab, text="Comparison")
-        right.grid(row=0, column=1, sticky="nsew", padx=(2, 5), pady=5)
-        right.columnconfigure(0, weight=1)
-        right.rowconfigure(0, weight=1)
-        right.rowconfigure(1, weight=1)
+        # Alpha — top-right
+        _make_panel(tab, 0, 2, 1, "alpha  —  where (left/right)", "alpha")
 
-        top_plot = ttk.LabelFrame(right, text="Original")
-        top_plot.grid(row=0, column=0, sticky="nsew", padx=5, pady=(5, 2))
-        top_plot.columnconfigure(0, weight=1)
-        top_plot.rowconfigure(0, weight=1)
+        # Beta — bottom-left
+        _make_panel(tab, 1, 1, 1, "beta  —  where (up/down)", "beta")
 
-        self.review_before_fig = Figure(tight_layout=True)
-        self.review_before_mpl = FigureCanvas(self.review_before_fig, master=top_plot)
-        self.review_before_mpl.draw()
-        self.review_before_mpl.get_tk_widget().pack(fill="both", expand=True)
-
-        self.review_after_lf = ttk.LabelFrame(right, text="Selected Output")
-        self.review_after_lf.grid(row=1, column=0, sticky="nsew", padx=5, pady=(2, 5))
-        self.review_after_lf.columnconfigure(0, weight=1)
-        self.review_after_lf.rowconfigure(0, weight=1)
-
-        self.review_after_fig = Figure(tight_layout=True)
-        self.review_after_mpl = FigureCanvas(self.review_after_fig, master=self.review_after_lf)
-        self.review_after_mpl.draw()
-        self.review_after_mpl.get_tk_widget().pack(fill="both", expand=True)
+        # Pulse frequency — bottom-right
+        _make_panel(tab, 1, 2, 1, "pulse frequency  —  intensity", "pulse_frequency")
 
         # Bottom nav
         btn_row = ttk.Frame(tab)
-        btn_row.grid(row=1, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
-
+        btn_row.grid(row=2, column=0, columnspan=3, sticky="ew", padx=5, pady=5)
         ttk.Button(btn_row, text="← Back",
                    command=lambda: self.notebook.select(1)).pack(side="left", padx=5)
         ttk.Button(btn_row, text="Export →",
@@ -1266,67 +1262,55 @@ class ForgeWindow:
     # ─── Review ───────────────────────────────────────────────────────────────
 
     def _populate_review(self):
-        for w in self.output_list_frame.winfo_children():
-            w.destroy()
+        """Fill all five review panels from current output_files."""
+        self.selected_outputs = {
+            suffix: tk.BooleanVar(value=True)
+            for suffix in self.output_files
+        }
 
-        self.selected_outputs = {}
+        # Original — always available from source_data
+        if self.source_data:
+            self._plot_funscript(
+                self._review_figs["original"],
+                self._review_canvases["original"],
+                self.source_data,
+            )
 
-        if not self.output_files:
-            ttk.Label(self.output_list_frame, text="No outputs.").pack(padx=8, pady=8)
-            return
+        # Master — the processed main funscript (stem only, no suffix)
+        # It lives in the same directory as the input, with the same stem
+        if self.input_file:
+            master_path = self.input_file  # original is also the master input
+            # Check if a processed version exists alongside (same stem, no extra suffix)
+            # For now, show the input as master — will update when master output is distinct
+            if self.source_data:
+                self._plot_funscript(
+                    self._review_figs["master"],
+                    self._review_canvases["master"],
+                    self.source_data,
+                )
 
-        ttk.Label(
-            self.output_list_frame,
-            text="Check to include in export.\nClick name to preview.",
-            font=("", 8),
-            justify="left",
-        ).pack(anchor="w", padx=8, pady=(8, 4))
-
-        ttk.Separator(self.output_list_frame, orient="horizontal").pack(
-            fill="x", padx=4, pady=4
-        )
-
-        def _add_row(suffix, label):
-            var = tk.BooleanVar(value=True)
-            self.selected_outputs[suffix] = var
-            row = ttk.Frame(self.output_list_frame)
-            row.pack(fill="x", padx=4, pady=1)
-            ttk.Checkbutton(row, variable=var).pack(side="left")
-            ttk.Button(
-                row, text=label, width=28,
-                command=lambda s=suffix, p=self.output_files[s]: self._preview_output(s, p),
-            ).pack(side="left", padx=2)
-
-        # Primary channels first
-        primary_found = []
-        for suffix, label in PRIMARY_CHANNELS.items():
+        # Alpha, beta, pulse_frequency
+        for suffix in ("alpha", "beta", "pulse_frequency"):
             if suffix in self.output_files:
-                _add_row(suffix, label)
-                primary_found.append(suffix)
-
-        # Separator then additional channels
-        others = sorted(s for s in self.output_files if s not in PRIMARY_CHANNELS)
-        if others:
-            ttk.Separator(self.output_list_frame, orient="horizontal").pack(
-                fill="x", padx=4, pady=(6, 2))
-            tk.Label(self.output_list_frame, text="Additional channels",
-                     font=("", 7), fg="#888888").pack(anchor="w", padx=8)
-            for suffix in others:
-                _add_row(suffix, suffix)
-
-        # Auto-preview alpha
-        first = primary_found[0] if primary_found else (others[0] if others else None)
-        if first:
-            self._preview_output(first, self.output_files[first])
+                try:
+                    data = load_file(str(self.output_files[suffix]))
+                    self._plot_funscript(
+                        self._review_figs[suffix],
+                        self._review_canvases[suffix],
+                        data,
+                    )
+                except Exception as e:
+                    self._set_status(0, f"Preview error ({suffix}): {e}")
 
     def _preview_output(self, suffix: str, path: Path):
+        """Legacy single-panel preview — kept for Configure tab 'after' panel."""
         if not self.source_data:
             return
         try:
             output_data = load_file(str(path))
-            self.review_after_lf.config(text=f"Output: {suffix}")
+            self.after_label_frame.config(text=f"After — {suffix}")
             self._plot_comparison(
-                self.review_after_fig, self.review_after_mpl,
+                self.after_fig, self.after_mpl,
                 self.source_data, output_data, suffix
             )
         except Exception as e:
