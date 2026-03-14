@@ -1,0 +1,43 @@
+site_name: funscript-tools
+site_description: CLI and processing tools for converting funscripts to restim estim signals
+site_url: https://liquid-releasing.github.io/funscript-tools/
+repo_url: https://github.com/liquid-releasing/funscript-tools
+repo_name: liquid-releasing/funscript-tools
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: purple
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - User Guide: USER_GUIDE.md
+  - CLI Reference: CLI_REFERENCE.md
+  - Examples: examples/README.md
+  - Design: DESIGN.md
+
+plugins:
+  - search
