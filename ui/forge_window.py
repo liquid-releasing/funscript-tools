@@ -78,6 +78,8 @@ class ForgeWindow:
         # Live preview state
         self._electrode_preview_pending = False
         self._sensation_update_pending = False
+        self._auto_process_pending = False
+        self._auto_process_after_id = None
 
         # Config — plain dict, no upstream objects
         self.current_config = get_default_config()
@@ -680,6 +682,7 @@ class ForgeWindow:
                     self.cv_pulse_freq_ratio, self.cv_pf_min, self.cv_pf_max,
                     self.cv_pw_min, self.cv_pw_max, self.cv_pr_min, self.cv_pr_max):
             var.trace_add("write", lambda *_: self._schedule_sensation_update())
+            var.trace_add("write", lambda *_: self._schedule_auto_process())
 
         # Initial draw
         self._schedule_electrode_preview()
@@ -733,6 +736,19 @@ class ForgeWindow:
         if not self._sensation_update_pending:
             self._sensation_update_pending = True
             self.root.after(200, self._do_sensation_update)
+
+    def _schedule_auto_process(self, *_):
+        """Debounced auto-reprocess: fires 1.5s after last config change if source loaded."""
+        if not self.source_data:
+            return
+        if self._auto_process_after_id:
+            self.root.after_cancel(self._auto_process_after_id)
+        self._auto_process_after_id = self.root.after(1500, self._do_auto_process)
+
+    def _do_auto_process(self):
+        self._auto_process_after_id = None
+        if self.source_data:
+            self._start_processing()
 
     def _do_sensation_update(self):
         self._sensation_update_pending = False
@@ -829,6 +845,10 @@ class ForgeWindow:
 
         if description:
             self._etransform_desc_var.set(f"\u2713 {name}  \u2014  {description}")
+
+        # eTransform selection triggers immediate reprocess (no debounce)
+        if self.source_data:
+            self._start_processing()
 
     def _rebuild_etransform_sliders(self, specs: list):
         """Rebuild the contextual slider area inside the eTransforms panel."""
