@@ -450,6 +450,84 @@ def preview_output(
 
 # ── Command-line interface ─────────────────────────────────────────────────────
 
+def _cmd_algorithms(args):
+    for key, name in ALGORITHMS.items():
+        desc = ALGORITHM_DESCRIPTIONS[key]
+        print(f"  {key:<20} {name}")
+        print(f"  {'':20} {desc}")
+        print()
+
+
+def _cmd_config_show(args):
+    cfg = get_default_config()
+    if args.section:
+        if args.section not in cfg:
+            print(f"Error: unknown section '{args.section}'. "
+                  f"Available: {', '.join(cfg.keys())}", file=sys.stderr)
+            sys.exit(1)
+        print(json.dumps(cfg[args.section], indent=2))
+    else:
+        print(json.dumps(cfg, indent=2))
+
+
+def _cmd_config_save(args):
+    cfg = get_default_config()
+    out = Path(args.output)
+    if out.exists() and not args.force:
+        print(f"Error: {out} already exists. Use --force to overwrite.", file=sys.stderr)
+        sys.exit(1)
+    with open(out, "w") as f:
+        json.dump(cfg, f, indent=2)
+    print(f"Default config saved to: {out}")
+    print(f"Edit it, then use:  python cli.py process <file> --config {out}")
+
+
+def _cmd_preview_electrode(args):
+    result = preview_electrode_path(
+        algorithm=args.algorithm,
+        min_distance_from_center=args.min_distance,
+        speed_threshold_percent=args.speed_threshold,
+        points=args.points,
+    )
+    if args.json:
+        print(json.dumps(result, indent=2))
+    else:
+        print(f"Algorithm:    {result['label']}")
+        print(f"Description:  {result['description']}")
+        print(f"Points:       {len(result['alpha'])} alpha, {len(result['beta'])} beta")
+        print(f"Alpha range:  {min(result['alpha']):.3f} – {max(result['alpha']):.3f}")
+        print(f"Beta range:   {min(result['beta']):.3f} – {max(result['beta']):.3f}")
+
+
+def _cmd_preview_frequency(args):
+    result = preview_frequency_blend(
+        frequency_ramp_combine_ratio=args.ramp_ratio,
+        pulse_frequency_combine_ratio=args.pulse_ratio,
+    )
+    if args.json:
+        print(json.dumps(result, indent=2))
+    else:
+        print(f"  {result['overall_label']}")
+        print(f"  Frequency:  {result['frequency_label']}")
+        print(f"  Pulse:      {result['pulse_label']}")
+
+
+def _cmd_preview_pulse(args):
+    result = preview_pulse_shape(
+        width_min=args.width_min,
+        width_max=args.width_max,
+        rise_min=args.rise_min,
+        rise_max=args.rise_max,
+    )
+    if args.json:
+        print(json.dumps(result, indent=2))
+    else:
+        print(f"  {result['label']}")
+        print(f"  Width (mid): {result['width']}")
+        print(f"  Rise  (mid): {result['rise']}")
+        print(f"  Sharpness:   {result['sharpness']}")
+
+
 def _cmd_info(args):
     try:
         info = load_file(args.file)
@@ -513,25 +591,264 @@ def _deep_merge(base: dict, override: dict):
 def main():
     parser = argparse.ArgumentParser(
         prog="cli.py",
-        description="funscript-tools CLI — built on edger477's processing engine",
+        description=(
+            "funscript-tools CLI — convert .funscript files into restim-ready output sets.\n\n"
+            "Processing engine by edger477: https://github.com/edger477/funscript-tools\n\n"
+            "Quick start:\n"
+            "  python cli.py process my_scene.funscript\n\n"
+            "Tune settings:\n"
+            "  python cli.py config save my_config.json\n"
+            "  # edit my_config.json, then:\n"
+            "  python cli.py process my_scene.funscript --config my_config.json\n\n"
+            "Explore without processing:\n"
+            "  python cli.py algorithms\n"
+            "  python cli.py preview electrode-path --algorithm circular\n"
+            "  python cli.py preview frequency-blend --ramp-ratio 4\n"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "For full documentation see DESIGN.md or examples/README.md\n"
+            "Run any subcommand with --help for details:  python cli.py process --help"
+        ),
     )
-    sub = parser.add_subparsers(dest="command", required=True)
+    sub = parser.add_subparsers(dest="command", required=True, metavar="command")
 
-    # info
-    p_info = sub.add_parser("info", help="Show info about a .funscript file")
-    p_info.add_argument("file", help="Path to .funscript file")
+    # ── info ─────────────────────────────────────────────────────────────────
+    p_info = sub.add_parser(
+        "info",
+        help="Show metadata about a .funscript file",
+        description="Load a .funscript file and display its metadata — action count, duration, and position range.",
+        epilog="Example:\n  python cli.py info my_scene.funscript",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_info.add_argument("file", help="Path to the .funscript file")
 
-    # process
-    p_proc = sub.add_parser("process", help="Run the full processing pipeline")
-    p_proc.add_argument("file", help="Path to .funscript file")
-    p_proc.add_argument("--config", help="Path to config JSON file (overrides defaults)")
-    p_proc.add_argument("--output-dir", help="Output directory (default: same as input)")
+    # ── process ──────────────────────────────────────────────────────────────
+    p_proc = sub.add_parser(
+        "process",
+        help="Run the full processing pipeline on a .funscript file",
+        description=(
+            "Process a .funscript file through the full restim pipeline, generating all\n"
+            "output files (alpha, beta, frequency, volume, pulse_width, etc.).\n\n"
+            "Outputs are written next to the input file by default.\n"
+            "Use --config to load a saved config (see: python cli.py config save).\n"
+            "Use --output-dir to redirect outputs to a different folder."
+        ),
+        epilog=(
+            "Examples:\n"
+            "  python cli.py process my_scene.funscript\n"
+            "  python cli.py process my_scene.funscript --output-dir ~/restim/\n"
+            "  python cli.py process my_scene.funscript --config my_config.json\n"
+            "  python cli.py process my_scene.funscript --config my_config.json --output-dir ~/restim/"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_proc.add_argument("file", help="Path to the .funscript file to process")
+    p_proc.add_argument(
+        "--config",
+        metavar="FILE",
+        help="JSON config file to use instead of defaults (see: python cli.py config save)"
+    )
+    p_proc.add_argument(
+        "--output-dir",
+        metavar="DIR",
+        help="Directory for output files (default: same folder as input)"
+    )
 
-    # list-outputs
-    p_list = sub.add_parser("list-outputs", help="List generated output files")
-    p_list.add_argument("directory", help="Directory to search")
-    p_list.add_argument("stem", help="Input filename stem (without extension)")
+    # ── list-outputs ─────────────────────────────────────────────────────────
+    p_list = sub.add_parser(
+        "list-outputs",
+        help="List generated output files for a given input stem",
+        description=(
+            "Find and list all generated .funscript output files for a given input\n"
+            "filename stem (the filename without .funscript extension)."
+        ),
+        epilog=(
+            "Examples:\n"
+            "  python cli.py list-outputs . my_scene\n"
+            "  python cli.py list-outputs ~/restim/ my_scene"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_list.add_argument("directory", help="Directory to search for output files")
+    p_list.add_argument("stem", help="Input filename without extension (e.g. my_scene)")
 
+    # ── algorithms ───────────────────────────────────────────────────────────
+    sub.add_parser(
+        "algorithms",
+        help="List available 2D electrode path algorithms with descriptions",
+        description=(
+            "List all available algorithms for converting 1D funscript motion\n"
+            "into a 2D electrode path, with plain-language descriptions.\n\n"
+            "Use the algorithm key with:  python cli.py preview electrode-path --algorithm <key>\n"
+            "Or set it in your config:    python cli.py config save my_config.json"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+
+    # ── config ───────────────────────────────────────────────────────────────
+    p_cfg = sub.add_parser(
+        "config",
+        help="Show or save the default processing configuration",
+        description=(
+            "Inspect or export the default configuration.\n\n"
+            "Workflow:\n"
+            "  1. Save defaults to a file:   python cli.py config save my_config.json\n"
+            "  2. Edit my_config.json in any text editor\n"
+            "  3. Process with your config:  python cli.py process file.funscript --config my_config.json"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    cfg_sub = p_cfg.add_subparsers(dest="config_command", required=True, metavar="subcommand")
+
+    p_cfg_show = cfg_sub.add_parser(
+        "show",
+        help="Print the default configuration as JSON",
+        description="Print the full default config, or a single section, as formatted JSON.",
+        epilog=(
+            "Examples:\n"
+            "  python cli.py config show\n"
+            "  python cli.py config show frequency\n"
+            "  python cli.py config show pulse"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_cfg_show.add_argument(
+        "section", nargs="?",
+        help="Section to show: general, frequency, pulse, volume, alpha_beta_generation, "
+             "prostate_generation, advanced, options, positional_axes, speed. Omit for full config."
+    )
+
+    p_cfg_save = cfg_sub.add_parser(
+        "save",
+        help="Save the default configuration to a JSON file for editing",
+        description=(
+            "Write the full default configuration to a JSON file.\n"
+            "Edit the file to tune parameters, then use it with --config."
+        ),
+        epilog=(
+            "Examples:\n"
+            "  python cli.py config save my_config.json\n"
+            "  python cli.py config save configs/gentle.json\n"
+            "  python cli.py config save my_config.json --force  # overwrite existing"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_cfg_save.add_argument("output", help="Output file path (e.g. my_config.json)")
+    p_cfg_save.add_argument("--force", action="store_true", help="Overwrite if file already exists")
+
+    # ── preview ──────────────────────────────────────────────────────────────
+    p_prev = sub.add_parser(
+        "preview",
+        help="Preview parameter effects without running the full pipeline",
+        description=(
+            "Fast parameter previews — no file I/O, no output files written.\n"
+            "Use these to understand what a setting does before committing to a full process run.\n"
+            "Add --json to pipe results to other tools."
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    prev_sub = p_prev.add_subparsers(dest="preview_command", required=True, metavar="subcommand")
+
+    p_elec = prev_sub.add_parser(
+        "electrode-path",
+        help="Show the 2D electrode path shape for an algorithm",
+        description=(
+            "Generate the 2D electrode path shape that a given algorithm produces.\n"
+            "Uses a synthetic sine-wave input so the shape reflects the algorithm only.\n\n"
+            "This is what the UI plots when you change the Algorithm dropdown.\n"
+            "Run 'python cli.py algorithms' to see available algorithm keys."
+        ),
+        epilog=(
+            "Examples:\n"
+            "  python cli.py preview electrode-path\n"
+            "  python cli.py preview electrode-path --algorithm circular\n"
+            "  python cli.py preview electrode-path --algorithm top-right-left --min-distance 0.3\n"
+            "  python cli.py preview electrode-path --json | python -m json.tool"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_elec.add_argument(
+        "--algorithm", default="circular",
+        choices=list(ALGORITHMS.keys()),
+        help="Algorithm to preview (default: circular)"
+    )
+    p_elec.add_argument(
+        "--min-distance", type=float, default=0.1,
+        metavar="0.0-0.9",
+        help="Min distance from center (default: 0.1)"
+    )
+    p_elec.add_argument(
+        "--speed-threshold", type=float, default=50.0,
+        metavar="0-100",
+        help="Speed threshold percent (default: 50)"
+    )
+    p_elec.add_argument(
+        "--points", type=int, default=200,
+        help="Number of preview points (default: 200)"
+    )
+    p_elec.add_argument(
+        "--json", action="store_true",
+        help="Output raw JSON (for piping to other tools)"
+    )
+
+    p_freq = prev_sub.add_parser(
+        "frequency-blend",
+        help="Show plain-language description of frequency blend settings",
+        description=(
+            "Translate the frequency combine ratios into plain English.\n"
+            "Shows what percentage of the output comes from the slow ramp vs scene energy,\n"
+            "and gives an overall character description.\n\n"
+            "The ramp ratio controls the primary frequency envelope.\n"
+            "The pulse ratio controls how pulse frequency tracks action intensity."
+        ),
+        epilog=(
+            "Examples:\n"
+            "  python cli.py preview frequency-blend\n"
+            "  python cli.py preview frequency-blend --ramp-ratio 4\n"
+            "  python cli.py preview frequency-blend --ramp-ratio 1 --pulse-ratio 1\n"
+            "  python cli.py preview frequency-blend --json"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_freq.add_argument(
+        "--ramp-ratio", type=float, default=2.0,
+        metavar="1-10",
+        help="Frequency ramp combine ratio (default: 2.0)"
+    )
+    p_freq.add_argument(
+        "--pulse-ratio", type=float, default=3.0,
+        metavar="1-10",
+        help="Pulse frequency combine ratio (default: 3.0)"
+    )
+    p_freq.add_argument("--json", action="store_true", help="Output raw JSON")
+
+    p_pulse = prev_sub.add_parser(
+        "pulse-shape",
+        help="Show pulse silhouette for given width and rise time settings",
+        description=(
+            "Describe the shape of a representative pulse given width and rise time settings.\n\n"
+            "Width controls how long each pulse lasts.\n"
+            "Rise time controls how quickly it ramps up — low values are sharp, high values are soft.\n\n"
+            "Both are expressed as 0.0–1.0 fractions. The preview uses the midpoint of each range."
+        ),
+        epilog=(
+            "Examples:\n"
+            "  python cli.py preview pulse-shape\n"
+            "  python cli.py preview pulse-shape --width-min 0.1 --width-max 0.5\n"
+            "  python cli.py preview pulse-shape --rise-min 0.0 --rise-max 0.1   # sharp\n"
+            "  python cli.py preview pulse-shape --rise-min 0.5 --rise-max 0.9   # soft\n"
+            "  python cli.py preview pulse-shape --json"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_pulse.add_argument("--width-min", type=float, default=0.1, metavar="0.0-1.0")
+    p_pulse.add_argument("--width-max", type=float, default=0.45, metavar="0.0-1.0")
+    p_pulse.add_argument("--rise-min",  type=float, default=0.0,  metavar="0.0-1.0")
+    p_pulse.add_argument("--rise-max",  type=float, default=0.80, metavar="0.0-1.0")
+    p_pulse.add_argument("--json", action="store_true", help="Output raw JSON")
+
+    # ── dispatch ─────────────────────────────────────────────────────────────
     args = parser.parse_args()
 
     if args.command == "info":
@@ -540,6 +857,20 @@ def main():
         _cmd_process(args)
     elif args.command == "list-outputs":
         _cmd_list_outputs(args)
+    elif args.command == "algorithms":
+        _cmd_algorithms(args)
+    elif args.command == "config":
+        if args.config_command == "show":
+            _cmd_config_show(args)
+        elif args.config_command == "save":
+            _cmd_config_save(args)
+    elif args.command == "preview":
+        if args.preview_command == "electrode-path":
+            _cmd_preview_electrode(args)
+        elif args.preview_command == "frequency-blend":
+            _cmd_preview_frequency(args)
+        elif args.preview_command == "pulse-shape":
+            _cmd_preview_pulse(args)
 
 
 if __name__ == "__main__":
