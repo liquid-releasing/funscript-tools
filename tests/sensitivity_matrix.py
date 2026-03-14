@@ -113,38 +113,62 @@ def _get_baseline(input_path: str, config: dict) -> dict[str, np.ndarray]:
 
 def run(fixtures: list[Path], out_path: Path, n_steps_override: int | None = None):
     rows = []
-    total_runs = (
-        len(BUILTIN_PRESETS)
-        * len(PARAMETERS)
-        * (n_steps_override or 10)  # approximate
-        * len(fixtures)
-    )
+    total_steps = sum(n_steps_override or n for _, _, _, n in PARAMETERS)
+    total_runs = len(BUILTIN_PRESETS) * len(fixtures) * total_steps
     run_count = 0
     t0 = time.time()
 
-    for preset_name in BUILTIN_PRESETS:
+    print("=" * 70)
+    print("SENSITIVITY MATRIX — what does each slider actually do?")
+    print("=" * 70)
+    print(f"Plan: {len(BUILTIN_PRESETS)} eTransforms × {len(fixtures)} fixtures × "
+          f"{len(PARAMETERS)} parameters × ~{total_steps // len(PARAMETERS)} steps each")
+    print(f"Total runs: ~{total_runs}")
+    print(f"Output: {out_path}")
+    print()
+    print("How to read the output:")
+    print("  delta_alpha/beta/pulse = L2 norm of (varied output − baseline output)")
+    print("  delta_mean = average across all three channels")
+    print("  High delta = this parameter moves the needle")
+    print("  Zero delta = this parameter does nothing for this eTransform")
+    print("=" * 70)
+
+    for preset_idx, preset_name in enumerate(BUILTIN_PRESETS, 1):
         base_config = get_preset(preset_name)
+        print(f"\n{'─'*60}")
+        print(f"eTransform {preset_idx}/{len(BUILTIN_PRESETS)}: {preset_name}")
+        print(f"  Character: {BUILTIN_PRESETS[preset_name]['description']}")
+        print(f"{'─'*60}")
 
         for fixture in fixtures:
             input_path = str(fixture)
-            print(f"\n[{preset_name}] fixture={fixture.name}")
-
-            # Baseline for this preset × fixture
-            print(f"  computing baseline...", end="", flush=True)
+            print(f"\n  Fixture: {fixture.name}")
+            print(f"  Step 1: Running baseline (no changes) to get reference output...")
             baseline = _get_baseline(input_path, base_config)
-            print(" done")
+            channels_found = list(baseline.keys())
+            print(f"  Baseline done. Measuring channels: {channels_found}")
+            print(f"  Step 2: Varying each parameter across its range...")
+            print()
 
-            for dot_path, p_min, p_max, n_steps in PARAMETERS:
+            for param_idx, (dot_path, p_min, p_max, n_steps) in enumerate(PARAMETERS, 1):
                 steps = n_steps_override or n_steps
                 values = np.linspace(p_min, p_max, steps)
+                param_short = dot_path.split(".")[-1]
+                print(f"  [{param_idx:2d}/{len(PARAMETERS)}] {param_short:<35} "
+                      f"range [{p_min}→{p_max}] in {steps} steps", flush=True)
 
+                step_deltas = []
                 for val in values:
                     config = _set_nested(base_config, dot_path, float(val))
                     try:
                         deltas = _run_and_measure(input_path, config, baseline)
                     except Exception as e:
-                        print(f"  ERROR {dot_path}={val:.3f}: {e}")
+                        print(f"       ERROR at value={val:.3f}: {e}")
                         deltas = {ch: 0.0 for ch in MEASURE_CHANNELS}
+
+                    step_deltas.append(deltas.get("delta_mean", 0.0)
+                                       if "delta_mean" in deltas
+                                       else np.mean([deltas.get(ch, 0.0) for ch in MEASURE_CHANNELS]))
 
                     row = {
                         "etransform": preset_name,
@@ -163,13 +187,26 @@ def run(fixtures: list[Path], out_path: Path, n_steps_override: int | None = Non
 
                     elapsed = time.time() - t0
                     rate = run_count / elapsed if elapsed > 0 else 0
-                    print(
-                        f"  {dot_path}={val:.3f}  "
-                        f"Δα={row['delta_alpha']:.1f} Δβ={row['delta_beta']:.1f} "
-                        f"Δpf={row['delta_pulse']:.1f}  "
-                        f"[{run_count} runs, {rate:.1f}/s]",
-                        flush=True,
-                    )
+                    run_count += 1
+                    rows.append(row)
+
+                # Per-parameter summary after all steps
+                max_delta = max(step_deltas) if step_deltas else 0.0
+                verdict = (
+                    "SIGNIFICANT ✓" if max_delta > 50
+                    else "moderate" if max_delta > 10
+                    else "low" if max_delta > 1
+                    else "DEAD — no effect"
+                )
+                elapsed = time.time() - t0
+                rate = run_count / elapsed if elapsed > 0 else 0
+                print(f"       max delta={max_delta:.1f}  → {verdict}  "
+                      f"[{run_count}/{total_runs} runs, {rate:.1f}/s]")
+
+    print()
+    print("=" * 70)
+    print("ALL RUNS COMPLETE")
+    print("=" * 70)
 
     # Write CSV
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -202,9 +239,5 @@ if __name__ == "__main__":
     if not fixtures:
         print(f"No fixtures found in {fixtures_dir}")
         sys.exit(1)
-
-    print(f"Fixtures: {[f.name for f in fixtures]}")
-    print(f"eTransforms: {list(BUILTIN_PRESETS.keys())}")
-    print(f"Parameters: {len(PARAMETERS)}")
 
     run(fixtures, Path(args.out), args.steps)
