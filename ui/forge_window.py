@@ -301,134 +301,296 @@ class ForgeWindow:
         )
         self.btn_process.pack(side="right", padx=5)
 
+    # ── Algorithm metadata ─────────────────────────────────────────────────────
+
+    _ALGO_INFO = {
+        "circular": {
+            "label": "Circular arc  (0° – 180°)",
+            "hint": "Smooth semi-circle. Balanced — works well for most content.",
+        },
+        "top-right-left": {
+            "label": "Wide arc  (0° – 270°)",
+            "hint": "Larger sweep. More contrast between strokes — good for energetic content.",
+        },
+        "top-left-right": {
+            "label": "Narrow arc  (0° – 90°)",
+            "hint": "Subtle movement. Works well for slow, building content.",
+        },
+        "restim-original": {
+            "label": "Full circle with reversals  (0° – 360°)",
+            "hint": "Most unpredictable. Random direction changes — maximally varied.",
+        },
+    }
+
     def _build_creative_panel(self, parent):
-        """Build the simplified creative controls panel."""
+        """Guided creative controls — each knob explains what you will feel."""
         cfg = self.current_config
         row = 0
 
-        def section(text):
+        # ── helpers ───────────────────────────────────────────────────────────
+
+        def section(title, subtitle):
             nonlocal row
             ttk.Separator(parent, orient="horizontal").grid(
-                row=row, column=0, sticky="ew", padx=4, pady=(8, 2)
-            )
+                row=row, column=0, sticky="ew", padx=4, pady=(10, 2))
             row += 1
-            ttk.Label(parent, text=text, font=("", 9, "bold")).grid(
-                row=row, column=0, sticky="w", padx=8, pady=(0, 4)
-            )
+            ttk.Label(parent, text=title, font=("", 9, "bold")).grid(
+                row=row, column=0, sticky="w", padx=8, pady=(0, 0))
+            row += 1
+            ttk.Label(parent, text=subtitle, font=("", 8), foreground="#888888",
+                      justify="left", wraplength=300).grid(
+                row=row, column=0, sticky="w", padx=8, pady=(0, 4))
             row += 1
 
-        def labeled_row(label_text, widget_factory):
+        def guided_slider(label, hint, var, from_, to_, on_change=None):
+            """Slider + live value label + hint text below."""
             nonlocal row
-            f = ttk.Frame(parent)
-            f.grid(row=row, column=0, sticky="ew", padx=8, pady=2)
-            f.columnconfigure(1, weight=1)
-            ttk.Label(f, text=label_text, width=20, anchor="w").grid(row=0, column=0, sticky="w")
-            w = widget_factory(f)
-            w.grid(row=0, column=1, sticky="ew", padx=(4, 0))
+            # Label row
+            hdr = ttk.Frame(parent)
+            hdr.grid(row=row, column=0, sticky="ew", padx=8, pady=(4, 0))
+            hdr.columnconfigure(0, weight=1)
+            ttk.Label(hdr, text=label, font=("", 8, "bold"), anchor="w").grid(
+                row=0, column=0, sticky="w")
+            val_lbl = ttk.Label(hdr, text=f"{var.get():.2f}", font=("", 8),
+                                foreground="#4fc3f7", width=6, anchor="e")
+            val_lbl.grid(row=0, column=1, sticky="e")
             row += 1
-            return w
+            # Slider
+            def _on_slide(v, _var=var, _lbl=val_lbl, _cb=on_change):
+                _lbl.config(text=f"{float(v):.2f}")
+                if _cb:
+                    _cb()
+                self._schedule_sensation_update()
+            sl = ttk.Scale(parent, from_=from_, to=to_, variable=var, orient="horizontal",
+                           command=_on_slide)
+            sl.grid(row=row, column=0, sticky="ew", padx=8, pady=(0, 1))
+            row += 1
+            # Hint
+            ttk.Label(parent, text=hint, font=("", 7), foreground="#666666",
+                      justify="left", wraplength=300).grid(
+                row=row, column=0, sticky="w", padx=12, pady=(0, 2))
+            row += 1
+            return sl
 
-        ttk.Label(parent, text="Key parameters that shape how the output feels.\nAdjust → Process → compare before/after.",
-                  font=("", 8), justify="left", foreground="#aaaaaa"
-                  ).grid(row=row, column=0, sticky="w", padx=8, pady=(8, 0))
+        # ── What you'll feel — live summary ───────────────────────────────────
+        summary_frame = ttk.LabelFrame(parent, text="What you'll feel")
+        summary_frame.grid(row=row, column=0, sticky="ew", padx=8, pady=(8, 4))
+        summary_frame.columnconfigure(0, weight=1)
         row += 1
+        self._sensation_var = tk.StringVar(value="Adjust settings to see a description.")
+        ttk.Label(summary_frame, textvariable=self._sensation_var,
+                  font=("", 8), justify="left", wraplength=290,
+                  foreground="#cccccc").grid(
+            row=0, column=0, sticky="w", padx=8, pady=6)
 
-        # ── Motion Axis ───────────────────────────────────────────────────────
-        section("Motion Axis — 2D path on electrode")
+        # ── Motion — WHERE sensation moves ────────────────────────────────────
+        section(
+            "WHERE  —  Spatial movement",
+            "Controls how the active point moves across the electrode surface."
+        )
 
         ab = cfg.get("alpha_beta_generation", {})
-
         self.cv_algo = tk.StringVar(value=ab.get("algorithm", "top-right-left"))
-        labeled_row("Algorithm", lambda p: ttk.Combobox(
-            p, textvariable=self.cv_algo, state="readonly",
-            values=["circular", "top-right-left", "top-left-right", "restim-original"],
-            width=18,
-        ))
 
-        self.cv_pps = tk.IntVar(value=ab.get("points_per_second", 25))
-        labeled_row("Points / second", lambda p: ttk.Spinbox(
-            p, from_=1, to=100, textvariable=self.cv_pps, width=6
-        ))
+        # Algorithm picker with inline description
+        algo_frame = ttk.Frame(parent)
+        algo_frame.grid(row=row, column=0, sticky="ew", padx=8, pady=(2, 0))
+        algo_frame.columnconfigure(1, weight=1)
+        row += 1
+        ttk.Label(algo_frame, text="Path shape", font=("", 8, "bold")).grid(
+            row=0, column=0, sticky="w", padx=(0, 8))
+        algo_combo = ttk.Combobox(
+            algo_frame, textvariable=self.cv_algo, state="readonly",
+            values=list(self._ALGO_INFO.keys()), width=20)
+        algo_combo.grid(row=0, column=1, sticky="ew")
+
+        self._algo_hint_var = tk.StringVar()
+        ttk.Label(parent, textvariable=self._algo_hint_var,
+                  font=("", 7), foreground="#4fc3f7", justify="left",
+                  wraplength=300).grid(
+            row=row, column=0, sticky="w", padx=12, pady=(1, 4))
+        row += 1
+
+        def _on_algo_change(*_):
+            info = self._ALGO_INFO.get(self.cv_algo.get(), {})
+            self._algo_hint_var.set(info.get("hint", ""))
+            self._schedule_electrode_preview()
+            self._schedule_sensation_update()
+
+        self.cv_algo.trace_add("write", _on_algo_change)
+        _on_algo_change()  # set initial hint
+
+        # Electrode path mini-plot
+        path_frame = ttk.LabelFrame(parent, text="Electrode path preview")
+        path_frame.grid(row=row, column=0, sticky="ew", padx=8, pady=(2, 4))
+        path_frame.columnconfigure(0, weight=1)
+        row += 1
+        self._path_fig = Figure(figsize=(3.2, 1.8), tight_layout=True)
+        self._path_canvas = FigureCanvas(self._path_fig, master=path_frame)
+        self._path_canvas.get_tk_widget().pack(fill="both", expand=True)
+        self._path_canvas.draw()
 
         self.cv_min_dist = tk.DoubleVar(value=ab.get("min_distance_from_center", 0.1))
-        labeled_row("Min dist. from center", lambda p: ttk.Scale(
-            p, from_=0.05, to=0.9, variable=self.cv_min_dist, orient="horizontal"
-        ))
+        guided_slider(
+            "Motion range  (center → edge)",
+            "How far from center the sensation moves. "
+            "Low = subtle, stays near center. High = wide sweep.",
+            self.cv_min_dist, 0.05, 0.9,
+            on_change=self._schedule_electrode_preview,
+        )
 
+        self.cv_pps = tk.IntVar(value=ab.get("points_per_second", 25))
         self.cv_speed_thresh = tk.IntVar(value=ab.get("speed_threshold_percent", 50))
-        labeled_row("Speed threshold %", lambda p: ttk.Spinbox(
-            p, from_=0, to=100, textvariable=self.cv_speed_thresh, width=6
-        ))
 
         # ── Prostate ──────────────────────────────────────────────────────────
-        section("Prostate 2D")
-
         pg = cfg.get("prostate_generation", {})
         self.cv_prostate_en = tk.BooleanVar(value=pg.get("generate_prostate_files", True))
+        self.cv_prostate_algo = tk.StringVar(value=pg.get("algorithm", "tear-shaped"))
+
+        ttk.Separator(parent, orient="horizontal").grid(
+            row=row, column=0, sticky="ew", padx=4, pady=(6, 2))
+        row += 1
         f_pr = ttk.Frame(parent)
         f_pr.grid(row=row, column=0, sticky="ew", padx=8, pady=2)
         row += 1
-        ttk.Checkbutton(f_pr, text="Generate prostate files", variable=self.cv_prostate_en).pack(anchor="w")
+        ttk.Checkbutton(f_pr, text="Generate prostate channel",
+                        variable=self.cv_prostate_en).pack(side="left")
+        ttk.Combobox(f_pr, textvariable=self.cv_prostate_algo, state="readonly",
+                     values=["tear-shaped", "circular"], width=12).pack(
+            side="left", padx=(8, 0))
+        ttk.Label(f_pr, text="shape", font=("", 7), foreground="#666666").pack(
+            side="left", padx=4)
 
-        self.cv_prostate_algo = tk.StringVar(value=pg.get("algorithm", "tear-shaped"))
-        labeled_row("Algorithm", lambda p: ttk.Combobox(
-            p, textvariable=self.cv_prostate_algo, state="readonly",
-            values=["tear-shaped", "circular"],
-            width=14,
-        ))
-
-        # ── Frequency ─────────────────────────────────────────────────────────
-        section("Frequency — pulse rate")
+        # ── Responsiveness — HOW FAST sensation tracks the action ─────────────
+        section(
+            "HOW FAST  —  Responsiveness to action",
+            "Controls whether sensation builds gradually or reacts instantly to movement."
+        )
 
         fq = cfg.get("frequency", {})
 
-        self.cv_freq_ramp_ratio = tk.DoubleVar(value=fq.get("frequency_ramp_combine_ratio", 2.0))
-        labeled_row("Ramp : Speed blend", lambda p: ttk.Scale(
-            p, from_=1.0, to=10.0, variable=self.cv_freq_ramp_ratio, orient="horizontal"
-        ))
+        self.cv_freq_ramp_ratio = tk.DoubleVar(
+            value=fq.get("frequency_ramp_combine_ratio", 2.0))
 
-        self.cv_pulse_freq_ratio = tk.DoubleVar(value=fq.get("pulse_frequency_combine_ratio", 3.0))
-        labeled_row("Pulse freq blend", lambda p: ttk.Scale(
-            p, from_=1.0, to=10.0, variable=self.cv_pulse_freq_ratio, orient="horizontal"
-        ))
+        # Custom responsiveness slider with labeled endpoints
+        hdr2 = ttk.Frame(parent)
+        hdr2.grid(row=row, column=0, sticky="ew", padx=8, pady=(4, 0))
+        hdr2.columnconfigure(1, weight=1)
+        row += 1
+        ttk.Label(hdr2, text="Tracking style", font=("", 8, "bold")).grid(
+            row=0, column=0, sticky="w")
+        self._ramp_val_lbl = ttk.Label(hdr2, text="", font=("", 8),
+                                       foreground="#4fc3f7", width=24, anchor="e")
+        self._ramp_val_lbl.grid(row=0, column=1, sticky="e")
+
+        def _on_ramp(v):
+            ratio = float(v)
+            speed_pct = round((1 / ratio) * 100)
+            ramp_pct = 100 - speed_pct
+            if ratio <= 2:
+                label = "Reactive — follows action closely"
+            elif ratio <= 4:
+                label = "Balanced — responsive with slow build"
+            elif ratio <= 7:
+                label = "Gradual — mostly slow build"
+            else:
+                label = "Slow build — ignores short spikes"
+            self._ramp_val_lbl.config(text=label)
+            self._ramp_hint_var.set(
+                f"{speed_pct}% tracks action speed  •  {ramp_pct}% slow build"
+            )
+            self._schedule_sensation_update()
+
+        ttk.Scale(parent, from_=1.0, to=10.0, variable=self.cv_freq_ramp_ratio,
+                  orient="horizontal", command=_on_ramp).grid(
+            row=row, column=0, sticky="ew", padx=8, pady=(0, 0))
+        row += 1
+
+        ep_row = ttk.Frame(parent)
+        ep_row.grid(row=row, column=0, sticky="ew", padx=8)
+        ep_row.columnconfigure(1, weight=1)
+        row += 1
+        ttk.Label(ep_row, text="Reactive", font=("", 7), foreground="#666666").grid(
+            row=0, column=0, sticky="w")
+        ttk.Label(ep_row, text="Slow build", font=("", 7), foreground="#666666").grid(
+            row=0, column=2, sticky="e")
+
+        self._ramp_hint_var = tk.StringVar()
+        ttk.Label(parent, textvariable=self._ramp_hint_var,
+                  font=("", 7), foreground="#4fc3f7", justify="left").grid(
+            row=row, column=0, sticky="w", padx=12, pady=(0, 4))
+        row += 1
+        _on_ramp(self.cv_freq_ramp_ratio.get())  # set initial state
+
+        self.cv_pulse_freq_ratio = tk.DoubleVar(
+            value=fq.get("pulse_frequency_combine_ratio", 3.0))
+        guided_slider(
+            "Pulse rate blend",
+            "How much action position (vs speed) shapes the pulse rate. "
+            "Higher = position-driven, lower = speed-driven.",
+            self.cv_pulse_freq_ratio, 1.0, 10.0,
+        )
 
         self.cv_pf_min = tk.DoubleVar(value=fq.get("pulse_freq_min", 0.40))
-        labeled_row("Pulse freq min", lambda p: ttk.Scale(
-            p, from_=0.0, to=1.0, variable=self.cv_pf_min, orient="horizontal"
-        ))
-
         self.cv_pf_max = tk.DoubleVar(value=fq.get("pulse_freq_max", 0.95))
-        labeled_row("Pulse freq max", lambda p: ttk.Scale(
-            p, from_=0.0, to=1.0, variable=self.cv_pf_max, orient="horizontal"
-        ))
+        guided_slider(
+            "Pulse rate — minimum",
+            "Slowest pulse rate (at rest / slow sections). "
+            "0 = very slow, 1 = always fast.",
+            self.cv_pf_min, 0.0, 1.0,
+        )
+        guided_slider(
+            "Pulse rate — maximum",
+            "Fastest pulse rate (during peak action). "
+            "Should be higher than minimum.",
+            self.cv_pf_max, 0.0, 1.0,
+        )
 
-        # ── Pulse Shape ───────────────────────────────────────────────────────
-        section("Pulse Shape — feel of each pulse")
+        # ── Pulse feel — WHAT KIND of sensation ───────────────────────────────
+        section(
+            "WHAT KIND  —  Pulse character",
+            "Controls the shape of each individual pulse — its fullness and how it attacks."
+        )
 
         pu = cfg.get("pulse", {})
 
         self.cv_pw_min = tk.DoubleVar(value=pu.get("pulse_width_min", 0.1))
-        labeled_row("Width min", lambda p: ttk.Scale(
-            p, from_=0.0, to=1.0, variable=self.cv_pw_min, orient="horizontal"
-        ))
-
         self.cv_pw_max = tk.DoubleVar(value=pu.get("pulse_width_max", 0.45))
-        labeled_row("Width max", lambda p: ttk.Scale(
-            p, from_=0.0, to=1.0, variable=self.cv_pw_max, orient="horizontal"
-        ))
+        guided_slider(
+            "Width — narrow end",
+            "Pulse width during low-intensity moments. "
+            "Narrow = sharper, more distinct. Wide = fuller, more continuous.",
+            self.cv_pw_min, 0.0, 1.0,
+        )
+        guided_slider(
+            "Width — wide end",
+            "Pulse width during peak intensity. "
+            "Should be higher than narrow end.",
+            self.cv_pw_max, 0.0, 1.0,
+        )
 
         self.cv_pr_min = tk.DoubleVar(value=pu.get("pulse_rise_min", 0.0))
-        labeled_row("Rise time min", lambda p: ttk.Scale(
-            p, from_=0.0, to=1.0, variable=self.cv_pr_min, orient="horizontal"
-        ))
-
         self.cv_pr_max = tk.DoubleVar(value=pu.get("pulse_rise_max", 0.80))
-        labeled_row("Rise time max", lambda p: ttk.Scale(
-            p, from_=0.0, to=1.0, variable=self.cv_pr_max, orient="horizontal"
-        ))
+        guided_slider(
+            "Attack — sharpest",
+            "How abruptly pulses start at low intensity. "
+            "0 = immediate hard edge. 1 = slow, gentle onset.",
+            self.cv_pr_min, 0.0, 1.0,
+        )
+        guided_slider(
+            "Attack — softest",
+            "How abruptly pulses start at peak intensity. "
+            "Sweep from sharp to soft creates more varied texture.",
+            self.cv_pr_max, 0.0, 1.0,
+        )
 
         # ── Output mode ───────────────────────────────────────────────────────
-        section("Output Mode")
+        ttk.Separator(parent, orient="horizontal").grid(
+            row=row, column=0, sticky="ew", padx=4, pady=(8, 4))
+        row += 1
+        ttk.Label(parent, text="Output channels", font=("", 9, "bold")).grid(
+            row=row, column=0, sticky="w", padx=8)
+        row += 1
 
         ax = cfg.get("positional_axes", {})
         self.cv_gen_3p = tk.BooleanVar(value=ax.get("generate_legacy", True))
@@ -437,11 +599,113 @@ class ForgeWindow:
         f_mode = ttk.Frame(parent)
         f_mode.grid(row=row, column=0, sticky="ew", padx=8, pady=2)
         row += 1
-        ttk.Checkbutton(f_mode, text="Generate 3P (alpha/beta)", variable=self.cv_gen_3p).pack(anchor="w")
-        ttk.Checkbutton(f_mode, text="Generate 4P (E1–E4)", variable=self.cv_gen_4p).pack(anchor="w")
+        ttk.Checkbutton(f_mode, text="3-pole  (alpha / beta)",
+                        variable=self.cv_gen_3p).pack(anchor="w")
+        ttk.Label(f_mode, text="   Standard restim electrode position files",
+                  font=("", 7), foreground="#666666").pack(anchor="w")
+        ttk.Checkbutton(f_mode, text="4-pole  (E1 – E4)",
+                        variable=self.cv_gen_4p).pack(anchor="w", pady=(4, 0))
+        ttk.Label(f_mode, text="   For 4-electrode setups",
+                  font=("", 7), foreground="#666666").pack(anchor="w")
 
-        # Spacer
         ttk.Frame(parent).grid(row=row, column=0, pady=10)
+
+        # Initial electrode path preview
+        self._schedule_electrode_preview()
+        self._schedule_sensation_update()
+
+    # ── Live preview helpers ───────────────────────────────────────────────────
+
+    _electrode_preview_pending = False
+    _sensation_update_pending = False
+
+    def _schedule_electrode_preview(self, *_):
+        """Debounce: schedule one electrode path redraw, ignore rapid slider moves."""
+        if not self._electrode_preview_pending:
+            self._electrode_preview_pending = True
+            self.root.after(150, self._do_electrode_preview)
+
+    def _do_electrode_preview(self):
+        self._electrode_preview_pending = False
+        algo = self.cv_algo.get()
+        min_dist = self.cv_min_dist.get()
+
+        def _run():
+            try:
+                from cli import preview_electrode_path
+                data = preview_electrode_path(
+                    algorithm=algo,
+                    min_distance_from_center=min_dist,
+                    points=120,
+                )
+                self.root.after(0, lambda: self._draw_electrode_plot(data))
+            except Exception:
+                pass
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _draw_electrode_plot(self, data: dict):
+        self._path_fig.clear()
+        ax = self._path_fig.add_subplot(111)
+        alpha = data.get("alpha", [])
+        beta = data.get("beta", [])
+        if alpha and beta:
+            ax.plot(alpha, beta, linewidth=0.8, color="#4fc3f7", alpha=0.9)
+            ax.scatter([alpha[0]], [beta[0]], color="#88ff88", s=18, zorder=5)
+            ax.scatter([alpha[-1]], [beta[-1]], color="#ff8888", s=18, zorder=5)
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        ax.set_xlabel("alpha", fontsize=7)
+        ax.set_ylabel("beta", fontsize=7)
+        ax.tick_params(labelsize=6)
+        ax.set_aspect("equal", adjustable="box")
+        self._path_fig.tight_layout()
+        self._path_canvas.draw()
+
+    def _schedule_sensation_update(self, *_):
+        if not self._sensation_update_pending:
+            self._sensation_update_pending = True
+            self.root.after(200, self._do_sensation_update)
+
+    def _do_sensation_update(self):
+        self._sensation_update_pending = False
+        self._sensation_var.set(self._summarize_sensation())
+
+    def _summarize_sensation(self) -> str:
+        """Translate current creative settings into plain-language description."""
+        parts = []
+
+        # Motion
+        info = self._ALGO_INFO.get(self.cv_algo.get(), {})
+        algo_label = info.get("label", self.cv_algo.get())
+        dist = self.cv_min_dist.get()
+        if dist < 0.2:
+            sweep = "subtle, close to center"
+        elif dist < 0.5:
+            sweep = "moderate sweep"
+        else:
+            sweep = "wide sweep, edge to edge"
+        parts.append(f"Movement: {algo_label}. {sweep.capitalize()}.")
+
+        # Responsiveness
+        ratio = self.cv_freq_ramp_ratio.get()
+        if ratio <= 2:
+            parts.append("Highly reactive — tracks every stroke.")
+        elif ratio <= 4:
+            parts.append("Balanced — responsive with a gradual build.")
+        elif ratio <= 7:
+            parts.append("Mostly gradual — builds over the scene.")
+        else:
+            parts.append("Slow build — independent of individual strokes.")
+
+        # Pulse character
+        pw_mid = (self.cv_pw_min.get() + self.cv_pw_max.get()) / 2
+        pr_mid = (self.cv_pr_min.get() + self.cv_pr_max.get()) / 2
+        width_desc = "narrow" if pw_mid < 0.25 else ("wide" if pw_mid > 0.6 else "medium")
+        attack_desc = "sharp" if pr_mid < 0.25 else ("soft" if pr_mid > 0.65 else "mixed")
+        parts.append(f"Pulses: {width_desc} width, {attack_desc} attack.")
+
+        return "  ".join(parts)
 
     def _collect_creative_config(self):
         """Push creative panel values into current_config before processing."""
