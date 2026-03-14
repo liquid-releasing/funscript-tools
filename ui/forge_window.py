@@ -1140,7 +1140,7 @@ class ForgeWindow:
         # Plots — pass info dict directly; _plot_funscript reads info["x"] / info["y"]
         self._plot_funscript(self.input_fig, self.input_mpl, info, "Input")
         self._plot_funscript(self.before_fig, self.before_mpl, info, "Original")
-        self._plot_funscript(self.review_before_fig, self.review_before_mpl, info, "Original")
+        self._plot_funscript(self._review_figs["original"], self._review_canvases["original"], info, "Original")
 
         self.drop_label.config(text=info["name"])
         self.notebook.tab(1, state="normal")
@@ -1395,8 +1395,7 @@ class ForgeWindow:
             (self.input_fig, self.input_mpl),
             (self.before_fig, self.before_mpl),
             (self.after_fig, self.after_mpl),
-            (self.review_before_fig, self.review_before_mpl),
-            (self.review_after_fig, self.review_after_mpl),
+            *[(f, self._review_canvases[k]) for k, f in self._review_figs.items()],
         ]:
             fig.clear()
             canvas.draw()
