@@ -1,294 +1,164 @@
-# Restim Funscript Processor
+# Funscript Tools — Estim Character Engine
 
-A Python GUI application for processing funscript files for electrostimulation devices. This application replaces the PowerShell-based workflow with a user-friendly interface and integrated processing pipeline.
+One funscript in. Ten estim outputs out. Character baked in.
 
-## Features
+A GUI and CLI for converting a single `.funscript` file into a complete set of restim-ready output files, with named estim characters that control how sensation moves and builds.
 
-- **Intuitive GUI**: Easy-to-use interface with organized parameter tabs
-- **Comprehensive Processing**: Generates 10 different output funscripts for various stimulation parameters
-- **Auto-generation**: Automatically creates alpha/beta files from main funscript when missing using 1D to 2D conversion
-- **Configurable Parameters**: 30+ configurable parameters with improved ratio controls showing real-time percentages
-- **File Management**: Automatic intermediary file management with optional cleanup
-- **Progress Tracking**: Real-time progress updates during processing
-- **Configuration Persistence**: Save and load parameter configurations
+---
 
-## Generated Output Files
+## The Idea
 
-The application processes a single input funscript and generates:
+A funscript describes position over time — the stroke. Restim needs more: where the sensation is, how it moves, how intense it gets, how the pulse feels.
 
-1. `alpha.funscript` - Alpha channel data
-2. `alpha-prostate.funscript` - Inverted alpha for prostate stimulation
-3. `beta.funscript` - Beta channel data
-4. `frequency.funscript` - Combined ramp/speed frequency
-5. `pulse_frequency.funscript` - Alpha-based pulse frequency
-6. `pulse_rise_time.funscript` - Composite timing signal
-7. `pulse_width.funscript` - Limited alpha-based width
-8. `volume.funscript` - Standard volume control
-9. `volume-prostate.funscript` - Enhanced volume for prostate
-10. `volume-stereostim.funscript` - Mapped volume range
+This tool takes the stroke and derives all of it. You pick a **character** — a movement personality — and it generates alpha, beta, pulse frequency, and seven other output files tuned to that character.
 
-## Requirements
+---
 
-- Python 3.8 or later (Python 3.13+ recommended for latest compatibility)
-- NumPy (automatically installed)
-- Tkinter (included with Python on Windows/macOS, may need separate install on Linux)
-- tkinterdnd2 (optional, for drag-and-drop support)
+## eTransforms — Five Characters
+
+| Character | What it means |
+|---|---|
+| **Gentle** | Soft, slow-building. Narrow arc, soft pulse onset. Good for intimate or slow content. |
+| **Reactive** | Sharp, tracks action closely. Wide arc, instant response. Good for fast, intense content. |
+| **Scene Builder** | Builds gradually over the scene. Circular arc, slow ramp. Rewards patience. |
+| **Unpredictable** | Random direction changes, varied character. Keeps you guessing. |
+| **Balanced** | Middle of everything. Good starting point for any content. |
+
+Pick a character. See 1–2 sliders that matter for it. Tune if you want. Process.
+
+---
+
+## The Three Outputs That Matter
+
+| File | What it is |
+|---|---|
+| `alpha.funscript` | Where — left/right electrode position |
+| `beta.funscript` | Where — up/down electrode position |
+| `pulse_frequency.funscript` | Intensity — tracks action speed |
+
+Plus seven additional channels for specialist hardware (pulse_width, pulse_rise, E1–E4, prostate).
+
+---
+
+## Workflow
+
+```
+1. Drop a .funscript file
+2. Pick an eTransform character
+3. Tune 1–2 sliders (optional)
+4. Process — takes seconds
+5. Review: original / master / alpha / beta / pulse_frequency / explorer
+6. Export to project folder
+```
+
+The Review tab shows six panels simultaneously. Original on the left. Five outputs on the right. The Explorer panel lets you inspect any additional channel. All panels update automatically when you change settings.
+
+---
+
+## CLI
+
+```bash
+# Process with defaults
+python cli.py process input.funscript
+
+# List available eTransforms
+python cli.py list-presets
+
+# Process with a named character
+python cli.py process input.funscript --preset Reactive
+
+# Get config for a preset (JSON)
+python cli.py get-preset "Scene Builder"
+
+# Save current settings as a named preset
+python cli.py save-preset "My Character" --from-config config.json
+```
+
+### Pipe-friendly JSON output
+
+```bash
+python cli.py process input.funscript --json | jq '.outputs'
+```
+
+---
 
 ## Installation
 
-### Option 1: Download Pre-built Executable (Easiest)
+### Option 1: Pre-built executable
 
-Download the latest release from the [Releases](https://github.com/edger477/funscript-tools/releases) page:
-- **Windows**: Download `RestimFunscriptProcessor-vX.X.X-Windows.zip`, extract, and run the `.exe`
-- No Python installation required!
+Download the latest release — no Python required.
 
-### Option 2: Run from Source
+### Option 2: From source
 
-For developers or users who want the latest features:
-
-#### Quick Setup (Recommended)
-
-**Windows:**
-```batch
-# Double-click setup.bat or run in Command Prompt:
-setup.bat
-
-# Then run the app:
-run.bat
-```
-
-**macOS / Linux:**
 ```bash
-# Make the script executable and run it:
-chmod +x setup.sh
-./setup.sh
-
-# Then run the app:
-./run.sh
+git clone https://github.com/liquid-releasing/funscript-tools.git
+cd funscript-tools
+pip install -r requirements.txt
+python forge.py
 ```
 
-#### Manual Setup
+**Requirements:** Python 3.8+, NumPy, Matplotlib. Tkinter included with Python on Windows/macOS. Optional: `pip install tkinterdnd2` for drag-and-drop.
 
-1. Clone or download this repository:
-   ```bash
-   git clone https://github.com/edger477/funscript-tools.git
-   cd funscript-tools
-   ```
+---
 
-2. Create and activate a virtual environment:
-   ```bash
-   # Windows
-   python -m venv venv
-   venv\Scripts\activate
+## Project Bundle (Export)
 
-   # macOS / Linux
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
+All outputs go into a named project folder alongside the video:
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Run the application:
-   ```bash
-   python main.py
-   ```
-
-#### Platform-Specific Notes
-
-**Linux** - You may need to install tkinter separately:
-```bash
-# Ubuntu/Debian
-sudo apt install python3-tk python3-venv
-
-# Fedora
-sudo dnf install python3-tkinter
-
-# Arch
-sudo pacman -S tk
+```
+my-scene/
+  my-scene.mp4
+  my-scene.funscript
+  my-scene.alpha.funscript
+  my-scene.beta.funscript
+  my-scene.pulse_frequency.funscript
+  ... (all outputs)
 ```
 
-**macOS** - If using Homebrew Python:
-```bash
-brew install python-tk
+Drop the folder into restim. Done.
+
+---
+
+## Advanced — Full Control
+
+Every parameter from the underlying processor is still accessible via **Advanced** in the UI, or as raw config in the CLI. The eTransforms are a starting point, not a cage.
+
+Edger's full parameter set: algorithm, points per second, speed threshold, frequency ramp ratio, pulse frequency min/max, pulse width min/max, pulse rise min/max, and more.
+
+---
+
+## Test Fixtures
+
+```
+tests/fixtures/big_buck_bunny.raw.funscript     — original, unprocessed
+tests/fixtures/big_buck_bunny.forged.funscript  — after FunScriptForge cleanup
 ```
 
-## Usage
+Convention: `<name>.raw.funscript` / `<name>.forged.funscript`
 
-1. Run the application:
-   ```bash
-   python main.py
-   ```
+---
 
-2. Select your input `.funscript` file using the Browse button, or **drag and drop** `.funscript` files directly onto the window
+## Architecture
 
-3. **Optional**: Configure 1D to 2D conversion:
-   - Choose algorithm (Circular, Top-Left-Right, or Top-Right-Left)
-   - Adjust speed-responsive radius controls
-   - Click "Convert to 2D" for alpha/beta generation only
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the adapter boundary design, the sensitivity matrix plan, and the agent loop spec.
 
-4. Configure parameters in the tabbed interface:
-   - **General**: Basic processing parameters
-   - **Speed**: Speed calculation settings
-   - **Frequency**: Frequency mapping with improved ratio sliders showing real-time percentages
-   - **Volume**: Volume processing with percentage-based ramp generation and clear combination ratio controls
-   - **Pulse**: Pulse parameters with intuitive ratio displays
-   - **Advanced**: Optional features and inversions
+**Adapter boundary:** `forge_window.py` imports only from `cli.py`. Zero upstream imports. The UI, the CLI, and FunScriptForge all call the same functions.
 
-5. Choose processing options:
-   - ☐ Normalize Volume: Apply volume normalization
-   - ☐ Delete Intermediary Files When Done: Clean up temporary files
+---
 
-6. Click "Process Files" to start processing
+## Integration with FunScriptForge
 
-7. Monitor progress in the status area
+funscript-tools is the second stage of the estim pipeline:
 
-## Configuration
+```
+FunScriptForge Explorer  →  FunScriptForge  →  funscript-tools  →  restim
+   (originate)               (edit/shape)       (estim character)   (play)
+```
 
-Parameters are automatically saved to `restim_config.json` when you click "Save Config". The application will remember your settings between sessions.
+The same five character names appear in FunScriptForge. Pick a character once — it flows through the entire pipeline.
 
-Use "Reset to Defaults" to restore factory settings.
+---
 
-## File Management
+## Credits
 
-- **Input file**: Select any `.funscript` file
-- **Intermediary files**: Created in `funscript-temp` subdirectory (automatically cleaned up if option selected)
-- **Output files**: Placed in the same directory as the input file
-- **Auxiliary files**: If `alpha.funscript`, `beta.funscript`, `speed.funscript`, or `ramp.funscript` exist alongside your input file, they will be used instead of generated
-- **Ramp Generation**: Volume ramp uses percentage-based progression with configurable rate (0-40% per hour, default 15%)
-- **Auto-generation**: Missing `alpha.funscript` and `beta.funscript` files are automatically created from the main funscript using multiple 1D to 2D conversion algorithms
-- **1D to 2D Conversion**: Dedicated section with algorithm selection and speed-responsive radius control
-
-## 1D to 2D Conversion
-
-The application features a sophisticated 1D to 2D conversion system with multiple algorithms and speed-responsive motion control:
-
-### Available Algorithms
-
-- **Circular (0°-180°)**: Original semicircular motion algorithm
-- **Top-Left-Right (0°-270°)**: Oscillating arc motion counter-clockwise from top
-- **Top-Right-Left (0°-90°)**: Oscillating arc motion clockwise from top
-- **0-360 (restim original)**: Original algorithm from diglet48's restim with stroke-relative circular motion and random direction changes
-
-### Speed-Responsive Radius Control
-
-The conversion system includes dynamic radius control that responds to funscript movement speed:
-
-- **Min Distance From Center** (0.1-0.9): Sets the minimum radius for slow movements
-- **Speed at Edge (Hz)** (1-5 Hz): Defines the speed threshold where the dot reaches maximum radius
-- **Dynamic Scaling**: Slow movements stay closer to center, fast movements reach the edge
-
-### Usage
-
-1. **Algorithm Selection**: Choose your preferred motion pattern using radio buttons
-2. **Configure Parameters**: Adjust interpolation density and radius control settings
-3. **Convert to 2D**: Click "Convert to 2D" to generate only alpha/beta files
-4. **Full Processing**: Use "Process Files" for complete workflow including 2D conversion
-
-### Technical Details
-
-- **Position Mapping**: Angular position directly corresponds to funscript position values
-- **Speed Calculation**: `current_speed = position_change / time_duration`
-- **Radius Scaling**: `radius = min_distance + (1.0 - min_distance) * (speed / max_speed)`
-- **Quality Control**: Configurable points per second (1-100) for interpolation density
-
-## Enhanced Ratio Controls
-
-The application features improved combination ratio controls and ramp generation:
-
-- **Interactive Sliders**: Adjust ratios with real-time visual feedback (automatically rounded to 0.1 precision)
-- **Percentage Display**: See exact mixing percentages (e.g., "Ramp 83.3% | Speed 16.7%")
-- **Clear Labeling**: Each control shows which files are being combined
-- **Dual Input**: Use sliders for quick adjustment or text entry for precise values
-- **Clean Values**: All ratio values automatically round to one decimal place for clarity
-- **Smart Ramp Generation**: Percentage-based progression with real-time value display and per-minute calculation
-
-### Example Ratio Meanings:
-- **Ratio 2**: 50% File1 + 50% File2 (equal mix)
-- **Ratio 3**: 66.7% File1 + 33.3% File2 (File1 dominant)
-- **Ratio 6**: 83.3% File1 + 16.7% File2 (heavily weighted toward File1)
-
-## Technical Details
-
-- **Processing Pipeline**: Integrated Python workflow replacing separate script calls
-- **Performance**: Utilizes caching and optimized numpy operations
-- **Thread Safety**: Processing runs in background thread to maintain UI responsiveness
-- **Error Handling**: Comprehensive validation and user-friendly error messages
-
-## Troubleshooting
-
-1. **"Module not found" errors**: Ensure you've installed requirements with `pip install -r requirements.txt`
-2. **Permission errors**: Ensure write access to the input file directory
-3. **Processing errors**: Check that input file is a valid funscript JSON format
-4. **Configuration errors**: Use "Reset to Defaults" if parameter validation fails
-5. **tkinter errors on Linux**: Install tkinter with `sudo apt install python3-tk` (Ubuntu/Debian)
-6. **Drag-and-drop not working**: Install tkinterdnd2 with `pip install tkinterdnd2` (optional feature)
-7. **Python version errors**: This app requires Python 3.8+. Python 3.13+ is recommended for best compatibility
-
-## Building Windows Executable
-
-To create a standalone Windows executable that doesn't require Python installation:
-
-### Prerequisites
-
-1. Install PyInstaller:
-   ```bash
-   pip install pyinstaller
-   ```
-
-2. Ensure all dependencies are installed:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Build Process
-
-1. **Quick Build**: Run the automated build script:
-   ```bash
-   python build_windows.py
-   ```
-
-2. **Manual Build** (alternative): Use PyInstaller directly:
-   ```bash
-   pyinstaller --onefile --windowed --name RestimFunscriptProcessor main.py
-   ```
-
-### Build Output
-
-The build script creates:
-- **Executable**: `dist/windows/RestimFunscriptProcessor-v{version}.exe`
-- **Release Package**: `dist/RestimFunscriptProcessor-v{version}-Windows.zip`
-
-The release package includes:
-- Standalone executable (no Python required)
-- Complete documentation (README.md, specifications)
-- Installation guide (INSTALLATION.txt)
-
-### Build Features
-
-- **Single File**: All dependencies bundled into one executable
-- **No Console**: GUI-only application (no command prompt window)
-- **Auto-Versioning**: Version number automatically included in filename
-- **Documentation**: Complete docs package included
-- **Cross-Platform**: Can build on any platform (best results on Windows)
-
-### Distribution
-
-The generated ZIP file in the `dist/` folder contains everything needed for distribution. Users simply:
-1. Extract the ZIP file
-2. Run `RestimFunscriptProcessor.exe`
-3. No Python installation required!
-
-## Development
-
-The application is structured as follows:
-
-- `main.py` - Entry point
-- `processor.py` - Core processing workflow
-- `config.py` - Configuration management
-- `funscript/` - Funscript file handling
-- `processing/` - Individual processing functions
-- `ui/` - GUI components
-- `build_windows.py` - Windows executable build script
+Built on [edger477/funscript-tools](https://github.com/edger477/funscript-tools). The eTransforms system, guided UI, CLI preset API, and six-panel review are additions by [liquid-releasing](https://github.com/liquid-releasing).
