@@ -992,16 +992,18 @@ class ForgeWindow:
         tab = ttk.Frame(self.notebook)
         self.notebook.add(tab, text="  3 · Review  ")
 
-        # Column layout: original (left, spans full height) + 2-col grid (right)
-        tab.columnconfigure(0, weight=1)   # original
-        tab.columnconfigure(1, weight=1)   # grid col A
-        tab.columnconfigure(2, weight=1)   # grid col B
+        # Layout: original (col 0, spans 3 rows) + 2-col grid (cols 1-2, rows 0-2) + nav row 3
+        tab.columnconfigure(0, weight=1)
+        tab.columnconfigure(1, weight=1)
+        tab.columnconfigure(2, weight=1)
         tab.rowconfigure(0, weight=1)
         tab.rowconfigure(1, weight=1)
-        tab.rowconfigure(2, weight=0)      # nav row
+        tab.rowconfigure(2, weight=1)
+        tab.rowconfigure(3, weight=0)   # nav
 
         self._review_figs = {}
         self._review_canvases = {}
+        self._review_label_frames = {}
 
         def _make_panel(parent, row, col, rowspan, label, suffix):
             lf = ttk.LabelFrame(parent, text=label)
@@ -1016,25 +1018,51 @@ class ForgeWindow:
             canvas.get_tk_widget().pack(fill="both", expand=True)
             self._review_figs[suffix] = fig
             self._review_canvases[suffix] = canvas
+            self._review_label_frames[suffix] = lf
 
-        # Original — left column, full height
-        _make_panel(tab, 0, 0, 2, "Original funscript", "original")
+        # Original — left column, spans all 3 data rows
+        _make_panel(tab, 0, 0, 3, "Original funscript", "original")
 
-        # Master — top-left of right grid
+        # Master — top-left
         _make_panel(tab, 0, 1, 1, "master  —  processed", "master")
 
         # Alpha — top-right
         _make_panel(tab, 0, 2, 1, "alpha  —  where (left/right)", "alpha")
 
-        # Beta — bottom-left
+        # Beta — mid-left
         _make_panel(tab, 1, 1, 1, "beta  —  where (up/down)", "beta")
 
-        # Pulse frequency — bottom-right
+        # Pulse frequency — mid-right
         _make_panel(tab, 1, 2, 1, "pulse frequency  —  intensity", "pulse_frequency")
+
+        # Sixth panel — selectable, bottom row spans cols 1-2
+        self._sixth_suffix_var = tk.StringVar(value="— process first —")
+        sixth_lf = ttk.LabelFrame(tab, text="Explorer")
+        sixth_lf.grid(row=2, column=1, columnspan=2, sticky="nsew",
+                      padx=(2, 5), pady=(2, 2))
+        sixth_lf.columnconfigure(0, weight=1)
+        sixth_lf.rowconfigure(1, weight=1)
+
+        sixth_sel_row = ttk.Frame(sixth_lf)
+        sixth_sel_row.grid(row=0, column=0, sticky="ew", padx=4, pady=(4, 2))
+        ttk.Label(sixth_sel_row, text="Channel:").pack(side="left", padx=(0, 4))
+        self._sixth_combo = ttk.Combobox(
+            sixth_sel_row, textvariable=self._sixth_suffix_var,
+            state="readonly", width=28
+        )
+        self._sixth_combo.pack(side="left")
+        self._sixth_combo.bind("<<ComboboxSelected>>", self._on_sixth_selected)
+
+        sixth_fig = Figure(tight_layout=True)
+        sixth_canvas = FigureCanvas(sixth_fig, master=sixth_lf)
+        sixth_canvas.draw()
+        sixth_canvas.get_tk_widget().grid(row=1, column=0, sticky="nsew")
+        self._review_figs["sixth"] = sixth_fig
+        self._review_canvases["sixth"] = sixth_canvas
 
         # Bottom nav
         btn_row = ttk.Frame(tab)
-        btn_row.grid(row=2, column=0, columnspan=3, sticky="ew", padx=5, pady=5)
+        btn_row.grid(row=3, column=0, columnspan=3, sticky="ew", padx=5, pady=5)
         ttk.Button(btn_row, text="← Back",
                    command=lambda: self.notebook.select(1)).pack(side="left", padx=5)
         ttk.Button(btn_row, text="Export →",
@@ -1321,6 +1349,37 @@ class ForgeWindow:
                     )
                 except Exception as e:
                     self._set_status(0, f"Preview error ({suffix}): {e}")
+
+        # Sixth panel — populate dropdown with remaining channels
+        fixed = {"original", "master", "alpha", "beta", "pulse_frequency"}
+        extras = sorted(s for s in self.output_files if s not in fixed)
+        primary_labels = {s: PRIMARY_CHANNELS.get(s, s) for s in self.output_files if s not in fixed}
+        labels = [PRIMARY_CHANNELS.get(s, s) for s in extras]
+        self._sixth_combo["values"] = labels
+        self._sixth_suffix_extras = extras  # parallel list for lookup
+        if extras:
+            self._sixth_combo.current(0)
+            self._on_sixth_selected()
+
+    def _on_sixth_selected(self, *_):
+        idx = self._sixth_combo.current()
+        if idx < 0 or not hasattr(self, "_sixth_suffix_extras"):
+            return
+        suffix = self._sixth_suffix_extras[idx]
+        if suffix not in self.output_files:
+            return
+        try:
+            data = load_file(str(self.output_files[suffix]))
+            self._plot_funscript(
+                self._review_figs["sixth"],
+                self._review_canvases["sixth"],
+                data,
+            )
+            # Update Explorer label frame title
+            lf = self._review_canvases["sixth"].get_tk_widget().master
+            lf.config(text=f"Explorer  —  {PRIMARY_CHANNELS.get(suffix, suffix)}")
+        except Exception as e:
+            self._set_status(0, f"Explorer preview error: {e}")
 
     def _preview_output(self, suffix: str, path: Path):
         """Legacy single-panel preview — kept for Configure tab 'after' panel."""
