@@ -30,7 +30,18 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg as FigureCanvas
 plt.style.use(["ggplot", "dark_background", "fast"])
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from cli import get_default_config, list_outputs, load_file, process
+from cli import (
+    get_default_config, list_outputs, load_file, process,
+    BUILTIN_PRESETS, get_preset, save_preset, list_presets,
+)
+
+# The three channels that matter for creator review — shown first, labeled in plain English.
+# Everything else is texture for specialist hardware.
+PRIMARY_CHANNELS = {
+    "alpha":           "alpha  —  where (left / right)",
+    "beta":            "beta  —  where (up / down)",
+    "pulse_frequency": "pulse frequency  —  intensity",
+}
 from ui.parameter_tabs import ParameterTabs
 
 try:
@@ -63,6 +74,10 @@ class ForgeWindow:
         self.source_data: Optional[dict] = None   # dict from cli.load_file
         self.output_files: Dict[str, Path] = {}
         self.selected_outputs: Dict[str, tk.BooleanVar] = {}
+
+        # Live preview state
+        self._electrode_preview_pending = False
+        self._sensation_update_pending = False
 
         # Config — plain dict, no upstream objects
         self.current_config = get_default_config()
@@ -327,6 +342,41 @@ class ForgeWindow:
         cfg = self.current_config
         row = 0
 
+        # ── eTransforms — quick character presets ─────────────────────────────
+        et_lf = ttk.LabelFrame(parent, text="eTransforms  —  Pick a character")
+        et_lf.grid(row=row, column=0, sticky="ew", padx=8, pady=(8, 2))
+        et_lf.columnconfigure(tuple(range(len(BUILTIN_PRESETS))), weight=1)
+        row += 1
+
+        self._etransform_desc_var = tk.StringVar(
+            value="Pick a character to start. Adjust sliders below to fine-tune."
+            "\n(Applies to the whole funscript — per-section support coming with FunScriptForge.)"
+        )
+        tk.Label(et_lf, textvariable=self._etransform_desc_var,
+                 font=("", 8), fg="#555555", justify="left",
+                 wraplength=295, anchor="w").grid(
+            row=1, column=0, columnspan=len(BUILTIN_PRESETS),
+            sticky="w", padx=8, pady=(0, 6))
+
+        for i, (name, meta) in enumerate(BUILTIN_PRESETS.items()):
+            btn = ttk.Button(
+                et_lf, text=name,
+                command=lambda n=name, d=meta["description"]: self._apply_etransform(n, d)
+            )
+            btn.grid(row=0, column=i, padx=3, pady=(6, 3), sticky="ew")
+            # Hover: show description
+            btn.bind("<Enter>", lambda e, d=meta["description"]: self._etransform_desc_var.set(d))
+            btn.bind("<Leave>", lambda e: self._etransform_desc_var.set(
+                "Pick a character to start. Adjust sliders below to fine-tune."
+                "\n(Applies to the whole funscript — per-section support coming with FunScriptForge.)"
+            ))
+
+        # Dynamic contextual sliders — rebuilt each time an eTransform is selected
+        self._etransform_sliders_frame = ttk.Frame(et_lf)
+        self._etransform_sliders_frame.grid(
+            row=2, column=0, columnspan=len(BUILTIN_PRESETS), sticky="ew", padx=4, pady=(0, 4))
+        self._etransform_sliders_frame.columnconfigure(0, weight=1)
+
         # ── helpers ───────────────────────────────────────────────────────────
 
         def section(title, subtitle):
@@ -337,8 +387,8 @@ class ForgeWindow:
             ttk.Label(parent, text=title, font=("", 9, "bold")).grid(
                 row=row, column=0, sticky="w", padx=8, pady=(0, 0))
             row += 1
-            ttk.Label(parent, text=subtitle, font=("", 8), foreground="#888888",
-                      justify="left", wraplength=300).grid(
+            tk.Label(parent, text=subtitle, font=("", 8), fg="#555555",
+                     justify="left", wraplength=300, anchor="w").grid(
                 row=row, column=0, sticky="w", padx=8, pady=(0, 4))
             row += 1
 
@@ -351,8 +401,8 @@ class ForgeWindow:
             hdr.columnconfigure(0, weight=1)
             ttk.Label(hdr, text=label, font=("", 8, "bold"), anchor="w").grid(
                 row=0, column=0, sticky="w")
-            val_lbl = ttk.Label(hdr, text=f"{var.get():.2f}", font=("", 8),
-                                foreground="#4fc3f7", width=6, anchor="e")
+            val_lbl = tk.Label(hdr, text=f"{var.get():.2f}", font=("", 8, "bold"),
+                               fg="#0066cc", width=6, anchor="e")
             val_lbl.grid(row=0, column=1, sticky="e")
             row += 1
             # Slider
@@ -366,8 +416,8 @@ class ForgeWindow:
             sl.grid(row=row, column=0, sticky="ew", padx=8, pady=(0, 1))
             row += 1
             # Hint
-            ttk.Label(parent, text=hint, font=("", 7), foreground="#666666",
-                      justify="left", wraplength=300).grid(
+            tk.Label(parent, text=hint, font=("", 8), fg="#555555",
+                     justify="left", wraplength=300, anchor="w").grid(
                 row=row, column=0, sticky="w", padx=12, pady=(0, 2))
             row += 1
             return sl
@@ -378,9 +428,9 @@ class ForgeWindow:
         summary_frame.columnconfigure(0, weight=1)
         row += 1
         self._sensation_var = tk.StringVar(value="Adjust settings to see a description.")
-        ttk.Label(summary_frame, textvariable=self._sensation_var,
-                  font=("", 8), justify="left", wraplength=290,
-                  foreground="#cccccc").grid(
+        tk.Label(summary_frame, textvariable=self._sensation_var,
+                 font=("", 9), justify="left", wraplength=290,
+                 fg="#000000", anchor="w").grid(
             row=0, column=0, sticky="w", padx=8, pady=6)
 
         # ── Motion — WHERE sensation moves ────────────────────────────────────
@@ -405,9 +455,9 @@ class ForgeWindow:
         algo_combo.grid(row=0, column=1, sticky="ew")
 
         self._algo_hint_var = tk.StringVar()
-        ttk.Label(parent, textvariable=self._algo_hint_var,
-                  font=("", 7), foreground="#4fc3f7", justify="left",
-                  wraplength=300).grid(
+        tk.Label(parent, textvariable=self._algo_hint_var,
+                 font=("", 9), fg="#003399", justify="left",
+                 wraplength=300, anchor="w").grid(
             row=row, column=0, sticky="w", padx=12, pady=(1, 4))
         row += 1
 
@@ -516,8 +566,8 @@ class ForgeWindow:
             row=0, column=2, sticky="e")
 
         self._ramp_hint_var = tk.StringVar()
-        ttk.Label(parent, textvariable=self._ramp_hint_var,
-                  font=("", 7), foreground="#4fc3f7", justify="left").grid(
+        tk.Label(parent, textvariable=self._ramp_hint_var,
+                 font=("", 9), fg="#003399", justify="left", anchor="w").grid(
             row=row, column=0, sticky="w", padx=12, pady=(0, 4))
         row += 1
         _on_ramp(self.cv_freq_ramp_ratio.get())  # set initial state
@@ -608,41 +658,60 @@ class ForgeWindow:
         ttk.Label(f_mode, text="   For 4-electrode setups",
                   font=("", 7), foreground="#666666").pack(anchor="w")
 
-        ttk.Frame(parent).grid(row=row, column=0, pady=10)
+        # ── Bottom actions ────────────────────────────────────────────────────
+        ttk.Separator(parent, orient="horizontal").grid(
+            row=row, column=0, sticky="ew", padx=4, pady=(10, 4))
+        row += 1
 
-        # Initial electrode path preview
+        bottom_row = ttk.Frame(parent)
+        bottom_row.grid(row=row, column=0, sticky="ew", padx=8, pady=(0, 8))
+        row += 1
+        ttk.Button(bottom_row, text="Save as eTransform…",
+                   command=self._save_etransform_dialog).pack(side="left", padx=(0, 6))
+        ttk.Button(bottom_row, text="Advanced…",
+                   command=self._open_custom_dialog).pack(side="right")
+
+        ttk.Frame(parent).grid(row=row, column=0, pady=4)
+
+        # Wire live-update traces directly on variables
+        for var in (self.cv_algo, self.cv_min_dist):
+            var.trace_add("write", lambda *_: self._schedule_electrode_preview())
+        for var in (self.cv_algo, self.cv_min_dist, self.cv_freq_ramp_ratio,
+                    self.cv_pulse_freq_ratio, self.cv_pf_min, self.cv_pf_max,
+                    self.cv_pw_min, self.cv_pw_max, self.cv_pr_min, self.cv_pr_max):
+            var.trace_add("write", lambda *_: self._schedule_sensation_update())
+
+        # Initial draw
         self._schedule_electrode_preview()
         self._schedule_sensation_update()
 
     # ── Live preview helpers ───────────────────────────────────────────────────
 
-    _electrode_preview_pending = False
     _sensation_update_pending = False
 
     def _schedule_electrode_preview(self, *_):
-        """Debounce: schedule one electrode path redraw, ignore rapid slider moves."""
-        if not self._electrode_preview_pending:
-            self._electrode_preview_pending = True
-            self.root.after(150, self._do_electrode_preview)
+        """Redraw electrode path — fast enough to call on every variable write."""
+        if self._electrode_preview_pending:
+            return
+        self._electrode_preview_pending = True
+        self.root.after(80, self._do_electrode_preview)
 
     def _do_electrode_preview(self):
         self._electrode_preview_pending = False
-        algo = self.cv_algo.get()
-        min_dist = self.cv_min_dist.get()
-
-        def _run():
-            try:
-                from cli import preview_electrode_path
-                data = preview_electrode_path(
-                    algorithm=algo,
-                    min_distance_from_center=min_dist,
-                    points=120,
-                )
-                self.root.after(0, lambda: self._draw_electrode_plot(data))
-            except Exception:
-                pass
-
-        threading.Thread(target=_run, daemon=True).start()
+        try:
+            from cli import preview_electrode_path
+            algo = self.cv_algo.get()
+            dist = self.cv_min_dist.get()
+            print(f"[preview] algo={algo} dist={dist:.2f}", flush=True)
+            data = preview_electrode_path(
+                algorithm=algo,
+                min_distance_from_center=dist,
+                points=120,
+            )
+            self._draw_electrode_plot(data)
+            print(f"[preview] drew {len(data['alpha'])} points", flush=True)
+        except Exception as e:
+            print(f"[preview] ERROR: {e}", flush=True)
 
     def _draw_electrode_plot(self, data: dict):
         self._path_fig.clear()
@@ -650,15 +719,13 @@ class ForgeWindow:
         alpha = data.get("alpha", [])
         beta = data.get("beta", [])
         if alpha and beta:
-            ax.plot(alpha, beta, linewidth=0.8, color="#4fc3f7", alpha=0.9)
-            ax.scatter([alpha[0]], [beta[0]], color="#88ff88", s=18, zorder=5)
-            ax.scatter([alpha[-1]], [beta[-1]], color="#ff8888", s=18, zorder=5)
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-        ax.set_xlabel("alpha", fontsize=7)
-        ax.set_ylabel("beta", fontsize=7)
-        ax.tick_params(labelsize=6)
-        ax.set_aspect("equal", adjustable="box")
+            ax.plot(alpha, beta, linewidth=2.0, color="white")
+            ax.scatter([alpha[0]], [beta[0]], color="#44ff44", s=50, zorder=5)   # start
+            ax.scatter([alpha[-1]], [beta[-1]], color="#ff4444", s=50, zorder=5) # end
+        ax.set_xlabel("left  ←  electrode  →  right", fontsize=8, color="white")
+        ax.set_ylabel("up  ↕  down", fontsize=8, color="white")
+        ax.tick_params(labelsize=7, colors="white")
+        ax.set_title(data.get("label", ""), fontsize=9, color="white", pad=4)
         self._path_fig.tight_layout()
         self._path_canvas.draw()
 
@@ -732,8 +799,147 @@ class ForgeWindow:
         cfg["positional_axes"]["generate_legacy"] = self.cv_gen_3p.get()
         cfg["positional_axes"]["generate_motion_axis"] = self.cv_gen_4p.get()
 
+    # ── eTransform actions ─────────────────────────────────────────────────────
+
+    def _apply_etransform(self, name: str, description: str = ""):
+        """Load a preset into all Creative panel sliders, then show contextual sliders."""
+        try:
+            config = get_preset(name)
+        except KeyError as e:
+            messagebox.showerror("eTransform error", str(e))
+            return
+        ab = config.get("alpha_beta_generation", {})
+        fq = config.get("frequency", {})
+        pu = config.get("pulse", {})
+        if "algorithm" in ab:               self.cv_algo.set(ab["algorithm"])
+        if "min_distance_from_center" in ab: self.cv_min_dist.set(ab["min_distance_from_center"])
+        if "points_per_second" in ab:        self.cv_pps.set(ab["points_per_second"])
+        if "speed_threshold_percent" in ab:  self.cv_speed_thresh.set(ab["speed_threshold_percent"])
+        if "frequency_ramp_combine_ratio" in fq:  self.cv_freq_ramp_ratio.set(fq["frequency_ramp_combine_ratio"])
+        if "pulse_frequency_combine_ratio" in fq: self.cv_pulse_freq_ratio.set(fq["pulse_frequency_combine_ratio"])
+        if "pulse_freq_min" in fq: self.cv_pf_min.set(fq["pulse_freq_min"])
+        if "pulse_freq_max" in fq: self.cv_pf_max.set(fq["pulse_freq_max"])
+        if "pulse_width_min" in pu: self.cv_pw_min.set(pu["pulse_width_min"])
+        if "pulse_width_max" in pu: self.cv_pw_max.set(pu["pulse_width_max"])
+        if "pulse_rise_min" in pu:  self.cv_pr_min.set(pu["pulse_rise_min"])
+        if "pulse_rise_max" in pu:  self.cv_pr_max.set(pu["pulse_rise_max"])
+
+        slider_specs = BUILTIN_PRESETS.get(name, {}).get("sliders", [])
+        self._rebuild_etransform_sliders(slider_specs)
+
+        if description:
+            self._etransform_desc_var.set(f"\u2713 {name}  \u2014  {description}")
+
+    def _rebuild_etransform_sliders(self, specs: list):
+        """Rebuild the contextual slider area inside the eTransforms panel."""
+        frame = self._etransform_sliders_frame
+        for child in frame.winfo_children():
+            child.destroy()
+
+        if not specs:
+            return
+
+        ttk.Separator(frame, orient="horizontal").grid(
+            row=0, column=0, sticky="ew", padx=4, pady=(4, 4))
+
+        for s_row, spec in enumerate(specs, start=1):
+            cv_attr = spec["cv"]
+            var = getattr(self, cv_attr, None)
+            if var is None:
+                continue
+
+            # Label row: bold name left, live value right
+            hdr = ttk.Frame(frame)
+            hdr.grid(row=s_row * 3 - 2, column=0, sticky="ew", padx=8, pady=(4, 0))
+            hdr.columnconfigure(0, weight=1)
+            ttk.Label(hdr, text=spec["label"], font=("", 8, "bold"), anchor="w").grid(
+                row=0, column=0, sticky="w")
+            val_lbl = tk.Label(hdr, text=f"{var.get():.2f}", font=("", 8, "bold"),
+                               fg="#0066cc", width=6, anchor="e")
+            val_lbl.grid(row=0, column=1, sticky="e")
+
+            # Slider + endpoint labels
+            def _on_slide(v, _lbl=val_lbl, _var=var):
+                _lbl.config(text=f"{float(v):.2f}")
+
+            sl = ttk.Scale(frame, from_=spec["from_"], to=spec["to_"],
+                           variable=var, orient="horizontal", command=_on_slide)
+            sl.grid(row=s_row * 3 - 1, column=0, sticky="ew", padx=8, pady=(0, 0))
+
+            ep = ttk.Frame(frame)
+            ep.grid(row=s_row * 3, column=0, sticky="ew", padx=8)
+            ep.columnconfigure(1, weight=1)
+            ttk.Label(ep, text=spec.get("min_label", ""), font=("", 7),
+                      foreground="#666666").grid(row=0, column=0, sticky="w")
+            ttk.Label(ep, text=spec.get("max_label", ""), font=("", 7),
+                      foreground="#666666").grid(row=0, column=2, sticky="e")
+            tk.Label(frame, text=spec["hint"], font=("", 8), fg="#003399",
+                     justify="left", wraplength=290, anchor="w").grid(
+                row=s_row * 3 + 1, column=0, sticky="w", padx=12, pady=(0, 4))
+
+    def _save_etransform_dialog(self):
+        """Prompt for a name and save current sliders as a user eTransform."""
+        dlg = tk.Toplevel(self.root)
+        dlg.title("Save eTransform")
+        dlg.resizable(False, False)
+        dlg.grab_set()
+
+        ttk.Label(dlg, text="Name:", font=("", 9)).grid(
+            row=0, column=0, padx=12, pady=(12, 4), sticky="w")
+        name_var = tk.StringVar()
+        name_entry = ttk.Entry(dlg, textvariable=name_var, width=28)
+        name_entry.grid(row=0, column=1, padx=(0, 12), pady=(12, 4))
+        name_entry.focus()
+
+        ttk.Label(dlg, text="Description:", font=("", 9)).grid(
+            row=1, column=0, padx=12, pady=4, sticky="w")
+        desc_var = tk.StringVar()
+        ttk.Entry(dlg, textvariable=desc_var, width=28).grid(
+            row=1, column=1, padx=(0, 12), pady=4)
+
+        def _save():
+            name = name_var.get().strip()
+            if not name:
+                messagebox.showwarning("Name required", "Enter a name for the eTransform.",
+                                       parent=dlg)
+                return
+            self._collect_creative_config()
+            try:
+                path = save_preset(name, self.current_config, desc_var.get().strip())
+                messagebox.showinfo("Saved", f"eTransform '{name}' saved to:\n{path}", parent=dlg)
+                dlg.destroy()
+            except Exception as e:
+                messagebox.showerror("Save error", str(e), parent=dlg)
+
+        btn_row = ttk.Frame(dlg)
+        btn_row.grid(row=2, column=0, columnspan=2, sticky="ew", padx=12, pady=(4, 12))
+        ttk.Button(btn_row, text="Save", command=_save).pack(side="right", padx=(6, 0))
+        ttk.Button(btn_row, text="Cancel", command=dlg.destroy).pack(side="right")
+
+    def _open_custom_dialog(self):
+        """Open the full 100-knob parameter editor in a separate window."""
+        dlg = tk.Toplevel(self.root)
+        dlg.title("Advanced Configuration — all parameters")
+        dlg.geometry("740x520")
+        dlg.columnconfigure(0, weight=1)
+        dlg.rowconfigure(0, weight=1)
+
+        # Sync current slider values into config before opening
+        self._collect_creative_config()
+
+        tabs = ParameterTabs(dlg, self.current_config)
+        tabs.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
+        tabs.set_mode_change_callback(lambda m: None)
+        tabs.set_conversion_callbacks(self._convert_basic_2d, self._convert_prostate_2d)
+
+        btn_row = ttk.Frame(dlg)
+        btn_row.grid(row=1, column=0, sticky="ew", padx=10, pady=(0, 10))
+        ttk.Button(btn_row, text="Apply & Close", command=dlg.destroy).pack(side="right", padx=(6, 0))
+        ttk.Button(btn_row, text="Cancel", command=dlg.destroy).pack(side="right")
+
     def _on_preview_selected(self, event=None):
-        suffix = self.preview_var.get()
+        label = self.preview_var.get()
+        suffix = getattr(self, "_preview_suffix_map", {}).get(label, label)
         if suffix and suffix in self.output_files:
             self._update_after_preview(suffix)
 
@@ -948,10 +1154,12 @@ class ForgeWindow:
     # ─── Visualization ────────────────────────────────────────────────────────
 
     def _plot_funscript(self, fig: Figure, canvas: FigureCanvas, data: dict, label: str):
-        """Plot a funscript waveform. data is the dict returned by cli.load_file."""
+        """Plot a funscript waveform. data is the dict returned by cli.load_file.
+        x is time in seconds; y is position 0–100 (already scaled)."""
+        import numpy as np
         fig.clear()
         ax = fig.add_subplot(111)
-        ax.plot(data["x"], data["y"] * 100, linewidth=0.7, color="#4fc3f7", label=label)
+        ax.plot(data["x"], np.asarray(data["y"]), linewidth=0.7, color="#4fc3f7", label=label)
         ax.set_ylim(0, 100)
         ax.set_xlabel("Time (s)", fontsize=8)
         ax.set_ylabel("Position", fontsize=8)
@@ -967,12 +1175,14 @@ class ForgeWindow:
         processed: dict,
         label: str,
     ):
-        """Overlay original vs processed waveform. Both are dicts from cli.load_file."""
+        """Overlay original vs processed waveform. Both are dicts from cli.load_file.
+        y values are 0–100 (already scaled)."""
+        import numpy as np
         fig.clear()
         ax = fig.add_subplot(111)
-        ax.plot(original["x"], original["y"] * 100, linewidth=0.5,
+        ax.plot(original["x"], np.asarray(original["y"]), linewidth=0.5,
                 color="#555555", alpha=0.6, label="original")
-        ax.plot(processed["x"], processed["y"] * 100, linewidth=0.8,
+        ax.plot(processed["x"], np.asarray(processed["y"]), linewidth=0.8,
                 color="#4fc3f7", label=label)
         ax.set_ylim(0, 100)
         ax.legend(fontsize=7)
@@ -1016,15 +1226,21 @@ class ForgeWindow:
         n = len(self.output_files)
         self._set_status(100, f"Done — {n} file(s) generated")
 
-        # Populate preview dropdown
-        sorted_suffixes = sorted(self.output_files.keys())
-        self.preview_combo["values"] = sorted_suffixes
+        # Populate preview dropdown — primary channels first, rest alphabetically
+        primary = [s for s in PRIMARY_CHANNELS if s in self.output_files]
+        others  = sorted(s for s in self.output_files if s not in PRIMARY_CHANNELS)
+        ordered = primary + others
+        # Use plain labels for primary channels
+        display = [PRIMARY_CHANNELS.get(s, s) for s in ordered]
+        self._preview_suffix_map = dict(zip(display, ordered))  # label → suffix
+        self.preview_combo["values"] = display
 
-        # Auto-select alpha if present, otherwise first output
-        default = "alpha" if "alpha" in self.output_files else (sorted_suffixes[0] if sorted_suffixes else None)
-        if default:
-            self.preview_var.set(default)
-            self._update_after_preview(default)
+        # Auto-select alpha
+        default_label = next((PRIMARY_CHANNELS[s] for s in ("alpha", "beta", "pulse_frequency")
+                              if s in self.output_files), display[0] if display else None)
+        if default_label:
+            self.preview_var.set(default_label)
+            self._update_after_preview(self._preview_suffix_map[default_label])
 
         self._populate_review()
         self._populate_export()
@@ -1070,22 +1286,38 @@ class ForgeWindow:
             fill="x", padx=4, pady=4
         )
 
-        for suffix, path in sorted(self.output_files.items()):
+        def _add_row(suffix, label):
             var = tk.BooleanVar(value=True)
             self.selected_outputs[suffix] = var
-
             row = ttk.Frame(self.output_list_frame)
             row.pack(fill="x", padx=4, pady=1)
-
             ttk.Checkbutton(row, variable=var).pack(side="left")
             ttk.Button(
-                row, text=suffix, width=24,
-                command=lambda s=suffix, p=path: self._preview_output(s, p),
+                row, text=label, width=28,
+                command=lambda s=suffix, p=self.output_files[s]: self._preview_output(s, p),
             ).pack(side="left", padx=2)
 
-        # Auto-preview first
-        first_suffix, first_path = next(iter(self.output_files.items()))
-        self._preview_output(first_suffix, first_path)
+        # Primary channels first
+        primary_found = []
+        for suffix, label in PRIMARY_CHANNELS.items():
+            if suffix in self.output_files:
+                _add_row(suffix, label)
+                primary_found.append(suffix)
+
+        # Separator then additional channels
+        others = sorted(s for s in self.output_files if s not in PRIMARY_CHANNELS)
+        if others:
+            ttk.Separator(self.output_list_frame, orient="horizontal").pack(
+                fill="x", padx=4, pady=(6, 2))
+            tk.Label(self.output_list_frame, text="Additional channels",
+                     font=("", 7), fg="#888888").pack(anchor="w", padx=8)
+            for suffix in others:
+                _add_row(suffix, suffix)
+
+        # Auto-preview alpha
+        first = primary_found[0] if primary_found else (others[0] if others else None)
+        if first:
+            self._preview_output(first, self.output_files[first])
 
     def _preview_output(self, suffix: str, path: Path):
         if not self.source_data:

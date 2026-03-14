@@ -55,28 +55,57 @@ def _upstream_default_config() -> dict:
     return copy.deepcopy(DEFAULT_CONFIG)
 
 
-def _upstream_preview_path(algorithm: str, min_distance: float,
-                            speed_threshold: float, n_points: int):
-    """Generate a 2D electrode path using a synthetic sine input."""
-    from funscript import Funscript  # upstream
-    from processing.speed_processing import convert_to_speed  # upstream
-    from processing.funscript_1d_to_2d import generate_alpha_beta_from_main  # upstream
+def _geometric_preview_path(algorithm: str, min_distance: float, n_points: int):
+    """
+    Return a clean geometric representation of what each algorithm's path looks like.
 
-    # Synthetic sinusoidal funscript (2 seconds, representative motion)
-    t = np.linspace(0, 2.0, n_points)
-    y = (np.sin(2 * np.pi * 1.5 * t) + 1) / 2  # 0-1 range, 1.5 Hz
-    synth = Funscript(t.tolist(), y.tolist())
+    The upstream algorithms converge on synthetic input. This draws the template
+    shape directly — which is what users need to understand the algorithm choice.
 
-    speed = convert_to_speed(synth, window_size=5, interpolation_interval=0.05)
+    Center of electrode space is (0.5, 0.5). Radius scales with min_distance.
+    """
+    cx, cy = 0.5, 0.5
+    r = (0.9 - min_distance) / 2  # radius: shrinks as min_distance grows
+    r = max(0.05, min(r, 0.45))
 
-    alpha, beta = generate_alpha_beta_from_main(
-        synth, speed,
-        points_per_second=25,
-        algorithm=algorithm,
-        min_distance_from_center=min_distance,
-        speed_threshold_percent=speed_threshold,
-    )
-    return alpha.y, beta.y  # Both are 0-1 floats
+    if algorithm == "circular":
+        # Semi-circle: sweeps 0° → 180° (right side to left, arcing upward)
+        angles = np.linspace(0, np.pi, n_points)
+        alpha = cx + r * np.cos(angles)
+        beta  = cy + r * np.sin(angles)
+
+    elif algorithm == "top-right-left":
+        # Wide arc: sweeps 0° → 270° (right → top → left → bottom)
+        angles = np.linspace(0, 1.5 * np.pi, n_points)
+        alpha = cx + r * np.cos(angles)
+        beta  = cy + r * np.sin(angles)
+
+    elif algorithm == "top-left-right":
+        # Narrow arc: sweeps 0° → 90° (right → top only — subtle quarter circle)
+        angles = np.linspace(0, 0.5 * np.pi, n_points)
+        alpha = cx + r * np.cos(angles)
+        beta  = cy + r * np.sin(angles)
+
+    elif algorithm == "restim-original":
+        # Full circle with random direction reversals — shows unpredictability
+        rng = np.random.default_rng(42)  # fixed seed so preview is consistent
+        angles = np.zeros(n_points)
+        direction = 1
+        step = 2 * np.pi / (n_points / 3)
+        for i in range(1, n_points):
+            if rng.random() < 0.12:   # ~12% chance of reversal per step
+                direction *= -1
+            angles[i] = angles[i-1] + direction * step
+        alpha = cx + r * np.cos(angles)
+        beta  = cy + r * np.sin(angles)
+
+    else:
+        # Fallback: circle
+        angles = np.linspace(0, np.pi, n_points)
+        alpha = cx + r * np.cos(angles)
+        beta  = cy + r * np.sin(angles)
+
+    return alpha.tolist(), beta.tolist()
 
 
 # ── Public API ────────────────────────────────────────────────────────────────
@@ -147,6 +176,291 @@ def load_file(path: str) -> dict:
 def get_default_config() -> dict:
     """Return the default processing configuration."""
     return _upstream_default_config()
+
+
+# ── Presets ───────────────────────────────────────────────────────────────────
+
+_USER_PRESETS_PATH = Path.home() / ".config" / "funscript-tools" / "presets.json"
+
+# Built-in presets — curated starting points, not exhaustive configurations.
+# Each preset overrides only the creative settings; infrastructure (volume,
+# rest level, output mode) stays at defaults unless explicitly set.
+BUILTIN_PRESETS: dict[str, dict] = {
+    "Gentle": {
+        "description": "Soft, slow-building. Good for intimate or slow content.",
+        "config": {
+            "alpha_beta_generation": {
+                "algorithm": "top-left-right",
+                "min_distance_from_center": 0.12,
+                "points_per_second": 20,
+                "speed_threshold_percent": 40,
+            },
+            "frequency": {
+                "frequency_ramp_combine_ratio": 8.0,
+                "pulse_frequency_combine_ratio": 6.0,
+                "pulse_freq_min": 0.25,
+                "pulse_freq_max": 0.70,
+            },
+            "pulse": {
+                "pulse_width_min": 0.30,
+                "pulse_width_max": 0.60,
+                "pulse_rise_min": 0.50,
+                "pulse_rise_max": 0.90,
+            },
+        },
+        "sliders": [
+            {
+                "cv": "cv_min_dist",
+                "label": "Softness",
+                "hint": "How far sensation moves from center. Low = barely perceptible flutter. High = wider, more present.",
+                "from_": 0.05, "to_": 0.35,
+                "min_label": "whisper", "max_label": "noticeable",
+            },
+            {
+                "cv": "cv_pr_max",
+                "label": "Onset gentleness",
+                "hint": "How softly each pulse starts. High = feather-light onset. Low = cleaner, more defined edge.",
+                "from_": 0.40, "to_": 1.0,
+                "min_label": "defined", "max_label": "feather",
+            },
+        ],
+    },
+    "Reactive": {
+        "description": "Sharp, tracks action closely. Good for fast, intense content.",
+        "config": {
+            "alpha_beta_generation": {
+                "algorithm": "top-right-left",
+                "min_distance_from_center": 0.18,
+                "points_per_second": 30,
+                "speed_threshold_percent": 60,
+            },
+            "frequency": {
+                "frequency_ramp_combine_ratio": 2.0,
+                "pulse_frequency_combine_ratio": 2.0,
+                "pulse_freq_min": 0.50,
+                "pulse_freq_max": 0.95,
+            },
+            "pulse": {
+                "pulse_width_min": 0.05,
+                "pulse_width_max": 0.25,
+                "pulse_rise_min": 0.00,
+                "pulse_rise_max": 0.20,
+            },
+        },
+        "sliders": [
+            {
+                "cv": "cv_freq_ramp_ratio",
+                "label": "Reactivity",
+                "hint": "How tightly sensation tracks each stroke. Low = instant response. High = adds a slight lag.",
+                "from_": 1.0, "to_": 4.0,
+                "min_label": "instant", "max_label": "slight lag",
+            },
+            {
+                "cv": "cv_pf_max",
+                "label": "Peak intensity",
+                "hint": "Maximum pulse rate at peak action. Higher = more intense at climax.",
+                "from_": 0.60, "to_": 1.0,
+                "min_label": "moderate peak", "max_label": "maximum",
+            },
+        ],
+    },
+    "Scene Builder": {
+        "description": "Builds gradually over the scene. Works well for longer content with a slow arc.",
+        "config": {
+            "alpha_beta_generation": {
+                "algorithm": "circular",
+                "min_distance_from_center": 0.15,
+                "points_per_second": 25,
+                "speed_threshold_percent": 50,
+            },
+            "frequency": {
+                "frequency_ramp_combine_ratio": 7.0,
+                "pulse_frequency_combine_ratio": 5.0,
+                "pulse_freq_min": 0.30,
+                "pulse_freq_max": 0.85,
+            },
+            "pulse": {
+                "pulse_width_min": 0.15,
+                "pulse_width_max": 0.45,
+                "pulse_rise_min": 0.20,
+                "pulse_rise_max": 0.70,
+            },
+        },
+        "sliders": [
+            {
+                "cv": "cv_freq_ramp_ratio",
+                "label": "Build speed",
+                "hint": "How slowly the scene builds. High = very gradual — ignores short spikes, follows the overall arc.",
+                "from_": 4.0, "to_": 10.0,
+                "min_label": "builds quickly", "max_label": "very slow arc",
+            },
+            {
+                "cv": "cv_min_dist",
+                "label": "Arc width",
+                "hint": "How wide the circular sweep is. Low = tight circle. High = broad sweep at the peak.",
+                "from_": 0.05, "to_": 0.45,
+                "min_label": "tight", "max_label": "broad",
+            },
+        ],
+    },
+    "Unpredictable": {
+        "description": "Random direction changes, varied character. Good for surprise content.",
+        "config": {
+            "alpha_beta_generation": {
+                "algorithm": "restim-original",
+                "min_distance_from_center": 0.20,
+                "points_per_second": 28,
+                "speed_threshold_percent": 55,
+            },
+            "frequency": {
+                "frequency_ramp_combine_ratio": 4.0,
+                "pulse_frequency_combine_ratio": 3.0,
+                "pulse_freq_min": 0.35,
+                "pulse_freq_max": 0.90,
+            },
+            "pulse": {
+                "pulse_width_min": 0.10,
+                "pulse_width_max": 0.50,
+                "pulse_rise_min": 0.00,
+                "pulse_rise_max": 0.60,
+            },
+        },
+        "sliders": [
+            {
+                "cv": "cv_min_dist",
+                "label": "Wildness",
+                "hint": "How far the random movement reaches. Low = subtle chaos. High = full-range unpredictability.",
+                "from_": 0.10, "to_": 0.50,
+                "min_label": "subtle chaos", "max_label": "full range",
+            },
+            {
+                "cv": "cv_pulse_freq_ratio",
+                "label": "Pulse variety",
+                "hint": "How much the pulse rate varies. Low = speed-driven changes. High = position adds more variation.",
+                "from_": 1.0, "to_": 8.0,
+                "min_label": "speed only", "max_label": "highly varied",
+            },
+        ],
+    },
+    "Balanced": {
+        "description": "Middle of everything. A good starting point for any content.",
+        "config": {
+            "alpha_beta_generation": {
+                "algorithm": "circular",
+                "min_distance_from_center": 0.15,
+                "points_per_second": 25,
+                "speed_threshold_percent": 50,
+            },
+            "frequency": {
+                "frequency_ramp_combine_ratio": 5.0,
+                "pulse_frequency_combine_ratio": 3.0,
+                "pulse_freq_min": 0.40,
+                "pulse_freq_max": 0.95,
+            },
+            "pulse": {
+                "pulse_width_min": 0.10,
+                "pulse_width_max": 0.45,
+                "pulse_rise_min": 0.00,
+                "pulse_rise_max": 0.80,
+            },
+        },
+        "sliders": [
+            {
+                "cv": "cv_min_dist",
+                "label": "Sweep width",
+                "hint": "How wide the sensation arc is. Low = centered and focused. High = sweeps edge to edge.",
+                "from_": 0.05, "to_": 0.50,
+                "min_label": "focused", "max_label": "edge to edge",
+            },
+            {
+                "cv": "cv_freq_ramp_ratio",
+                "label": "Reactive vs. gradual",
+                "hint": "The balance between tracking strokes and building slowly. Low = follows action. High = ignores spikes.",
+                "from_": 1.0, "to_": 8.0,
+                "min_label": "follows action", "max_label": "slow build",
+            },
+        ],
+    },
+}
+
+
+def list_presets(user_presets_path: Optional[str] = None) -> dict[str, dict]:
+    """
+    Return all available presets — built-in and user-defined.
+
+    User presets override built-ins with the same name.
+
+    Returns:
+        { name: { description, config, builtin: bool } }
+    """
+    result = {k: {**v, "builtin": True} for k, v in BUILTIN_PRESETS.items()}
+    user = load_user_presets(user_presets_path)
+    for name, preset in user.items():
+        result[name] = {**preset, "builtin": False}
+    return result
+
+
+def get_preset(name: str, user_presets_path: Optional[str] = None) -> dict:
+    """
+    Get a preset by name. Returns the full config merged with defaults.
+
+    Raises KeyError if not found.
+    """
+    all_presets = list_presets(user_presets_path)
+    if name not in all_presets:
+        raise KeyError(f"Preset '{name}' not found. Available: {list(all_presets)}")
+    preset_config = all_presets[name]["config"]
+    # Deep-merge preset over defaults so missing keys use defaults
+    import copy
+    config = get_default_config()
+    for section, values in preset_config.items():
+        if section in config:
+            config[section].update(values)
+        else:
+            config[section] = copy.deepcopy(values)
+    return config
+
+
+def load_user_presets(path: Optional[str] = None) -> dict:
+    """Load user-defined presets from disk. Returns {} if file doesn't exist."""
+    p = Path(path) if path else _USER_PRESETS_PATH
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def save_preset(name: str, config: dict, description: str = "",
+                path: Optional[str] = None) -> str:
+    """
+    Save a preset to the user presets file.
+
+    Extracts only the creative settings from config (algorithm, frequency,
+    pulse) — not infrastructure settings like volume or output mode.
+
+    Returns the path where presets were saved.
+    """
+    p = Path(path) if path else _USER_PRESETS_PATH
+    p.parent.mkdir(parents=True, exist_ok=True)
+
+    presets = load_user_presets(str(p))
+
+    # Extract only creative settings
+    creative_config = {}
+    for section in ("alpha_beta_generation", "frequency", "pulse", "prostate_generation",
+                    "positional_axes"):
+        if section in config:
+            creative_config[section] = config[section]
+
+    presets[name] = {
+        "description": description or f"User preset: {name}",
+        "config": creative_config,
+    }
+
+    p.write_text(json.dumps(presets, indent=2), encoding="utf-8")
+    return str(p)
 
 
 def process(path: str, config: dict, on_progress: Optional[Callable] = None) -> dict:
@@ -225,10 +539,9 @@ def preview_electrode_path(
         }
     """
     try:
-        alpha_y, beta_y = _upstream_preview_path(
+        alpha_y, beta_y = _geometric_preview_path(
             algorithm,
             min_distance_from_center,
-            speed_threshold_percent,
             points,
         )
         return {
