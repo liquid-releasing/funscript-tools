@@ -37,7 +37,11 @@ nav:
   - User Guide: USER_GUIDE.md
   - CLI Reference: CLI_REFERENCE.md
   - Examples: examples/README.md
-  - Design: DESIGN.md
+  - Architecture:
+    - Overview: ARCHITECTURE.md
+    - Diagrams: ARCHITECTURE_DIAGRAMS.md
+    - Project Schema: PROJECT_SCHEMA.md
+    - Design Notes: DESIGN.md
 
 plugins:
   - search
