@@ -30,9 +30,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg as FigureCanvas
 plt.style.use(["ggplot", "dark_background", "fast"])
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import ConfigManager
-from funscript import Funscript
-from processor import RestimProcessor
+from cli import get_default_config, list_outputs, load_file, process
 from ui.parameter_tabs import ParameterTabs
 
 try:
@@ -62,13 +60,12 @@ class ForgeWindow:
 
         # State
         self.input_file: Optional[Path] = None
-        self.source_funscript: Optional[Funscript] = None
+        self.source_data: Optional[dict] = None   # dict from cli.load_file
         self.output_files: Dict[str, Path] = {}
         self.selected_outputs: Dict[str, tk.BooleanVar] = {}
 
-        # Config
-        self.config_manager = ConfigManager()
-        self.current_config = self.config_manager.get_config()
+        # Config — plain dict, no upstream objects
+        self.current_config = get_default_config()
 
         # Progress
         self.progress_var = tk.IntVar(value=0)
@@ -248,7 +245,7 @@ class ForgeWindow:
         full_tab.columnconfigure(0, weight=1)
         full_tab.rowconfigure(0, weight=1)
 
-        self.parameter_tabs = ParameterTabs(full_tab, self.current_config)
+        self.parameter_tabs = ParameterTabs(full_tab, self.current_config)  # our UI widget, not upstream
         self.parameter_tabs.grid(row=0, column=0, sticky="nsew")
         self.parameter_tabs.set_mode_change_callback(lambda m: None)
         self.parameter_tabs.set_conversion_callbacks(
@@ -477,14 +474,14 @@ class ForgeWindow:
             self._update_after_preview(suffix)
 
     def _update_after_preview(self, suffix: str):
-        if not self.source_funscript:
+        if not self.source_data:
             return
         try:
-            fs = Funscript.from_file(self.output_files[suffix])
+            output_data = load_file(str(self.output_files[suffix]))
             self.after_label_frame.config(text=f"After — {suffix}")
             self._plot_comparison(
                 self.after_fig, self.after_mpl,
-                self.source_funscript, fs, suffix
+                self.source_data, output_data, suffix
             )
         except Exception as e:
             self._set_status(0, f"Preview error: {e}")
@@ -656,45 +653,41 @@ class ForgeWindow:
 
         def _do():
             try:
-                fs = Funscript.from_file(path)
-                self.root.after(0, lambda: self._on_file_loaded(path, fs))
+                info = load_file(str(path))
+                self.root.after(0, lambda: self._on_file_loaded(path, info))
             except Exception as e:
                 self.root.after(0, lambda: self._set_status(0, f"Failed to load: {e}"))
 
         threading.Thread(target=_do, daemon=True).start()
 
-    def _on_file_loaded(self, path: Path, fs: Funscript):
+    def _on_file_loaded(self, path: Path, info: dict):
         self.input_file = path
-        self.source_funscript = fs
+        self.source_data = info
 
-        self.lbl_filename.config(text=path.name)
-        self.lbl_actions.config(text=str(len(fs.x)))
-
-        duration_s = float(fs.x[-1]) if len(fs.x) > 0 else 0
-        m, s = int(duration_s // 60), int(duration_s % 60)
-        self.lbl_duration.config(text=f"{m:02d}:{s:02d}")
-
-        y_pct = fs.y * 100
-        self.lbl_range.config(text=f"{int(y_pct.min())} – {int(y_pct.max())}")
+        self.lbl_filename.config(text=info["name"])
+        self.lbl_actions.config(text=str(info["actions"]))
+        self.lbl_duration.config(text=info["duration_fmt"])
+        self.lbl_range.config(text=f"{int(info['pos_min'] * 100)} – {int(info['pos_max'] * 100)}")
 
         self.output_dir_var.set(str(path.parent))
 
-        # Plots
-        self._plot_funscript(self.input_fig, self.input_mpl, fs, "Input")
-        self._plot_funscript(self.before_fig, self.before_mpl, fs, "Original")
-        self._plot_funscript(self.review_before_fig, self.review_before_mpl, fs, "Original")
+        # Plots — pass info dict directly; _plot_funscript reads info["x"] / info["y"]
+        self._plot_funscript(self.input_fig, self.input_mpl, info, "Input")
+        self._plot_funscript(self.before_fig, self.before_mpl, info, "Original")
+        self._plot_funscript(self.review_before_fig, self.review_before_mpl, info, "Original")
 
-        self.drop_label.config(text=path.name)
+        self.drop_label.config(text=info["name"])
         self.notebook.tab(1, state="normal")
         self.btn_next_1.config(state="normal")
-        self._set_status(100, f"Loaded {path.name} — {len(fs.x)} actions, {m:02d}:{s:02d}")
+        self._set_status(100, f"Loaded {info['name']} — {info['actions']} actions, {info['duration_fmt']}")
 
     # ─── Visualization ────────────────────────────────────────────────────────
 
-    def _plot_funscript(self, fig: Figure, canvas: FigureCanvas, fs: Funscript, label: str):
+    def _plot_funscript(self, fig: Figure, canvas: FigureCanvas, data: dict, label: str):
+        """Plot a funscript waveform. data is the dict returned by cli.load_file."""
         fig.clear()
         ax = fig.add_subplot(111)
-        ax.plot(fs.x, fs.y * 100, linewidth=0.7, color="#4fc3f7", label=label)
+        ax.plot(data["x"], data["y"] * 100, linewidth=0.7, color="#4fc3f7", label=label)
         ax.set_ylim(0, 100)
         ax.set_xlabel("Time (s)", fontsize=8)
         ax.set_ylabel("Position", fontsize=8)
@@ -706,15 +699,16 @@ class ForgeWindow:
         self,
         fig: Figure,
         canvas: FigureCanvas,
-        original: Funscript,
-        processed: Funscript,
+        original: dict,
+        processed: dict,
         label: str,
     ):
+        """Overlay original vs processed waveform. Both are dicts from cli.load_file."""
         fig.clear()
         ax = fig.add_subplot(111)
-        ax.plot(original.x, original.y * 100, linewidth=0.5,
+        ax.plot(original["x"], original["y"] * 100, linewidth=0.5,
                 color="#555555", alpha=0.6, label="original")
-        ax.plot(processed.x, processed.y * 100, linewidth=0.8,
+        ax.plot(processed["x"], processed["y"] * 100, linewidth=0.8,
                 color="#4fc3f7", label=label)
         ax.set_ylim(0, 100)
         ax.legend(fontsize=7)
@@ -737,23 +731,14 @@ class ForgeWindow:
 
     def _run_processor(self):
         try:
-            processor = RestimProcessor(self.current_config)
-            success = processor.process(str(self.input_file), self._progress_callback)
-
-            if success:
-                custom = self.current_config.get("advanced", {}).get(
-                    "custom_output_directory", ""
-                ).strip()
-                output_dir = Path(custom) if custom else self.input_file.parent
-                stem = self.input_file.stem
-
-                outputs = {}
-                for p in output_dir.glob(f"{stem}.*.funscript"):
-                    suffix = p.name[len(stem) + 1: -len(".funscript")]
-                    outputs[suffix] = p
-
-                self.output_files = outputs
+            result = process(str(self.input_file), self.current_config, self._progress_callback)
+            if result["success"]:
+                self.output_files = {o["suffix"]: Path(o["path"]) for o in result["outputs"]}
                 self.root.after(0, self._on_processing_done)
+            else:
+                msg = result.get("error", "Unknown error")
+                self.root.after(0, lambda: self._set_status(0, f"Processing error: {msg}"))
+                self.root.after(0, lambda: self.btn_process.config(state="normal"))
         except Exception as e:
             msg = str(e)
             self.root.after(0, lambda: self._set_status(0, f"Processing error: {msg}"))
@@ -839,14 +824,14 @@ class ForgeWindow:
         self._preview_output(first_suffix, first_path)
 
     def _preview_output(self, suffix: str, path: Path):
-        if not self.source_funscript:
+        if not self.source_data:
             return
         try:
-            fs = Funscript.from_file(path)
+            output_data = load_file(str(path))
             self.review_after_lf.config(text=f"Output: {suffix}")
             self._plot_comparison(
                 self.review_after_fig, self.review_after_mpl,
-                self.source_funscript, fs, suffix
+                self.source_data, output_data, suffix
             )
         except Exception as e:
             self._set_status(0, f"Preview error: {e}")
@@ -913,7 +898,7 @@ class ForgeWindow:
 
     def _new_project(self):
         self.input_file = None
-        self.source_funscript = None
+        self.source_data = None
         self.output_files = {}
         self.selected_outputs = {}
 
