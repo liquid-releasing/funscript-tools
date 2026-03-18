@@ -1,0 +1,1721 @@
+etransform,parameter,value,fixture,delta_alpha,delta_beta,delta_pulse,delta_mean
+Gentle,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,113.2122,118.5875,33.5261,88.4419
+Gentle,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,113.2122,118.5875,33.5261,88.4419
+Gentle,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,31.7648,32.8024,12.7671,25.7781
+Gentle,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,31.7648,32.8024,12.7671,25.7781
+Gentle,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,89.2412,92.1303,32.1092,71.1603
+Gentle,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,89.2412,92.1303,32.1092,71.1603
+Gentle,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,177.2851,185.3942,44.7661,135.8151
+Gentle,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,177.2851,185.3942,44.7661,135.8151
+Gentle,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,270.1981,282.3137,53.9351,202.149
+Gentle,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,270.1981,282.3137,53.9351,202.149
+Gentle,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,363.7375,379.7512,63.293,268.9272
+Gentle,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,363.7375,379.7512,63.293,268.9272
+Gentle,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,456.5512,477.3824,75.5314,336.4884
+Gentle,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,456.5512,477.3824,75.5314,336.4884
+Gentle,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,550.2327,576.1736,84.1427,403.5163
+Gentle,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,550.2327,576.1736,84.1427,403.5163
+Gentle,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,643.3094,673.4367,91.3838,469.3766
+Gentle,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,643.3094,673.4367,91.3838,469.3766
+Gentle,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,736.4835,771.6988,100.2098,536.1307
+Gentle,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,736.4835,771.6988,100.2098,536.1307
+Gentle,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,2118.105,2245.8926,1127.0377,1830.3451
+Gentle,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,2118.105,2245.8926,1127.0377,1830.3451
+Gentle,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,2940.2939,2958.9067,1527.7021,2475.6343
+Gentle,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,2940.2939,2958.9067,1527.7021,2475.6343
+Gentle,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,3093.2581,3164.4241,1340.1992,2532.6271
+Gentle,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,3093.2581,3164.4241,1340.1992,2532.6271
+Gentle,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,2904.5325,3069.4043,1390.6638,2454.8669
+Gentle,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,2904.5325,3069.4043,1390.6638,2454.8669
+Gentle,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,3002.092,3102.6487,1210.6193,2438.4533
+Gentle,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,3002.092,3102.6487,1210.6193,2438.4533
+Gentle,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,3073.4785,3111.5935,1118.1458,2434.4059
+Gentle,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,3073.4785,3111.5935,1118.1458,2434.4059
+Gentle,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,775.2548,818.429,204.4138,599.3659
+Gentle,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,775.2548,818.429,204.4138,599.3659
+Gentle,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,361.288,351.5622,137.7171,283.5224
+Gentle,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,361.288,351.5622,137.7171,283.5224
+Gentle,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,181.1988,178.5133,106.419,155.377
+Gentle,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,181.1988,178.5133,106.419,155.377
+Gentle,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,594.6083,588.4395,156.205,446.4176
+Gentle,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,594.6083,588.4395,156.205,446.4176
+Gentle,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,879.5977,872.458,174.7198,642.2585
+Gentle,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,879.5977,872.458,174.7198,642.2585
+Gentle,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,1085.7924,1075.8323,188.5921,783.4056
+Gentle,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,1085.7924,1075.8323,188.5921,783.4056
+Gentle,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1964.8646,654.9549
+Gentle,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1964.8646,654.9549
+Gentle,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,700.1536,233.3845
+Gentle,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,700.1536,233.3845
+Gentle,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,287.8541,95.9514
+Gentle,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,287.8541,95.9514
+Gentle,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,109.252,36.4173
+Gentle,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,109.252,36.4173
+Gentle,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,17.72,5.9067
+Gentle,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,17.72,5.9067
+Gentle,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,74.0743,24.6914
+Gentle,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,74.0743,24.6914
+Gentle,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,107.2986,35.7662
+Gentle,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,107.2986,35.7662
+Gentle,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,132.4802,44.1601
+Gentle,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,132.4802,44.1601
+Gentle,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,1377.1641,459.0547
+Gentle,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,1377.1641,459.0547
+Gentle,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,457.0842,152.3614
+Gentle,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,457.0842,152.3614
+Gentle,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,465.2902,155.0967
+Gentle,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,465.2902,155.0967
+Gentle,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,1378.4905,459.4968
+Gentle,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,1378.4905,459.4968
+Gentle,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,2301.9189,767.3063
+Gentle,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,2301.9189,767.3063
+Gentle,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,3217.6963,1072.5654
+Gentle,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,3217.6963,1072.5654
+Gentle,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,4197.895,1399.2983
+Gentle,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,4197.895,1399.2983
+Gentle,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,897.4887,299.1629
+Gentle,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,897.4887,299.1629
+Gentle,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,454.5085,151.5028
+Gentle,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,454.5085,151.5028
+Gentle,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,451.8816,150.6272
+Gentle,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,451.8816,150.6272
+Gentle,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,900.8107,300.2702
+Gentle,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,900.8107,300.2702
+Gentle,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,1348.0249,449.3416
+Gentle,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,1348.0249,449.3416
+Gentle,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Gentle,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,92.7793,109.1055,29.7658,77.2168
+Gentle,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,92.7793,109.1055,29.7658,77.2168
+Gentle,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,26.9629,29.0689,8.4853,21.5057
+Gentle,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,26.9629,29.0689,8.4853,21.5057
+Gentle,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,72.9315,85.0176,29.1204,62.3565
+Gentle,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,72.9315,85.0176,29.1204,62.3565
+Gentle,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,143.3318,171.7469,41.8091,118.9626
+Gentle,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,143.3318,171.7469,41.8091,118.9626
+Gentle,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,217.0806,261.3063,51.0196,176.4689
+Gentle,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,217.0806,261.3063,51.0196,176.4689
+Gentle,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,291.7979,352.0838,58.9152,234.2656
+Gentle,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,291.7979,352.0838,58.9152,234.2656
+Gentle,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,366.542,441.9559,66.2797,291.5925
+Gentle,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,366.542,441.9559,66.2797,291.5925
+Gentle,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,442.433,533.076,73.2871,349.5987
+Gentle,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,442.433,533.076,73.2871,349.5987
+Gentle,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,517.435,623.4477,79.95,406.9442
+Gentle,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,517.435,623.4477,79.95,406.9442
+Gentle,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,591.646,713.8942,86.8562,464.1321
+Gentle,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,591.646,713.8942,86.8562,464.1321
+Gentle,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,2294.2009,2395.0681,1345.0547,2011.4412
+Gentle,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,2294.2009,2395.0681,1345.0547,2011.4412
+Gentle,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,3292.3579,3273.8452,1457.3208,2674.508
+Gentle,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,3292.3579,3273.8452,1457.3208,2674.508
+Gentle,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,3508.4946,3556.4241,1467.3585,2844.0924
+Gentle,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,3508.4946,3556.4241,1467.3585,2844.0924
+Gentle,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,3414.0642,3429.2229,1647.4028,2830.23
+Gentle,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,3414.0642,3429.2229,1647.4028,2830.23
+Gentle,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,3303.8721,3384.2925,1592.4886,2760.2177
+Gentle,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,3303.8721,3384.2925,1592.4886,2760.2177
+Gentle,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,3284.0718,3301.2847,1573.8237,2719.7267
+Gentle,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,3284.0718,3301.2847,1573.8237,2719.7267
+Gentle,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,619.8467,767.989,167.3708,518.4022
+Gentle,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,619.8467,767.989,167.3708,518.4022
+Gentle,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,347.013,359.0195,118.558,274.8635
+Gentle,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,347.013,359.0195,118.558,274.8635
+Gentle,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,150.2731,154.1687,79.4921,127.978
+Gentle,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,150.2731,154.1687,79.4921,127.978
+Gentle,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,498.591,508.5194,125.4472,377.5192
+Gentle,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,498.591,508.5194,125.4472,377.5192
+Gentle,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,756.9016,770.8794,144.8724,557.5511
+Gentle,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,756.9016,770.8794,144.8724,557.5511
+Gentle,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,973.636,989.7383,187.5447,716.973
+Gentle,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,973.636,989.7383,187.5447,716.973
+Gentle,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2001.2585,667.0862
+Gentle,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2001.2585,667.0862
+Gentle,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,846.9061,282.302
+Gentle,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,846.9061,282.302
+Gentle,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,341.9459,113.982
+Gentle,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,341.9459,113.982
+Gentle,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,129.9115,43.3038
+Gentle,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,129.9115,43.3038
+Gentle,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,20.3961,6.7987
+Gentle,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,20.3961,6.7987
+Gentle,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,82.0122,27.3374
+Gentle,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,82.0122,27.3374
+Gentle,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,124.2377,41.4126
+Gentle,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,124.2377,41.4126
+Gentle,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,152.1545,50.7182
+Gentle,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,152.1545,50.7182
+Gentle,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,1271.9207,423.9736
+Gentle,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,1271.9207,423.9736
+Gentle,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,426.9977,142.3326
+Gentle,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,426.9977,142.3326
+Gentle,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,426.9426,142.3142
+Gentle,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,426.9426,142.3142
+Gentle,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,1271.5986,423.8662
+Gentle,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,1271.5986,423.8662
+Gentle,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2116.5642,705.5214
+Gentle,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2116.5642,705.5214
+Gentle,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,2959.749,986.583
+Gentle,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,2959.749,986.583
+Gentle,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,3868.4744,1289.4915
+Gentle,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,3868.4744,1289.4915
+Gentle,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,1065.3234,355.1078
+Gentle,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,1065.3234,355.1078
+Gentle,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,535.3008,178.4336
+Gentle,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,535.3008,178.4336
+Gentle,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,532.9071,177.6357
+Gentle,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,532.9071,177.6357
+Gentle,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,1061.9949,353.9983
+Gentle,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,1061.9949,353.9983
+Gentle,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,1591.8329,530.611
+Gentle,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,1591.8329,530.611
+Gentle,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Gentle,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,325.8773,336.1057,85.7555,249.2461
+Reactive,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,325.8773,336.1057,85.7555,249.2461
+Reactive,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,178.5665,183.7471,63.561,141.9582
+Reactive,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,178.5665,183.7471,63.561,141.9582
+Reactive,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,44.9778,45.4643,26.2488,38.897
+Reactive,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,44.9778,45.4643,26.2488,38.897
+Reactive,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,140.6911,143.7637,58.3609,114.2719
+Reactive,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,140.6911,143.7637,58.3609,114.2719
+Reactive,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,289.6636,298.1493,81.2465,223.0198
+Reactive,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,289.6636,298.1493,81.2465,223.0198
+Reactive,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,438.4849,451.2394,101.1682,330.2975
+Reactive,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,438.4849,451.2394,101.1682,330.2975
+Reactive,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,590.9543,608.1661,119.7706,439.6303
+Reactive,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,590.9543,608.1661,119.7706,439.6303
+Reactive,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,740.9015,763.3734,142.5623,548.9457
+Reactive,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,740.9015,763.3734,142.5623,548.9457
+Reactive,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,892.5424,919.5428,164.4232,658.8362
+Reactive,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,892.5424,919.5428,164.4232,658.8362
+Reactive,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,1044.7354,1076.4924,187.0374,769.4217
+Reactive,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,1044.7354,1076.4924,187.0374,769.4217
+Reactive,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,1680.1051,1664.8892,854.4033,1399.7992
+Reactive,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,1680.1051,1664.8892,854.4033,1399.7992
+Reactive,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,2246.1689,2353.7402,1150.23,1916.7131
+Reactive,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,2246.1689,2353.7402,1150.23,1916.7131
+Reactive,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,2951.3916,2994.2725,1397.2183,2447.6274
+Reactive,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,2951.3916,2994.2725,1397.2183,2447.6274
+Reactive,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,3122.3462,3180.5386,1462.7634,2588.5494
+Reactive,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,3122.3462,3180.5386,1462.7634,2588.5494
+Reactive,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,3079.9819,3172.3867,1230.4503,2494.273
+Reactive,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,3079.9819,3172.3867,1230.4503,2494.273
+Reactive,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,2938.4727,3084.0415,1344.5829,2455.699
+Reactive,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,2938.4727,3084.0415,1344.5829,2455.699
+Reactive,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,1509.3243,1536.6077,327.8399,1124.5906
+Reactive,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,1509.3243,1536.6077,327.8399,1124.5906
+Reactive,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,1152.6053,1129.9393,325.9724,869.5057
+Reactive,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,1152.6053,1129.9393,325.9724,869.5057
+Reactive,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,620.478,613.8159,209.306,481.2
+Reactive,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,620.478,613.8159,209.306,481.2
+Reactive,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,138.2787,137.0,66.4304,113.903
+Reactive,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,138.2787,137.0,66.4304,113.903
+Reactive,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,218.4079,216.4694,89.1516,174.6763
+Reactive,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,218.4079,216.4694,89.1516,174.6763
+Reactive,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,459.8174,455.8256,191.4184,369.0205
+Reactive,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,459.8174,455.8256,191.4184,369.0205
+Reactive,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,2429.9045,809.9682
+Reactive,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,2429.9045,809.9682
+Reactive,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,107.0187,35.6729
+Reactive,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,107.0187,35.6729
+Reactive,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,417.4818,139.1606
+Reactive,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,417.4818,139.1606
+Reactive,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,601.5912,200.5304
+Reactive,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,601.5912,200.5304
+Reactive,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,703.2653,234.4218
+Reactive,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,703.2653,234.4218
+Reactive,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,760.8791,253.6264
+Reactive,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,760.8791,253.6264
+Reactive,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,802.3484,267.4495
+Reactive,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,802.3484,267.4495
+Reactive,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,834.9042,278.3014
+Reactive,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,834.9042,278.3014
+Reactive,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,4454.335,1484.7783
+Reactive,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,4454.335,1484.7783
+Reactive,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,3341.6199,1113.8733
+Reactive,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,3341.6199,1113.8733
+Reactive,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,2228.2739,742.758
+Reactive,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,2228.2739,742.758
+Reactive,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,1114.3721,371.4574
+Reactive,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,1114.3721,371.4574
+Reactive,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,1115.5671,371.8557
+Reactive,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,1115.5671,371.8557
+Reactive,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,2228.6006,742.8669
+Reactive,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,2228.6006,742.8669
+Reactive,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1984.613,661.5377
+Reactive,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1984.613,661.5377
+Reactive,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,1600.7095,533.5698
+Reactive,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,1600.7095,533.5698
+Reactive,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,1144.0266,381.3422
+Reactive,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,1144.0266,381.3422
+Reactive,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,683.382,227.794
+Reactive,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,683.382,227.794
+Reactive,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,233.8033,77.9344
+Reactive,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,233.8033,77.9344
+Reactive,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,234.7339,78.2446
+Reactive,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,234.7339,78.2446
+Reactive,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Reactive,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,275.1563,316.5059,105.1285,232.2636
+Reactive,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,275.1563,316.5059,105.1285,232.2636
+Reactive,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,151.2316,172.4326,74.8599,132.8414
+Reactive,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,151.2316,172.4326,74.8599,132.8414
+Reactive,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,38.6005,42.4617,25.4362,35.4995
+Reactive,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,38.6005,42.4617,25.4362,35.4995
+Reactive,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,119.256,135.3145,73.4779,109.3495
+Reactive,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,119.256,135.3145,73.4779,109.3495
+Reactive,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,243.7478,278.7885,103.3005,208.6123
+Reactive,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,243.7478,278.7885,103.3005,208.6123
+Reactive,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,369.3846,424.376,127.0905,306.9504
+Reactive,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,369.3846,424.376,127.0905,306.9504
+Reactive,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,496.2328,570.9116,152.345,406.4965
+Reactive,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,496.2328,570.9116,152.345,406.4965
+Reactive,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,623.3867,718.2416,180.6433,507.4239
+Reactive,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,623.3867,718.2416,180.6433,507.4239
+Reactive,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,751.1245,864.4385,203.8406,606.4679
+Reactive,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,751.1245,864.4385,203.8406,606.4679
+Reactive,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,879.1422,1011.5676,229.9587,706.8895
+Reactive,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,879.1422,1011.5676,229.9587,706.8895
+Reactive,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,1960.203,1979.8835,1084.7456,1674.9441
+Reactive,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,1960.203,1979.8835,1084.7456,1674.9441
+Reactive,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,2915.6379,2942.4341,1320.8883,2392.9868
+Reactive,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,2915.6379,2942.4341,1320.8883,2392.9868
+Reactive,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,3574.094,3531.4521,1435.915,2847.1537
+Reactive,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,3574.094,3531.4521,1435.915,2847.1537
+Reactive,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,3772.5244,3784.1282,1505.7935,3020.8153
+Reactive,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,3772.5244,3784.1282,1505.7935,3020.8153
+Reactive,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,3882.8247,3907.2339,1436.0411,3075.3666
+Reactive,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,3882.8247,3907.2339,1436.0411,3075.3666
+Reactive,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,3848.7034,3875.4126,1568.4174,3097.5111
+Reactive,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,3848.7034,3875.4126,1568.4174,3097.5111
+Reactive,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,1301.2701,1458.9304,341.1466,1033.7824
+Reactive,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,1301.2701,1458.9304,341.1466,1033.7824
+Reactive,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,1052.6566,1073.0195,300.4696,808.7153
+Reactive,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,1052.6566,1073.0195,300.4696,808.7153
+Reactive,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,528.2017,536.124,206.5938,423.6398
+Reactive,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,528.2017,536.124,206.5938,423.6398
+Reactive,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,120.9132,122.4786,112.907,118.7663
+Reactive,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,120.9132,122.4786,112.907,118.7663
+Reactive,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,245.1673,247.5278,144.9724,212.5558
+Reactive,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,245.1673,247.5278,144.9724,212.5558
+Reactive,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,529.8132,533.705,256.2206,439.9129
+Reactive,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,529.8132,533.705,256.2206,439.9129
+Reactive,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2282.7664,760.9221
+Reactive,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2282.7664,760.9221
+Reactive,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,121.8031,40.601
+Reactive,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,121.8031,40.601
+Reactive,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,508.9362,169.6454
+Reactive,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,508.9362,169.6454
+Reactive,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,739.0623,246.3541
+Reactive,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,739.0623,246.3541
+Reactive,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,859.1862,286.3954
+Reactive,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,859.1862,286.3954
+Reactive,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,933.72,311.24
+Reactive,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,933.72,311.24
+Reactive,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,985.199,328.3997
+Reactive,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,985.199,328.3997
+Reactive,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,1016.3312,338.7771
+Reactive,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,1016.3312,338.7771
+Reactive,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,4279.2559,1426.4186
+Reactive,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,4279.2559,1426.4186
+Reactive,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,3210.3372,1070.1124
+Reactive,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,3210.3372,1070.1124
+Reactive,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,2140.1836,713.3945
+Reactive,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,2140.1836,713.3945
+Reactive,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,1071.5405,357.1802
+Reactive,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,1071.5405,357.1802
+Reactive,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,1070.5695,356.8565
+Reactive,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,1070.5695,356.8565
+Reactive,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,2143.0894,714.3631
+Reactive,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,2143.0894,714.3631
+Reactive,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2221.7378,740.5793
+Reactive,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2221.7378,740.5793
+Reactive,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,1780.2871,593.429
+Reactive,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,1780.2871,593.429
+Reactive,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,1271.7578,423.9193
+Reactive,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,1271.7578,423.9193
+Reactive,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,762.7057,254.2352
+Reactive,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,762.7057,254.2352
+Reactive,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,259.9077,86.6359
+Reactive,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,259.9077,86.6359
+Reactive,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,261.113,87.0377
+Reactive,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,261.113,87.0377
+Reactive,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Reactive,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,105.8489,274.6543,47.4974,142.6669
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,105.8489,274.6543,47.4974,142.6669
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,58.1979,117.2945,32.2955,69.2626
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,58.1979,117.2945,32.2955,69.2626
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,42.7434,73.1095,16.8819,44.245
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,42.7434,73.1095,16.8819,44.245
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,90.956,226.7752,42.9535,120.2282
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,90.956,226.7752,42.9535,120.2282
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,149.0939,390.2205,57.8965,199.0703
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,149.0939,390.2205,57.8965,199.0703
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,205.7207,555.2216,66.5132,275.8185
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,205.7207,555.2216,66.5132,275.8185
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,263.2945,721.4458,79.3725,354.7043
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,263.2945,721.4458,79.3725,354.7043
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,320.0063,886.2957,91.4221,432.5747
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,320.0063,886.2957,91.4221,432.5747
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,382.5846,1050.1733,102.8445,511.8675
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,382.5846,1050.1733,102.8445,511.8675
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,442.7765,1214.1379,110.1363,589.0169
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,442.7765,1214.1379,110.1363,589.0169
+Scene Builder,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,1895.0591,1067.4835,1143.7451,1368.7626
+Scene Builder,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,1895.0591,1067.4835,1143.7451,1368.7626
+Scene Builder,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,2565.2229,1576.2455,1532.7472,1891.4052
+Scene Builder,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,2565.2229,1576.2455,1532.7472,1891.4052
+Scene Builder,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,3102.5149,1525.3298,1402.9465,2010.2638
+Scene Builder,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,3102.5149,1525.3298,1402.9465,2010.2638
+Scene Builder,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,3020.9277,1766.2701,1726.2954,2171.1644
+Scene Builder,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,3020.9277,1766.2701,1726.2954,2171.1644
+Scene Builder,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,2806.905,1911.3561,1847.9786,2188.7466
+Scene Builder,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,2806.905,1911.3561,1847.9786,2188.7466
+Scene Builder,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,2850.3027,1778.3475,1728.5581,2119.0695
+Scene Builder,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,2850.3027,1778.3475,1728.5581,2119.0695
+Scene Builder,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,663.1968,1514.2159,116.056,764.4896
+Scene Builder,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,663.1968,1514.2159,116.056,764.4896
+Scene Builder,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,487.3233,978.6838,89.2132,518.4068
+Scene Builder,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,487.3233,978.6838,89.2132,518.4068
+Scene Builder,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,178.0534,316.1898,50.3587,181.534
+Scene Builder,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,178.0534,316.1898,50.3587,181.534
+Scene Builder,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,157.121,271.8327,48.5386,159.1641
+Scene Builder,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,157.121,271.8327,48.5386,159.1641
+Scene Builder,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,372.6164,667.3185,82.801,374.2453
+Scene Builder,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,372.6164,667.3185,82.801,374.2453
+Scene Builder,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,531.6823,951.1262,182.4692,555.0925
+Scene Builder,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,531.6823,951.1262,182.4692,555.0925
+Scene Builder,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,3230.5166,1076.8389
+Scene Builder,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,3230.5166,1076.8389
+Scene Builder,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,740.9393,246.9798
+Scene Builder,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,740.9393,246.9798
+Scene Builder,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,235.2764,78.4255
+Scene Builder,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,235.2764,78.4255
+Scene Builder,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,64.1561,21.3854
+Scene Builder,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,64.1561,21.3854
+Scene Builder,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,87.4185,29.1395
+Scene Builder,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,87.4185,29.1395
+Scene Builder,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,137.4263,45.8088
+Scene Builder,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,137.4263,45.8088
+Scene Builder,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,176.2583,58.7528
+Scene Builder,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,176.2583,58.7528
+Scene Builder,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,205.6818,68.5606
+Scene Builder,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,205.6818,68.5606
+Scene Builder,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,1916.1052,638.7017
+Scene Builder,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,1916.1052,638.7017
+Scene Builder,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,957.4664,319.1555
+Scene Builder,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,957.4664,319.1555
+Scene Builder,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,960.5014,320.1671
+Scene Builder,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,960.5014,320.1671
+Scene Builder,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1917.5189,639.173
+Scene Builder,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1917.5189,639.173
+Scene Builder,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,2877.1982,959.0661
+Scene Builder,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,2877.1982,959.0661
+Scene Builder,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,3834.7197,1278.2399
+Scene Builder,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,3834.7197,1278.2399
+Scene Builder,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1848.6233,616.2078
+Scene Builder,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,1848.6233,616.2078
+Scene Builder,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,1321.2528,440.4176
+Scene Builder,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,1321.2528,440.4176
+Scene Builder,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,791.9647,263.9882
+Scene Builder,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,791.9647,263.9882
+Scene Builder,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,267.2733,89.0911
+Scene Builder,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,267.2733,89.0911
+Scene Builder,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,272.8553,90.9518
+Scene Builder,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,272.8553,90.9518
+Scene Builder,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,796.3404,265.4468
+Scene Builder,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,796.3404,265.4468
+Scene Builder,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,112.7963,234.5592,50.309,132.5548
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,112.7963,234.5592,50.309,132.5548
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,56.2317,99.7798,31.5595,62.5236
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,56.2317,99.7798,31.5595,62.5236
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,41.821,66.2948,16.6733,41.5964
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,41.821,66.2948,16.6733,41.5964
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,95.7914,197.8863,42.8952,112.191
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,95.7914,197.8863,42.8952,112.191
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,157.0764,336.7536,57.7581,183.8627
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,157.0764,336.7536,57.7581,183.8627
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,219.3262,477.4254,69.1375,255.2964
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,219.3262,477.4254,69.1375,255.2964
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,282.2818,618.8748,77.4016,326.186
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,282.2818,618.8748,77.4016,326.186
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,345.9624,760.8693,89.7441,398.8586
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,345.9624,760.8693,89.7441,398.8586
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,410.2536,901.4866,102.3621,471.3674
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,410.2536,901.4866,102.3621,471.3674
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,473.7404,1043.5118,111.0676,542.7733
+Scene Builder,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,473.7404,1043.5118,111.0676,542.7733
+Scene Builder,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,2135.0708,1118.0568,1551.1763,1601.4346
+Scene Builder,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,2135.0708,1118.0568,1551.1763,1601.4346
+Scene Builder,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,3140.2212,1652.5148,1728.6564,2173.7974
+Scene Builder,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,3140.2212,1652.5148,1728.6564,2173.7974
+Scene Builder,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,3171.6577,1546.9849,1320.9625,2013.2017
+Scene Builder,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,3171.6577,1546.9849,1320.9625,2013.2017
+Scene Builder,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,3693.7471,1897.9031,1959.9845,2517.2115
+Scene Builder,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,3693.7471,1897.9031,1959.9845,2517.2115
+Scene Builder,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,3567.8276,1905.2155,2165.781,2546.2747
+Scene Builder,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,3567.8276,1905.2155,2165.781,2546.2747
+Scene Builder,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,3583.6096,1955.1777,2091.0195,2543.269
+Scene Builder,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,3583.6096,1955.1777,2091.0195,2543.269
+Scene Builder,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,668.4639,1339.187,121.0744,709.5751
+Scene Builder,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,668.4639,1339.187,121.0744,709.5751
+Scene Builder,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,472.4331,933.4865,99.5942,501.8379
+Scene Builder,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,472.4331,933.4865,99.5942,501.8379
+Scene Builder,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,154.4701,280.0696,44.9333,159.8243
+Scene Builder,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,154.4701,280.0696,44.9333,159.8243
+Scene Builder,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,127.4794,226.4906,41.1339,131.7013
+Scene Builder,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,127.4794,226.4906,41.1339,131.7013
+Scene Builder,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,345.6978,596.4067,84.1903,342.0983
+Scene Builder,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,345.6978,596.4067,84.1903,342.0983
+Scene Builder,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,544.5383,901.2708,165.5506,537.1199
+Scene Builder,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,544.5383,901.2708,165.5506,537.1199
+Scene Builder,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,3092.2173,1030.7391
+Scene Builder,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,3092.2173,1030.7391
+Scene Builder,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,889.5015,296.5005
+Scene Builder,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,889.5015,296.5005
+Scene Builder,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,280.8024,93.6008
+Scene Builder,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,280.8024,93.6008
+Scene Builder,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,71.2461,23.7487
+Scene Builder,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,71.2461,23.7487
+Scene Builder,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,93.7337,31.2446
+Scene Builder,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,93.7337,31.2446
+Scene Builder,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,156.8407,52.2802
+Scene Builder,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,156.8407,52.2802
+Scene Builder,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,203.0369,67.679
+Scene Builder,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,203.0369,67.679
+Scene Builder,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,237.5374,79.1791
+Scene Builder,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,237.5374,79.1791
+Scene Builder,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,1771.7317,590.5772
+Scene Builder,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,1771.7317,590.5772
+Scene Builder,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,887.5697,295.8566
+Scene Builder,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,887.5697,295.8566
+Scene Builder,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,886.7034,295.5678
+Scene Builder,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,886.7034,295.5678
+Scene Builder,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,1769.1498,589.7166
+Scene Builder,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,1769.1498,589.7166
+Scene Builder,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,2653.5513,884.5171
+Scene Builder,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,2653.5513,884.5171
+Scene Builder,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,3541.0769,1180.359
+Scene Builder,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,3541.0769,1180.359
+Scene Builder,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2162.4751,720.825
+Scene Builder,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,2162.4751,720.825
+Scene Builder,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,1546.2855,515.4285
+Scene Builder,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,1546.2855,515.4285
+Scene Builder,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,927.9914,309.3305
+Scene Builder,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,927.9914,309.3305
+Scene Builder,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,314.9968,104.9989
+Scene Builder,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,314.9968,104.9989
+Scene Builder,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,312.9041,104.3014
+Scene Builder,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,312.9041,104.3014
+Scene Builder,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,926.4707,308.8236
+Scene Builder,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,926.4707,308.8236
+Scene Builder,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Scene Builder,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,0.0,2658.7161,0.0,886.2387
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,0.0,2658.7161,0.0,886.2387
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,0.0,2666.3447,0.0,888.7816
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,0.0,2666.3447,0.0,888.7816
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,0.0,2679.0977,0.0,893.0326
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,0.0,2679.0977,0.0,893.0326
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,0.0,2643.7188,0.0,881.2396
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,0.0,2643.7188,0.0,881.2396
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,0.0,2656.3442,0.0,885.4481
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,0.0,2656.3442,0.0,885.4481
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,0.0,2687.8616,0.0,895.9539
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,0.0,2687.8616,0.0,895.9539
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,0.0,2649.1846,0.0,883.0615
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,0.0,2649.1846,0.0,883.0615
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,0.0,2794.0938,0.0,931.3646
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,0.0,2794.0938,0.0,931.3646
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,0.0,2642.0752,0.0,880.6917
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,0.0,2642.0752,0.0,880.6917
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,0.0,2651.4294,0.0,883.8098
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,0.0,2651.4294,0.0,883.8098
+Unpredictable,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,0.0,2516.8601,0.0,838.9534
+Unpredictable,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,0.0,2516.8601,0.0,838.9534
+Unpredictable,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,0.0,2761.6819,0.0,920.5606
+Unpredictable,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,0.0,2761.6819,0.0,920.5606
+Unpredictable,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,0.0,2521.2329,0.0,840.411
+Unpredictable,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,0.0,2521.2329,0.0,840.411
+Unpredictable,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,0.0,2653.3301,0.0,884.4434
+Unpredictable,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,0.0,2653.3301,0.0,884.4434
+Unpredictable,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,0.0,2813.635,0.0,937.8783
+Unpredictable,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,0.0,2813.635,0.0,937.8783
+Unpredictable,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,0.0,2731.48,0.0,910.4933
+Unpredictable,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,0.0,2731.48,0.0,910.4933
+Unpredictable,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,0.0,2552.6228,0.0,850.8743
+Unpredictable,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,0.0,2552.6228,0.0,850.8743
+Unpredictable,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,0.0,2628.8428,0.0,876.2809
+Unpredictable,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,0.0,2628.8428,0.0,876.2809
+Unpredictable,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,0.0,2553.665,0.0,851.2217
+Unpredictable,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,0.0,2553.665,0.0,851.2217
+Unpredictable,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,0.0,2708.365,0.0,902.7883
+Unpredictable,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,0.0,2708.365,0.0,902.7883
+Unpredictable,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,0.0,2652.9839,0.0,884.328
+Unpredictable,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,0.0,2652.9839,0.0,884.328
+Unpredictable,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,0.0,2632.7839,0.0,877.5946
+Unpredictable,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,0.0,2632.7839,0.0,877.5946
+Unpredictable,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,2718.5859,0.0,906.1953
+Unpredictable,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,2718.5859,0.0,906.1953
+Unpredictable,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,2732.5032,0.0,910.8344
+Unpredictable,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,2732.5032,0.0,910.8344
+Unpredictable,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,2635.3999,0.0,878.4666
+Unpredictable,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,2635.3999,0.0,878.4666
+Unpredictable,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,2605.8054,0.0,868.6018
+Unpredictable,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,2605.8054,0.0,868.6018
+Unpredictable,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,2603.8938,0.0,867.9646
+Unpredictable,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,2603.8938,0.0,867.9646
+Unpredictable,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,2796.9856,0.0,932.3285
+Unpredictable,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,2796.9856,0.0,932.3285
+Unpredictable,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,2699.0398,0.0,899.6799
+Unpredictable,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,2699.0398,0.0,899.6799
+Unpredictable,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,2645.0208,0.0,881.6736
+Unpredictable,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,2645.0208,0.0,881.6736
+Unpredictable,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,2646.8108,0.0,882.2703
+Unpredictable,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,2646.8108,0.0,882.2703
+Unpredictable,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,2522.741,0.0,840.9137
+Unpredictable,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,2522.741,0.0,840.9137
+Unpredictable,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,2571.1646,2208.0361,1593.0669
+Unpredictable,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,2571.1646,2208.0361,1593.0669
+Unpredictable,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,2506.5825,434.7816,980.4547
+Unpredictable,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,2506.5825,434.7816,980.4547
+Unpredictable,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,2651.1626,69.7997,906.9874
+Unpredictable,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,2651.1626,69.7997,906.9874
+Unpredictable,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,2756.8228,234.5677,997.1301
+Unpredictable,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,2756.8228,234.5677,997.1301
+Unpredictable,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,2722.7217,332.0105,1018.2441
+Unpredictable,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,2722.7217,332.0105,1018.2441
+Unpredictable,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,2733.5166,391.2327,1041.5831
+Unpredictable,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,2733.5166,391.2327,1041.5831
+Unpredictable,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,2685.7537,431.8264,1039.1933
+Unpredictable,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,2685.7537,431.8264,1039.1933
+Unpredictable,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,2597.6665,462.1331,1019.9332
+Unpredictable,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,2597.6665,462.1331,1019.9332
+Unpredictable,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,2843.7241,1961.1454,1601.6232
+Unpredictable,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,2843.7241,1961.1454,1601.6232
+Unpredictable,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,2640.2605,1176.1786,1272.1464
+Unpredictable,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,2640.2605,1176.1786,1272.1464
+Unpredictable,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,2726.4868,395.2012,1040.5627
+Unpredictable,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,2726.4868,395.2012,1040.5627
+Unpredictable,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,2602.9854,396.3748,999.7867
+Unpredictable,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,2602.9854,396.3748,999.7867
+Unpredictable,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,2578.6326,1177.6222,1252.0849
+Unpredictable,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,2578.6326,1177.6222,1252.0849
+Unpredictable,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,2688.0964,1960.5078,1549.5347
+Unpredictable,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,2688.0964,1960.5078,1549.5347
+Unpredictable,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,2681.5801,2745.1873,1808.9224
+Unpredictable,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,2681.5801,2745.1873,1808.9224
+Unpredictable,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,2844.2153,1970.2606,1604.8253
+Unpredictable,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,2844.2153,1970.2606,1604.8253
+Unpredictable,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,2780.2859,1477.4938,1419.2599
+Unpredictable,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,2780.2859,1477.4938,1419.2599
+Unpredictable,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,2718.1682,983.9644,1234.0442
+Unpredictable,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,2718.1682,983.9644,1234.0442
+Unpredictable,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,2730.323,494.9556,1075.0929
+Unpredictable,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,2730.323,494.9556,1075.0929
+Unpredictable,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,2762.6836,0.0,920.8945
+Unpredictable,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,2762.6836,0.0,920.8945
+Unpredictable,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,2684.834,493.4096,1059.4145
+Unpredictable,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,2684.834,493.4096,1059.4145
+Unpredictable,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,2795.116,0.0,931.7053
+Unpredictable,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,2795.116,0.0,931.7053
+Unpredictable,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,2577.2227,0.0,859.0742
+Unpredictable,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,2577.2227,0.0,859.0742
+Unpredictable,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,2700.5303,0.0,900.1768
+Unpredictable,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,2700.5303,0.0,900.1768
+Unpredictable,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,2674.1514,0.0,891.3838
+Unpredictable,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,2674.1514,0.0,891.3838
+Unpredictable,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,2661.4319,0.0,887.144
+Unpredictable,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,2661.4319,0.0,887.144
+Unpredictable,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,2715.6472,0.0,905.2157
+Unpredictable,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,2715.6472,0.0,905.2157
+Unpredictable,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,2722.731,0.0,907.577
+Unpredictable,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,2722.731,0.0,907.577
+Unpredictable,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,2521.7981,0.0,840.5994
+Unpredictable,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,2521.7981,0.0,840.5994
+Unpredictable,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,2652.7715,0.0,884.2572
+Unpredictable,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,2652.7715,0.0,884.2572
+Unpredictable,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,2712.4155,0.0,904.1385
+Unpredictable,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,2712.4155,0.0,904.1385
+Unpredictable,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,2650.9482,0.0,883.6494
+Unpredictable,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,2650.9482,0.0,883.6494
+Unpredictable,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,2707.6375,0.0,902.5458
+Unpredictable,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,2707.6375,0.0,902.5458
+Unpredictable,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,2672.3904,0.0,890.7968
+Unpredictable,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,2672.3904,0.0,890.7968
+Unpredictable,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,2671.1768,0.0,890.3923
+Unpredictable,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,2671.1768,0.0,890.3923
+Unpredictable,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,2784.3657,0.0,928.1219
+Unpredictable,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,2784.3657,0.0,928.1219
+Unpredictable,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,2680.0376,0.0,893.3459
+Unpredictable,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,2680.0376,0.0,893.3459
+Unpredictable,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,2673.5193,0.0,891.1731
+Unpredictable,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,2673.5193,0.0,891.1731
+Unpredictable,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,2796.6987,0.0,932.2329
+Unpredictable,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,2796.6987,0.0,932.2329
+Unpredictable,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,2628.0383,0.0,876.0128
+Unpredictable,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,2628.0383,0.0,876.0128
+Unpredictable,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,2796.3049,0.0,932.1016
+Unpredictable,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,2796.3049,0.0,932.1016
+Unpredictable,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,2768.1865,0.0,922.7288
+Unpredictable,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,2768.1865,0.0,922.7288
+Unpredictable,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,2549.0564,0.0,849.6855
+Unpredictable,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,2549.0564,0.0,849.6855
+Unpredictable,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,2750.5354,0.0,916.8451
+Unpredictable,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,2750.5354,0.0,916.8451
+Unpredictable,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,2702.7026,0.0,900.9009
+Unpredictable,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,2702.7026,0.0,900.9009
+Unpredictable,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,2574.1003,0.0,858.0334
+Unpredictable,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,2574.1003,0.0,858.0334
+Unpredictable,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,2707.927,0.0,902.6423
+Unpredictable,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,2707.927,0.0,902.6423
+Unpredictable,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,2689.3748,0.0,896.4583
+Unpredictable,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,2689.3748,0.0,896.4583
+Unpredictable,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,2606.9089,0.0,868.9696
+Unpredictable,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,2606.9089,0.0,868.9696
+Unpredictable,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,2692.4878,0.0,897.4959
+Unpredictable,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,2692.4878,0.0,897.4959
+Unpredictable,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,2733.0181,0.0,911.006
+Unpredictable,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,2733.0181,0.0,911.006
+Unpredictable,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,2690.5334,0.0,896.8445
+Unpredictable,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,2690.5334,0.0,896.8445
+Unpredictable,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,2687.4705,0.0,895.8235
+Unpredictable,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,2687.4705,0.0,895.8235
+Unpredictable,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,2593.7869,0.0,864.5956
+Unpredictable,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,2593.7869,0.0,864.5956
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,0.0,2815.0688,0.0,938.3563
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,0.0,2815.0688,0.0,938.3563
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,0.0,2734.6165,0.0,911.5388
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,0.0,2734.6165,0.0,911.5388
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,0.0,2755.4661,0.0,918.4887
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,0.0,2755.4661,0.0,918.4887
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,0.0,2816.5,0.0,938.8333
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,0.0,2816.5,0.0,938.8333
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,0.0,2766.6707,0.0,922.2236
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,0.0,2766.6707,0.0,922.2236
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,0.0,2830.0942,0.0,943.3647
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,0.0,2830.0942,0.0,943.3647
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,0.0,2796.8757,0.0,932.2919
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,0.0,2796.8757,0.0,932.2919
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,0.0,2737.1062,0.0,912.3687
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,0.0,2737.1062,0.0,912.3687
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,0.0,2771.8975,0.0,923.9658
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,0.0,2771.8975,0.0,923.9658
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,0.0,2807.7834,0.0,935.9278
+Unpredictable,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,0.0,2807.7834,0.0,935.9278
+Unpredictable,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,0.0,2792.7722,0.0,930.9241
+Unpredictable,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,0.0,2792.7722,0.0,930.9241
+Unpredictable,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,0.0,2821.9551,0.0,940.6517
+Unpredictable,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,0.0,2821.9551,0.0,940.6517
+Unpredictable,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,0.0,2882.2632,0.0,960.7544
+Unpredictable,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,0.0,2882.2632,0.0,960.7544
+Unpredictable,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,0.0,2659.2864,0.0,886.4288
+Unpredictable,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,0.0,2659.2864,0.0,886.4288
+Unpredictable,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,0.0,2854.7778,0.0,951.5926
+Unpredictable,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,0.0,2854.7778,0.0,951.5926
+Unpredictable,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,0.0,2827.9119,0.0,942.6373
+Unpredictable,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,0.0,2827.9119,0.0,942.6373
+Unpredictable,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,0.0,2949.7083,0.0,983.2361
+Unpredictable,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,0.0,2949.7083,0.0,983.2361
+Unpredictable,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,0.0,2838.3999,0.0,946.1333
+Unpredictable,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,0.0,2838.3999,0.0,946.1333
+Unpredictable,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,0.0,2836.4321,0.0,945.4774
+Unpredictable,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,0.0,2836.4321,0.0,945.4774
+Unpredictable,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,0.0,2837.6382,0.0,945.8794
+Unpredictable,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,0.0,2837.6382,0.0,945.8794
+Unpredictable,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,0.0,2823.1108,0.0,941.0369
+Unpredictable,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,0.0,2823.1108,0.0,941.0369
+Unpredictable,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,0.0,2854.9558,0.0,951.6519
+Unpredictable,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,0.0,2854.9558,0.0,951.6519
+Unpredictable,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,2730.6729,0.0,910.2243
+Unpredictable,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,2730.6729,0.0,910.2243
+Unpredictable,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,2831.7273,0.0,943.9091
+Unpredictable,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,2831.7273,0.0,943.9091
+Unpredictable,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,2896.3374,0.0,965.4458
+Unpredictable,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,2896.3374,0.0,965.4458
+Unpredictable,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,2841.5881,0.0,947.196
+Unpredictable,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,2841.5881,0.0,947.196
+Unpredictable,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,2645.0095,0.0,881.6698
+Unpredictable,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,2645.0095,0.0,881.6698
+Unpredictable,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,2742.1594,0.0,914.0531
+Unpredictable,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,2742.1594,0.0,914.0531
+Unpredictable,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,2754.6672,0.0,918.2224
+Unpredictable,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,2754.6672,0.0,918.2224
+Unpredictable,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,2703.7312,0.0,901.2437
+Unpredictable,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,2703.7312,0.0,901.2437
+Unpredictable,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,2820.823,0.0,940.2743
+Unpredictable,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,2820.823,0.0,940.2743
+Unpredictable,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,2929.8411,0.0,976.6137
+Unpredictable,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,2929.8411,0.0,976.6137
+Unpredictable,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,2875.0537,2199.292,1691.4486
+Unpredictable,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,2875.0537,2199.292,1691.4486
+Unpredictable,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,2926.2236,503.4878,1143.2372
+Unpredictable,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,2926.2236,503.4878,1143.2372
+Unpredictable,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,2795.4595,72.8354,956.0983
+Unpredictable,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,2795.4595,72.8354,956.0983
+Unpredictable,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,2717.0852,267.2471,994.7774
+Unpredictable,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,2717.0852,267.2471,994.7774
+Unpredictable,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,2878.4536,376.3894,1084.9477
+Unpredictable,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,2878.4536,376.3894,1084.9477
+Unpredictable,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,2854.2871,444.8224,1099.7032
+Unpredictable,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,2854.2871,444.8224,1099.7032
+Unpredictable,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,2796.1672,490.6108,1095.5927
+Unpredictable,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,2796.1672,490.6108,1095.5927
+Unpredictable,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,2850.9241,523.9389,1124.9543
+Unpredictable,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,2850.9241,523.9389,1124.9543
+Unpredictable,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,2819.0461,1792.6079,1537.218
+Unpredictable,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,2819.0461,1792.6079,1537.218
+Unpredictable,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,2855.4622,1075.2549,1310.239
+Unpredictable,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,2855.4622,1075.2549,1310.239
+Unpredictable,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,2774.8411,361.6338,1045.4916
+Unpredictable,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,0.0,2774.8411,361.6338,1045.4916
+Unpredictable,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,2773.7241,363.0579,1045.594
+Unpredictable,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,0.0,2773.7241,363.0579,1045.594
+Unpredictable,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,2878.6479,568.4804,1149.0428
+Unpredictable,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,2878.6479,568.4804,1149.0428
+Unpredictable,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,2789.7078,0.0,929.9026
+Unpredictable,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,2789.7078,0.0,929.9026
+Unpredictable,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,2833.0784,0.0,944.3595
+Unpredictable,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,0.0,2833.0784,0.0,944.3595
+Unpredictable,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,2878.8752,0.0,959.6251
+Unpredictable,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,0.0,2878.8752,0.0,959.6251
+Unpredictable,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,2760.2371,0.0,920.079
+Unpredictable,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,0.0,2760.2371,0.0,920.079
+Unpredictable,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,2849.2556,0.0,949.7519
+Unpredictable,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,2849.2556,0.0,949.7519
+Unpredictable,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,2889.0154,0.0,963.0051
+Unpredictable,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,0.0,2889.0154,0.0,963.0051
+Unpredictable,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,2696.3745,0.0,898.7915
+Unpredictable,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,0.0,2696.3745,0.0,898.7915
+Unpredictable,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,2830.2178,0.0,943.4059
+Unpredictable,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,2830.2178,0.0,943.4059
+Unpredictable,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,2816.6826,0.0,938.8942
+Unpredictable,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,0.0,2816.6826,0.0,938.8942
+Unpredictable,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,2875.158,0.0,958.386
+Unpredictable,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,0.0,2875.158,0.0,958.386
+Unpredictable,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,2852.8926,0.0,950.9642
+Unpredictable,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,0.0,2852.8926,0.0,950.9642
+Unpredictable,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,2933.9753,0.0,977.9918
+Unpredictable,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,2933.9753,0.0,977.9918
+Unpredictable,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,2858.822,0.0,952.9407
+Unpredictable,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,2858.822,0.0,952.9407
+Unpredictable,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Unpredictable,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.6,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.7,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.8,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.9,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.2,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.3,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.4,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.5,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.1,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.2286,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.3571,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.4857,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.6143,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.7429,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.8714,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.forged.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,0.0,0.0,64.0703,21.3568
+Balanced,alpha_beta_generation.min_distance_from_center,0.05,big_buck_bunny.raw.funscript,0.0,0.0,64.0703,21.3568
+Balanced,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.1111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.1722,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.2944,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.3556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.4167,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,0.0,0.0,135.5876,45.1959
+Balanced,alpha_beta_generation.min_distance_from_center,0.4778,big_buck_bunny.raw.funscript,0.0,0.0,135.5876,45.1959
+Balanced,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.5389,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.min_distance_from_center,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,18.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,26.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,34.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,42.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,0.0,0.0,1948.6025,649.5342
+Balanced,alpha_beta_generation.points_per_second,50.0,big_buck_bunny.raw.funscript,0.0,0.0,1948.6025,649.5342
+Balanced,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,20.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,32.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,44.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,56.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,68.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,alpha_beta_generation.speed_threshold_percent,80.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,1.5556,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,2.6111,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,3.6667,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,4.7222,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,5.7778,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,6.8333,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,7.8889,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,8.9444,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.frequency_ramp_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,0.5,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,1.8571,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,3.2143,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,4.5714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,5.9286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,7.2857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,8.6429,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_frequency_combine_ratio,10.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,3940.6636,2962.4678,886.6826,2596.6046
+Balanced,frequency.pulse_freq_min,0.3,big_buck_bunny.raw.funscript,3940.6636,2962.4678,886.6826,2596.6046
+Balanced,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,frequency.pulse_freq_min,0.4,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,888.461,2597.1974
+Balanced,frequency.pulse_freq_min,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,888.461,2597.1974
+Balanced,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.6,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,3940.6636,2962.4678,2658.2297,3187.1204
+Balanced,frequency.pulse_freq_min,0.7,big_buck_bunny.raw.funscript,3940.6636,2962.4678,2658.2297,3187.1204
+Balanced,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,2705.9905,3203.0406
+Balanced,frequency.pulse_freq_max,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,2705.9905,3203.0406
+Balanced,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,3940.6636,2962.4678,2103.3608,3002.1641
+Balanced,frequency.pulse_freq_max,0.6,big_buck_bunny.raw.funscript,3940.6636,2962.4678,2103.3608,3002.1641
+Balanced,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,3940.6636,2962.4678,1505.3698,2802.8337
+Balanced,frequency.pulse_freq_max,0.7,big_buck_bunny.raw.funscript,3940.6636,2962.4678,1505.3698,2802.8337
+Balanced,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.8,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,0.9,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,frequency.pulse_freq_max,1.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.2,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_min,0.3,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_min,0.4,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_min,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.2,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.3,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.4,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.6,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.7,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.8,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_width_max,0.9,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.1,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.2,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.3,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.4,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_min,0.5,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.1,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.2286,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,0.3571,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.4857,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,0.6143,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,0.7429,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,0.8714,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_max,1.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,1.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,2.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,3.0,big_buck_bunny.raw.funscript,0.0,0.0,0.0,0.0
+Balanced,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,4.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438
+Balanced,pulse.pulse_rise_combine_ratio,5.0,big_buck_bunny.raw.funscript,3940.6636,2962.4678,0.0,2301.0438

@@ -210,18 +210,18 @@ BUILTIN_PRESETS: dict[str, dict] = {
         },
         "sliders": [
             {
-                "cv": "cv_min_dist",
-                "label": "Softness",
-                "hint": "How far sensation moves from center. Low = barely perceptible flutter. High = wider, more present.",
-                "from_": 0.05, "to_": 0.35,
-                "min_label": "whisper", "max_label": "noticeable",
+                "cv": "cv_pps",
+                "label": "Smoothness",
+                "hint": "How many movement points per second. Low = sparse, dreamy. High = silky continuous motion.",
+                "from_": 10, "to_": 40,
+                "min_label": "sparse", "max_label": "silky",
             },
             {
-                "cv": "cv_pr_max",
-                "label": "Onset gentleness",
-                "hint": "How softly each pulse starts. High = feather-light onset. Low = cleaner, more defined edge.",
-                "from_": 0.40, "to_": 1.0,
-                "min_label": "defined", "max_label": "feather",
+                "cv": "cv_pf_min",
+                "label": "Base intensity",
+                "hint": "The minimum pulse rate — the floor of sensation. Low = barely there at rest. High = always present.",
+                "from_": 0.10, "to_": 0.50,
+                "min_label": "barely there", "max_label": "always present",
             },
         ],
     },
@@ -249,18 +249,18 @@ BUILTIN_PRESETS: dict[str, dict] = {
         },
         "sliders": [
             {
-                "cv": "cv_freq_ramp_ratio",
-                "label": "Reactivity",
-                "hint": "How tightly sensation tracks each stroke. Low = instant response. High = adds a slight lag.",
-                "from_": 1.0, "to_": 4.0,
-                "min_label": "instant", "max_label": "slight lag",
+                "cv": "cv_speed_thresh",
+                "label": "Sensitivity",
+                "hint": "How fast the stroke needs to move before the character reacts sharply. Low = reacts to everything. High = only responds to fast strokes.",
+                "from_": 20, "to_": 80,
+                "min_label": "reacts to all", "max_label": "fast strokes only",
             },
             {
-                "cv": "cv_pf_max",
-                "label": "Peak intensity",
-                "hint": "Maximum pulse rate at peak action. Higher = more intense at climax.",
-                "from_": 0.60, "to_": 1.0,
-                "min_label": "moderate peak", "max_label": "maximum",
+                "cv": "cv_pf_min",
+                "label": "Base intensity",
+                "hint": "The floor of sensation. Low = quiet at rest, explosive at peak. High = always present.",
+                "from_": 0.20, "to_": 0.70,
+                "min_label": "quiet floor", "max_label": "always on",
             },
         ],
     },
@@ -288,23 +288,23 @@ BUILTIN_PRESETS: dict[str, dict] = {
         },
         "sliders": [
             {
-                "cv": "cv_freq_ramp_ratio",
-                "label": "Build speed",
-                "hint": "How slowly the scene builds. High = very gradual — ignores short spikes, follows the overall arc.",
-                "from_": 4.0, "to_": 10.0,
-                "min_label": "builds quickly", "max_label": "very slow arc",
+                "cv": "cv_pulse_freq_ratio",
+                "label": "Build rate",
+                "hint": "How much the pulse frequency builds with the scene. Low = stays steady. High = sensation escalates strongly.",
+                "from_": 1.0, "to_": 8.0,
+                "min_label": "steady", "max_label": "escalates",
             },
             {
-                "cv": "cv_min_dist",
-                "label": "Arc width",
-                "hint": "How wide the circular sweep is. Low = tight circle. High = broad sweep at the peak.",
-                "from_": 0.05, "to_": 0.45,
-                "min_label": "tight", "max_label": "broad",
+                "cv": "cv_pf_min",
+                "label": "Starting intensity",
+                "hint": "Where the sensation begins at the start of the scene. Low = barely a whisper. High = starts already present.",
+                "from_": 0.15, "to_": 0.60,
+                "min_label": "whisper", "max_label": "starts strong",
             },
         ],
     },
     "Unpredictable": {
-        "description": "Random direction changes, varied character. Good for surprise content.",
+        "description": "Random direction changes, varied tone. Good for surprise content.",
         "config": {
             "alpha_beta_generation": {
                 "algorithm": "restim-original",
@@ -366,18 +366,57 @@ BUILTIN_PRESETS: dict[str, dict] = {
         },
         "sliders": [
             {
-                "cv": "cv_min_dist",
-                "label": "Sweep width",
-                "hint": "How wide the sensation arc is. Low = centered and focused. High = sweeps edge to edge.",
-                "from_": 0.05, "to_": 0.50,
-                "min_label": "focused", "max_label": "edge to edge",
+                "cv": "cv_pf_min",
+                "label": "Intensity floor",
+                "hint": "The low end of the pulse frequency range. Sets where sensation begins.",
+                "from_": 0.20, "to_": 0.60,
+                "min_label": "low floor", "max_label": "high floor",
             },
             {
-                "cv": "cv_freq_ramp_ratio",
-                "label": "Reactive vs. gradual",
-                "hint": "The balance between tracking strokes and building slowly. Low = follows action. High = ignores spikes.",
-                "from_": 1.0, "to_": 8.0,
-                "min_label": "follows action", "max_label": "slow build",
+                "cv": "cv_pf_max",
+                "label": "Intensity ceiling",
+                "hint": "The high end of the pulse frequency range. Sets how intense it gets at peak.",
+                "from_": 0.60, "to_": 1.0,
+                "min_label": "moderate peak", "max_label": "maximum",
+            },
+        ],
+    },
+    "Baseline": {
+        "description": "Safe, unbiased output. No tone applied — clean processing with sensible defaults. Good starting point or safety check.",
+        "config": {
+            "alpha_beta_generation": {
+                "algorithm": "circular",
+                "min_distance_from_center": 0.15,
+                "points_per_second": 25,
+                "speed_threshold_percent": 50,
+            },
+            "frequency": {
+                "frequency_ramp_combine_ratio": 5.0,
+                "pulse_frequency_combine_ratio": 3.0,
+                "pulse_freq_min": 0.30,
+                "pulse_freq_max": 0.85,
+            },
+            "pulse": {
+                "pulse_width_min": 0.10,
+                "pulse_width_max": 0.45,
+                "pulse_rise_min": 0.10,
+                "pulse_rise_max": 0.70,
+            },
+        },
+        "sliders": [
+            {
+                "cv": "cv_pf_min",
+                "label": "Intensity floor",
+                "hint": "The minimum sensation level. Low = quiet at rest. High = always present at a steady level.",
+                "from_": 0.10, "to_": 0.60,
+                "min_label": "quiet", "max_label": "steady",
+            },
+            {
+                "cv": "cv_pf_max",
+                "label": "Intensity ceiling",
+                "hint": "The maximum sensation level. Lower this to keep output conservative. Higher = full range.",
+                "from_": 0.50, "to_": 1.0,
+                "min_label": "conservative", "max_label": "full range",
             },
         ],
     },
@@ -594,11 +633,11 @@ def preview_frequency_blend(
     pulse_label = f"{pulse_speed_pct:.0f}% scene energy + {pulse_alpha_pct:.0f}% spatial position"
 
     if ramp_pct >= 60:
-        character = "gradual, builds slowly"
+        tone = "gradual, builds slowly"
     elif speed_pct >= 60:
-        character = "reactive, follows action closely"
+        tone = "reactive, follows action closely"
     else:
-        character = "balanced — responsive with a slow build"
+        tone = "balanced — responsive with a slow build"
 
     return {
         "frequency_ramp_pct":  ramp_pct,
@@ -607,7 +646,7 @@ def preview_frequency_blend(
         "pulse_alpha_pct":     pulse_alpha_pct,
         "frequency_label":     freq_label,
         "pulse_label":         pulse_label,
-        "overall_label":       f"Frequency feel: {character}",
+        "overall_label":       f"Frequency tone: {tone}",
     }
 
 

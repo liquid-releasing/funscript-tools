@@ -187,3 +187,13 @@ nul
 testdata/
 *.funscript
 RestimFunscriptProcessor.AppDir/
+
+# Media files - never commit
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.webm
+*.mp3
+*.wav
+*.m4v

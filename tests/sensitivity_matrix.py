@@ -79,16 +79,28 @@ def _load_channel(path: Path) -> np.ndarray:
     return np.asarray(data["y"], dtype=np.float32)
 
 
+def _outputs_by_suffix(result: dict) -> dict[str, Path]:
+    """Convert process() outputs list to {suffix: path} dict."""
+    return {o["suffix"]: Path(o["path"]) for o in result.get("outputs", [])}
+
+
+def _force_overwrite(config: dict) -> dict:
+    """Return config copy with overwrite_existing_files forced on."""
+    import copy
+    c = copy.deepcopy(config)
+    c.setdefault("options", {})["overwrite_existing_files"] = True
+    return c
+
+
 def _run_and_measure(input_path: str, config: dict, baseline_channels: dict) -> dict[str, float]:
     """Process with config, return delta per channel vs baseline."""
-    result = process(input_path, config=config)
-    outputs = result.get("outputs", {})
+    result = process(input_path, config=_force_overwrite(config))
+    outputs = _outputs_by_suffix(result)
     deltas = {}
     for ch in MEASURE_CHANNELS:
         if ch in outputs and ch in baseline_channels:
-            arr = _load_channel(Path(outputs[ch]))
+            arr = _load_channel(outputs[ch])
             baseline = baseline_channels[ch]
-            # Trim to same length in case of rounding
             n = min(len(arr), len(baseline))
             deltas[ch] = float(np.linalg.norm(arr[:n] - baseline[:n]))
         else:
@@ -98,12 +110,12 @@ def _run_and_measure(input_path: str, config: dict, baseline_channels: dict) -> 
 
 def _get_baseline(input_path: str, config: dict) -> dict[str, np.ndarray]:
     """Run once to get baseline channel arrays."""
-    result = process(input_path, config=config)
-    outputs = result.get("outputs", {})
+    result = process(input_path, config=_force_overwrite(config))
+    outputs = _outputs_by_suffix(result)
     channels = {}
     for ch in MEASURE_CHANNELS:
         if ch in outputs:
-            channels[ch] = _load_channel(Path(outputs[ch]))
+            channels[ch] = _load_channel(outputs[ch])
     return channels
 
 
@@ -127,7 +139,7 @@ def run(fixtures: list[Path], out_path: Path, n_steps_override: int | None = Non
     print(f"Output: {out_path}")
     print()
     print("How to read the output:")
-    print("  delta_alpha/beta/pulse = L2 norm of (varied output − baseline output)")
+    print("  delta_alpha/beta/pulse = L2 norm of (varied output minus baseline output)")
     print("  delta_mean = average across all three channels")
     print("  High delta = this parameter moves the needle")
     print("  Zero delta = this parameter does nothing for this eTransform")
@@ -135,10 +147,10 @@ def run(fixtures: list[Path], out_path: Path, n_steps_override: int | None = Non
 
     for preset_idx, preset_name in enumerate(BUILTIN_PRESETS, 1):
         base_config = get_preset(preset_name)
-        print(f"\n{'─'*60}")
+        print(f"\n{'-'*60}")
         print(f"eTransform {preset_idx}/{len(BUILTIN_PRESETS)}: {preset_name}")
-        print(f"  Character: {BUILTIN_PRESETS[preset_name]['description']}")
-        print(f"{'─'*60}")
+        print(f"  Tone: {BUILTIN_PRESETS[preset_name]['description']}")
+        print(f"{'-'*60}")
 
         for fixture in fixtures:
             input_path = str(fixture)
@@ -155,7 +167,7 @@ def run(fixtures: list[Path], out_path: Path, n_steps_override: int | None = Non
                 values = np.linspace(p_min, p_max, steps)
                 param_short = dot_path.split(".")[-1]
                 print(f"  [{param_idx:2d}/{len(PARAMETERS)}] {param_short:<35} "
-                      f"range [{p_min}→{p_max}] in {steps} steps", flush=True)
+                      f"range [{p_min}->{p_max}] in {steps} steps", flush=True)
 
                 step_deltas = []
                 for val in values:
@@ -187,20 +199,18 @@ def run(fixtures: list[Path], out_path: Path, n_steps_override: int | None = Non
 
                     elapsed = time.time() - t0
                     rate = run_count / elapsed if elapsed > 0 else 0
-                    run_count += 1
-                    rows.append(row)
 
                 # Per-parameter summary after all steps
                 max_delta = max(step_deltas) if step_deltas else 0.0
                 verdict = (
-                    "SIGNIFICANT ✓" if max_delta > 50
+                    "SIGNIFICANT OK" if max_delta > 50
                     else "moderate" if max_delta > 10
                     else "low" if max_delta > 1
                     else "DEAD — no effect"
                 )
                 elapsed = time.time() - t0
                 rate = run_count / elapsed if elapsed > 0 else 0
-                print(f"       max delta={max_delta:.1f}  → {verdict}  "
+                print(f"       max delta={max_delta:.1f}  -> {verdict}  "
                       f"[{run_count}/{total_runs} runs, {rate:.1f}/s]")
 
     print()
@@ -234,7 +244,11 @@ if __name__ == "__main__":
     if args.fixture:
         fixtures = [Path(f) for f in args.fixture]
     else:
-        fixtures = sorted(fixtures_dir.glob("*.funscript"))
+        # Only use raw/forged input fixtures, not generated output files
+        fixtures = sorted(
+            [f for f in fixtures_dir.glob("*.funscript")
+             if f.name.endswith(".raw.funscript") or f.name.endswith(".forged.funscript")]
+        )
 
     if not fixtures:
         print(f"No fixtures found in {fixtures_dir}")

@@ -344,14 +344,14 @@ class ForgeWindow:
         cfg = self.current_config
         row = 0
 
-        # ── eTransforms — quick character presets ─────────────────────────────
-        et_lf = ttk.LabelFrame(parent, text="eTransforms  —  Pick a character")
+        # ── eTransforms — quick tone presets ──────────────────────────────────
+        et_lf = ttk.LabelFrame(parent, text="eTransforms  —  Pick a tone")
         et_lf.grid(row=row, column=0, sticky="ew", padx=8, pady=(8, 2))
         et_lf.columnconfigure(tuple(range(len(BUILTIN_PRESETS))), weight=1)
         row += 1
 
         self._etransform_desc_var = tk.StringVar(
-            value="Pick a character to start. Adjust sliders below to fine-tune."
+            value="Pick a tone to start. Adjust sliders below to fine-tune."
             "\n(Applies to the whole funscript — per-section support coming with FunScriptForge.)"
         )
         tk.Label(et_lf, textvariable=self._etransform_desc_var,
@@ -369,7 +369,7 @@ class ForgeWindow:
             # Hover: show description
             btn.bind("<Enter>", lambda e, d=meta["description"]: self._etransform_desc_var.set(d))
             btn.bind("<Leave>", lambda e: self._etransform_desc_var.set(
-                "Pick a character to start. Adjust sliders below to fine-tune."
+                "Pick a tone to start. Adjust sliders below to fine-tune."
                 "\n(Applies to the whole funscript — per-section support coming with FunScriptForge.)"
             ))
 
@@ -600,7 +600,7 @@ class ForgeWindow:
 
         # ── Pulse feel — WHAT KIND of sensation ───────────────────────────────
         section(
-            "WHAT KIND  —  Pulse character",
+            "WHAT KIND  —  Pulse tone",
             "Controls the shape of each individual pulse — its fullness and how it attacks."
         )
 
@@ -781,7 +781,7 @@ class ForgeWindow:
         else:
             parts.append("Slow build — independent of individual strokes.")
 
-        # Pulse character
+        # Pulse tone
         pw_mid = (self.cv_pw_min.get() + self.cv_pw_max.get()) / 2
         pr_mid = (self.cv_pr_min.get() + self.cv_pr_max.get()) / 2
         width_desc = "narrow" if pw_mid < 0.25 else ("wide" if pw_mid > 0.6 else "medium")

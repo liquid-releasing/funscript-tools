@@ -1,8 +1,8 @@
-# Funscript Tools — Estim Character Engine
+# Funscript Tools — Estim Tone Engine
 
-One funscript in. Ten estim outputs out. Character baked in.
+One funscript in. Ten estim outputs out. Tone baked in.
 
-A GUI and CLI for converting a single `.funscript` file into a complete set of restim-ready output files, with named estim characters that control how sensation moves and builds.
+A GUI and CLI for converting a single `.funscript` file into a complete set of restim-ready output files, with named estim tones that control how sensation moves and builds.
 
 ---
 
@@ -10,21 +10,22 @@ A GUI and CLI for converting a single `.funscript` file into a complete set of r
 
 A funscript describes position over time — the stroke. Restim needs more: where the sensation is, how it moves, how intense it gets, how the pulse feels.
 
-This tool takes the stroke and derives all of it. You pick a **character** — a movement personality — and it generates alpha, beta, pulse frequency, and seven other output files tuned to that character.
+This tool takes the stroke and derives all of it. You pick a **tone** — a movement personality — and it generates alpha, beta, pulse frequency, and seven other output files tuned to that tone.
 
 ---
 
-## eTransforms — Five Characters
+## eTransforms — Six Tones
 
-| Character | What it means |
+| Tone | What it means |
 |---|---|
 | **Gentle** | Soft, slow-building. Narrow arc, soft pulse onset. Good for intimate or slow content. |
 | **Reactive** | Sharp, tracks action closely. Wide arc, instant response. Good for fast, intense content. |
 | **Scene Builder** | Builds gradually over the scene. Circular arc, slow ramp. Rewards patience. |
-| **Unpredictable** | Random direction changes, varied character. Keeps you guessing. |
+| **Unpredictable** | Random direction changes, varied tone. Keeps you guessing. |
 | **Balanced** | Middle of everything. Good starting point for any content. |
+| **Baseline** | Safe, unbiased output. No tone applied. Clean processing with sensible defaults. |
 
-Pick a character. See 1–2 sliders that matter for it. Tune if you want. Process.
+Pick a tone. See 1–2 sliders that matter for it. Tune if you want. Process.
 
 ---
 
@@ -44,7 +45,7 @@ Plus seven additional channels for specialist hardware (pulse_width, pulse_rise,
 
 ```
 1. Drop a .funscript file
-2. Pick an eTransform character
+2. Pick an eTransform tone
 3. Tune 1–2 sliders (optional)
 4. Process — takes seconds
 5. Review: original / master / alpha / beta / pulse_frequency / explorer
@@ -155,7 +156,7 @@ FunScriptForge Explorer  →  FunScriptForge  →  funscript-tools  →  restim
    (originate)               (edit/shape)       (estim character)   (play)
 ```
 
-The same five character names appear in FunScriptForge. Pick a character once — it flows through the entire pipeline.
+The same five tone names appear in FunScriptForge. Pick a tone once — it flows through the entire pipeline.
 
 ---
 
