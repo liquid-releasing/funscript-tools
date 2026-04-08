@@ -66,6 +66,9 @@ DEFAULT_CONFIG = {
         "delete_intermediary_files": True,
         "overwrite_existing_files": False
     },
+    "ui": {
+        "dark_mode": False
+    },
     "positional_axes": {
         "mode": "motion_axis",  # kept for backward compat; use generate_legacy/generate_motion_axis flags instead
         "generate_legacy": True,       # Motion Axis (3P) tab: generate legacy alpha/beta scripts

@@ -47,7 +47,11 @@ class MainWindow:
 
         self.setup_ui()
         self.update_config_display()
-        _theme.apply(False)  # initialise with light mode (sv_ttk applies globally)
+        dark = self.current_config.get('ui', {}).get('dark_mode', False)
+        _theme.apply(dark)
+        if dark:
+            self._dark_btn.config(text='\u2600 Light')
+            self.drop_zone.config(bg='#2d2d3f')
 
     def setup_ui(self):
         """Setup the main user interface."""
@@ -156,11 +160,13 @@ class MainWindow:
         self.root.wait_window(dialog)
 
     def _toggle_dark_mode(self):
-        _theme.toggle()  # sv_ttk with root=None applies to all windows
+        _theme.toggle()
         dark = _theme.is_dark()
         self._dark_btn.config(text='\u2600 Light' if dark else '\u263d Dark')
-        # Update drop zone background to match theme
         self.drop_zone.config(bg='#2d2d3f' if dark else '#f0f0f0')
+        # Persist preference
+        self.current_config.setdefault('ui', {})['dark_mode'] = dark
+        self.save_config()
 
     def on_mode_change(self, mode):
         """Called when positional axis mode changes."""
