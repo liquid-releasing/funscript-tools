@@ -65,20 +65,21 @@ def build_windows_exe():
             "main.py"
         ]
 
-    # Add config file if it exists
-    if Path("restim_config.json").exists():
-        cmd.insert(-1, "--add-data")
-        cmd.insert(-1, "restim_config.json;.")
+    if not use_spec_file:
+        # Add config file if it exists
+        if Path("restim_config.json").exists():
+            cmd.insert(-1, "--add-data")
+            cmd.insert(-1, "restim_config.json;.")
 
-    # Add event definitions if it exists
-    if Path("config.event_definitions.yml").exists():
-        cmd.insert(-1, "--add-data")
-        cmd.insert(-1, "config.event_definitions.yml;.")
+        # Add event definitions if it exists
+        if Path("config.event_definitions.yml").exists():
+            cmd.insert(-1, "--add-data")
+            cmd.insert(-1, "config.event_definitions.yml;.")
 
-    # Add icon if it exists
-    if Path("assets/icon.ico").exists():
-        cmd.insert(-1, "--icon")
-        cmd.insert(-1, "assets/icon.ico")
+        # Add icon if it exists
+        if Path("assets/icon.ico").exists():
+            cmd.insert(-1, "--icon")
+            cmd.insert(-1, "assets/icon.ico")
 
     print("Running PyInstaller...")
     print(" ".join(cmd))

@@ -108,6 +108,30 @@ def _geometric_preview_path(algorithm: str, min_distance: float, n_points: int):
     return alpha.tolist(), beta.tolist()
 
 
+def _upstream_preview_path(algorithm: str, min_distance: float,
+                            speed_threshold: float, n_points: int):
+    """Generate a 2D electrode path using a synthetic sine input."""
+    from funscript import Funscript  # upstream
+    from processing.speed_processing import convert_to_speed  # upstream
+    from processing.funscript_1d_to_2d import generate_alpha_beta_from_main  # upstream
+
+    # Synthetic sinusoidal funscript (2 seconds, representative motion)
+    t = np.linspace(0, 2.0, n_points)
+    y = (np.sin(2 * np.pi * 1.5 * t) + 1) / 2  # 0-1 range, 1.5 Hz
+    synth = Funscript(t.tolist(), y.tolist())
+
+    speed = convert_to_speed(synth, window_size=5, interpolation_interval=0.05)
+
+    alpha, beta = generate_alpha_beta_from_main(
+        synth, speed,
+        points_per_second=25,
+        algorithm=algorithm,
+        min_distance_from_center=min_distance,
+        speed_threshold_percent=speed_threshold,
+    )
+    return alpha.y, beta.y  # Both are 0-1 floats
+
+
 # ── Public API ────────────────────────────────────────────────────────────────
 
 ALGORITHMS = {

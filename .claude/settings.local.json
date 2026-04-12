@@ -11,7 +11,9 @@
       "Bash(del debug_simple.py test_motion_axis_ui.py)",
       "mcp__serena__search_for_pattern",
       "mcp__serena__find_file",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

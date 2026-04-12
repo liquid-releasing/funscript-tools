@@ -58,12 +58,16 @@ DEFAULT_CONFIG = {
     "file_management": {
         "mode": "local",  # "local" or "central"
         "central_folder_path": "",
-        "create_backups": True
+        "create_backups": True,
+        "zip_output": False
     },
     "options": {
         "normalize_volume": True,
         "delete_intermediary_files": True,
         "overwrite_existing_files": False
+    },
+    "ui": {
+        "dark_mode": False
     },
     "positional_axes": {
         "mode": "motion_axis",  # kept for backward compat; use generate_legacy/generate_motion_axis flags instead

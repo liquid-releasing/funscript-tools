@@ -89,6 +89,11 @@ class RestimProcessor:
                 self._update_progress(progress_callback, 95, "Cleaning up intermediary files...")
                 self._cleanup_intermediary_files()
 
+            # Zip output files if enabled in central mode
+            file_mgmt = self.params.get('file_management', {})
+            if file_mgmt.get('mode') == 'central' and file_mgmt.get('zip_output', False):
+                self._zip_output_files(progress_callback)
+
             self._update_progress(progress_callback, 100, "Processing complete!")
             return True
 
@@ -129,16 +134,18 @@ class RestimProcessor:
         """Delete existing restim files in central mode (when backups are disabled)."""
         try:
             # Collect all existing restim files for this input
-            existing_files = []
-            for file_path in self.output_dir.glob(f"{self.filename_only}.*.funscript"):
-                existing_files.append(file_path)
+            existing_files = list(self.output_dir.glob(f"{self.filename_only}.*.funscript"))
+
+            # Also delete any existing output zip from a previous run
+            existing_zip = self.output_dir / f"{self.filename_only}.zip"
+            if existing_zip.exists():
+                existing_files.append(existing_zip)
 
             if not existing_files:
                 return  # No existing files to delete
 
             self._update_progress(progress_callback, 3, f"Cleaning {len(existing_files)} existing output files...")
 
-            # Delete the existing files
             for file_path in existing_files:
                 file_path.unlink()
 
@@ -147,6 +154,28 @@ class RestimProcessor:
         except Exception as e:
             # Log the error but don't fail the entire process
             self._update_progress(progress_callback, -1, f"Warning: Failed to delete existing files: {str(e)}")
+
+    def _zip_output_files(self, progress_callback: Optional[Callable]):
+        """Zip all output funscript files in central folder into a single zip, then delete the originals."""
+        try:
+            output_files = list(self.output_dir.glob(f"{self.filename_only}.*.funscript"))
+            if not output_files:
+                return
+
+            zip_path = self.output_dir / f"{self.filename_only}.zip"
+            self._update_progress(progress_callback, 97, f"Creating output zip: {zip_path.name}")
+
+            with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                for file_path in output_files:
+                    zipf.write(file_path, file_path.name)
+
+            for file_path in output_files:
+                file_path.unlink()
+
+            self._update_progress(progress_callback, 98, f"Zipped {len(output_files)} files into {zip_path.name}")
+
+        except Exception as e:
+            self._update_progress(progress_callback, -1, f"Warning: Failed to create output zip: {str(e)}")
 
     def _create_backup(self, progress_callback: Optional[Callable]):
         """Create backup zip of existing restim files in central mode before overwriting."""
@@ -283,7 +312,10 @@ events:
         if not alpha_exists or not beta_exists:
             self._update_progress(progress_callback, 15, "Generating alpha and beta files from main funscript...")
             alpha_beta_config = self.params.get('alpha_beta_generation', {})
-            points_per_second = alpha_beta_config.get('points_per_second', 25)
+            # Derive points_per_second from interpolation_interval so the alpha/beta grid
+            # matches the speed funscript's grid exactly (used as fallback when speed_funscript is None).
+            interpolation_interval = self.params['speed']['interpolation_interval']
+            points_per_second = round(1.0 / interpolation_interval)
             algorithm = alpha_beta_config.get('algorithm', 'circular')
             min_distance_from_center = alpha_beta_config.get('min_distance_from_center', 0.1)
             speed_threshold_percent = alpha_beta_config.get('speed_threshold_percent', 50)

@@ -16,8 +16,8 @@ from config import ConfigManager
 from processor import RestimProcessor
 from ui.parameter_tabs import ParameterTabs
 from ui.conversion_tabs import ConversionTabs
-from ui.custom_events_dialog import CustomEventsDialog
 from ui.custom_events_builder import CustomEventsBuilderDialog
+import ui.theme as _theme
 
 
 class MainWindow:
@@ -47,6 +47,11 @@ class MainWindow:
 
         self.setup_ui()
         self.update_config_display()
+        dark = self.current_config.get('ui', {}).get('dark_mode', False)
+        _theme.apply(dark)
+        if dark:
+            self._dark_btn.config(text='\u2600 Light')
+            self.drop_zone.config(bg='#2d2d3f')
 
     def setup_ui(self):
         """Setup the main user interface."""
@@ -120,11 +125,13 @@ class MainWindow:
         self.process_motion_button = ttk.Button(buttons_frame, text="Process Motion Files", command=self.start_motion_processing)
         self.process_motion_button.pack(side=tk.LEFT, padx=(0, 10))
 
-        ttk.Button(buttons_frame, text="Custom Event Builder (NEW)", command=self.open_custom_events_builder).pack(side=tk.LEFT, padx=(0, 5))
-        ttk.Button(buttons_frame, text="Custom Events (Classic)", command=self.open_custom_events_dialog).pack(side=tk.LEFT, padx=(0, 10))
+        ttk.Button(buttons_frame, text="Custom Event Builder", command=self.open_custom_events_builder).pack(side=tk.LEFT, padx=(0, 10))
 
         ttk.Button(buttons_frame, text="Save Config", command=self.save_config).pack(side=tk.LEFT, padx=(0, 10))
-        ttk.Button(buttons_frame, text="Reset to Defaults", command=self.reset_config).pack(side=tk.LEFT)
+        ttk.Button(buttons_frame, text="Reset to Defaults", command=self.reset_config).pack(side=tk.LEFT, padx=(0, 10))
+
+        self._dark_btn = ttk.Button(buttons_frame, text='\u263d Dark', width=8, command=self._toggle_dark_mode)
+        self._dark_btn.pack(side=tk.LEFT)
 
         # Configure main_frame row weights
         main_frame.rowconfigure(row-1, weight=1)  # Parameters frame gets extra space
@@ -152,11 +159,14 @@ class MainWindow:
         )
         self.root.wait_window(dialog)
 
-    def open_custom_events_dialog(self):
-        """Open the classic text-based custom events dialog."""
-        dialog = CustomEventsDialog(self.root, self.current_config)
-        self.root.wait_window(dialog)
-
+    def _toggle_dark_mode(self):
+        _theme.toggle()
+        dark = _theme.is_dark()
+        self._dark_btn.config(text='\u2600 Light' if dark else '\u263d Dark')
+        self.drop_zone.config(bg='#2d2d3f' if dark else '#f0f0f0')
+        # Persist preference
+        self.current_config.setdefault('ui', {})['dark_mode'] = dark
+        self.save_config()
 
     def on_mode_change(self, mode):
         """Called when positional axis mode changes."""
@@ -297,12 +307,15 @@ class MainWindow:
             else:
                 conversion_tabs = self.conversion_tabs
 
-            # Determine output directory - use custom if specified, otherwise use input file directory
-            custom_output = self.current_config.get('advanced', {}).get('custom_output_directory', '').strip()
-            if custom_output:
-                output_dir = Path(custom_output)
-                # Ensure the output directory exists
-                output_dir.mkdir(parents=True, exist_ok=True)
+            # Determine output directory - respect file_management mode (central vs local)
+            file_mgmt = self.current_config.get('file_management', {})
+            if file_mgmt.get('mode') == 'central':
+                central_path = file_mgmt.get('central_folder_path', '').strip()
+                if central_path:
+                    output_dir = Path(central_path)
+                    output_dir.mkdir(parents=True, exist_ok=True)
+                else:
+                    output_dir = input_path.parent  # fallback if central path not set
             else:
                 output_dir = input_path.parent
 
@@ -396,12 +409,15 @@ class MainWindow:
             # Get motion axis configuration
             motion_config = self.current_config['positional_axes']
 
-            # Determine output directory - use custom if specified, otherwise use input file directory
-            custom_output = self.current_config.get('advanced', {}).get('custom_output_directory', '').strip()
-            if custom_output:
-                output_dir = Path(custom_output)
-                # Ensure the output directory exists
-                output_dir.mkdir(parents=True, exist_ok=True)
+            # Determine output directory - respect file_management mode (central vs local)
+            file_mgmt = self.current_config.get('file_management', {})
+            if file_mgmt.get('mode') == 'central':
+                central_path = file_mgmt.get('central_folder_path', '').strip()
+                if central_path:
+                    output_dir = Path(central_path)
+                    output_dir.mkdir(parents=True, exist_ok=True)
+                else:
+                    output_dir = input_path.parent  # fallback if central path not set
             else:
                 output_dir = input_path.parent
 
