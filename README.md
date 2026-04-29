@@ -2,6 +2,15 @@
 
 A Python GUI application for processing funscript files for electrostimulation devices. This application replaces the PowerShell-based workflow with a user-friendly interface and integrated processing pipeline.
 
+> **Original project by [edger477](https://github.com/edger477)** — see
+> [edger477/funscript-tools](https://github.com/edger477/funscript-tools).
+> The `liquid-releasing/funscript-tools` repo is a fork that holds Liquid
+> Releasing-side integration glue; the algorithms, processing pipeline, and
+> overall design are edger477's work. All credit for the underlying tool goes
+> to the upstream author. Releases (`v2.x.x` tags) are produced by upstream and
+> are tracked on the `upstream` remote — they are not mirrored to this fork's
+> origin.
+
 ## Features
 
 - **Intuitive GUI**: Easy-to-use interface with organized parameter tabs
